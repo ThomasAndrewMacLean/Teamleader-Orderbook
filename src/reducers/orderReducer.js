@@ -21,6 +21,14 @@ export default function orderReducer(state = initialState.orders, action) {
             }
 
             return state
+        case types.LOAD_USERS_SUCCESS:
+            //  const newState = JSON.parse(JSON.stringify(state)); 
+            state = {
+                ...state,
+                users: action.users
+            }
+
+            return state
         case types.ADD_QUANTITY:
             const newState = JSON.parse(JSON.stringify(state));
 

@@ -7,7 +7,7 @@ import Detail from './containers/Detail/Detail';
 import { Provider } from 'react-redux';
 import configStore from './store/configureStore';
 import registerServiceWorker from './registerServiceWorker';
-import { loadOrders, loadProducts } from './actions/actions';
+import { loadOrders, loadProducts, loadUsers } from './actions/actions';
 import createHistory from 'history/createBrowserHistory'
 import { Route } from 'react-router'
 import { ConnectedRouter } from 'react-router-redux'
@@ -20,6 +20,7 @@ const store = configStore();
 
 store.dispatch(loadProducts());
 store.dispatch(loadOrders());
+store.dispatch(loadUsers());
 
 
 ReactDOM.render(<Provider store={store}>

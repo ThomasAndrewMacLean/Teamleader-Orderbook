@@ -22,8 +22,8 @@ export function loadProducts() {
 
 export function loadUsers() {
     return function (dispatch) {
-        return Api.getAllUsers().then(products => {
-            dispatch(loadUsersSuccess(products));
+        return Api.getAllUsers().then(users => {
+            dispatch(loadUsersSuccess(users));
         }).catch(error => {
             throw (error);
         });
@@ -36,8 +36,8 @@ export function loadOrdersSuccess(orders) {
 export function loadProductsSuccess(products) {
     return { type: LOAD_PRODUCTS_SUCCESS, products };
 }
-export function loadUsersSuccess(orders) {
-    return { type: LOAD_USERS_SUCCESS, orders };
+export function loadUsersSuccess(users) {
+    return { type: LOAD_USERS_SUCCESS, users };
 }
 
 export function addQuantity(quantity, productId, orderId) {
