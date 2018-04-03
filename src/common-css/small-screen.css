@@ -36,4 +36,8 @@
         justify-content: space-between;
         
     }
+
+    .detail-header-info{
+        font-size: 14px;
+    }
   }

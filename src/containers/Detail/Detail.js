@@ -75,15 +75,15 @@ class Detail extends Component {
                     </div>
                 </div>
 
-                {this.order ?
+                {this.order && this.props.users.length > 0 && this.props.products.length > 0 ?
                     <div className="App">
                         <header className="App-header">
-                            <div className="halfCol" onClick={() => this.props.history.push(`/`)}>
+                            <div className="quatreCol header" onClick={() => this.props.history.push(`/`)}>
                                 BACK
                             </div>
-                            <div className="halfCol">
-                                <p className="pullright">
-                                    id: {this.order.id} total: {new Intl.NumberFormat('nl-BE', { style: 'currency', currency: 'EUR' }).format(this.order.total)}
+                            <div className="threeQuatreCol header">
+                                <p className="pullright detail-header-info">
+                                    id: {this.order.id} name: {this.props.users.find(u => u.id === parseInt(this.order['customer-id'], 10)).name} total: {new Intl.NumberFormat('nl-BE', { style: 'currency', currency: 'EUR' }).format(this.order.total)}
                                 </p>
                             </div>
                         </header>
@@ -123,7 +123,7 @@ class Detail extends Component {
                     </div>
 
 
-                    : '....'}
+                    : '...loading'}
             </div>
         );
     }
@@ -132,7 +132,8 @@ class Detail extends Component {
 const mapStateToProps = (state) => {
     return {
         orders: state.orders.orders,
-        products: state.orders.products
+        products: state.orders.products,
+        users: state.orders.users
     }
 }
 

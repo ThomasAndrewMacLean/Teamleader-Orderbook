@@ -19,10 +19,19 @@ div{    box-sizing: border-box;}
 }
 .halfCol{
   width: 50%;
-  margin:20px 0px;
-  padding:0px 20px; 
+  /* margin:20px 0px;
+  padding:0px 20px;  */
   float:left;
   
+}
+.header{
+  margin:20px 0px;
+  padding:0px 20px; 
+}
+
+.threeQuatreCol{
+  width:75%;
+  float:left;
 }
 
 li.grid-header{

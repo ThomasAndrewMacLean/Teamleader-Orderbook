@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <div className="halfCol">
+          <div className="halfCol header">
             {this.test}
           </div>
         </header>

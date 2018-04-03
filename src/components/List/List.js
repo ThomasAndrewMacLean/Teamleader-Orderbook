@@ -16,7 +16,7 @@ class List extends Component {
                         <div className="quatreCol id-and-name">
                             {this.props.order.id}
                             <p className="username pullright">&nbsp;{
-                                this.props.users.find(u => u.id == this.props.order['customer-id']).name}</p>
+                                this.props.users.find(u => u.id === parseInt(this.props.order['customer-id'], 10)).name}</p>
                         </div>
                         <div className="quatreCol textright">
                             {this.props.order.items.length}
