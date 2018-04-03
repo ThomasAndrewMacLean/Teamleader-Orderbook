@@ -19,4 +19,20 @@
       line-height: 30px;
       clear: both;
     }
+
+    .username{
+        font-size: 12px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        margin-right: -20px;
+    }
+
+
+    .id-and-name{
+        white-space: nowrap;
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        
+    }
   }

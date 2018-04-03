@@ -18,7 +18,26 @@ class App extends Component {
         {this.props.orders.length === 0 ? 'loading...' :
           <div>
             <ul className="list">
-              {this.props.orders.map(o => <List key={o.id} order={o} history={this.props.history} />)}
+
+              <li className="grid-header">
+                <div className="quatreCol">
+                  id
+                  <p className="username pullright">
+                    customer
+                  </p>
+                </div>
+                <div className="quatreCol textright">
+                  # items
+                </div>
+                <div className="quatreCol textright">
+                  total
+                </div>
+                <div className="quatreCol">
+                </div>
+              </li>
+              <hr />
+
+              {this.props.orders.map(o => <List className="orderList" key={o.id} order={o} history={this.props.history} />)}
             </ul>
           </div>
         }

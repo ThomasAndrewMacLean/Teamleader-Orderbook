@@ -88,7 +88,7 @@ class Detail extends Component {
                             </div>
                         </header>
                         <ul>
-                            <li>
+                            <li className="grid-header">
                                 <div className="quatreCol resize-small">
                                     product
                                 </div>

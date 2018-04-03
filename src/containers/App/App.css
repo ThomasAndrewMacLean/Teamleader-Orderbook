@@ -21,5 +21,10 @@
 
 .username{
   display: inline;
-  font-size: 13px;
+  /* font-size: 13px; */
+  margin-right: -40px;
+}
+
+.orderList{
+  clear: both;
 }
