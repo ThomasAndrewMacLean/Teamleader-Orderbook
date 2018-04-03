@@ -1,7 +1,8 @@
 export default {
     orders: {
         orders: [],
-        products: []
+        products: [],
+        users: []
     },
     products: []
 }

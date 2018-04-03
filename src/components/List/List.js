@@ -11,15 +11,17 @@ class List extends Component {
     render() {
         return (
             <div className="Detail">
-                {this.props.order ?
+                {this.props.order && this.props.users.length > 0 ?
                     <li>
                         <div className="quatreCol">
                             id:{this.props.order.id}
+                            <p className="username pullright">{
+                                this.props.users.find(u => u.id == this.props.order['customer-id']).name}</p>
                         </div>
-                        <div className="quatreCol">
+                        <div className="quatreCol textright">
                             items:{this.props.order.items.length}
                         </div>
-                        <div className="quatreCol">
+                        <div className="quatreCol textright">
                             total: {new Intl.NumberFormat('nl-BE', { style: 'currency', currency: 'EUR' }).format(this.props.order.total)}
                         </div>
                         <div className="quatreCol">
@@ -35,7 +37,7 @@ class List extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        orders: state.orders,
+        users: state.orders.users
     }
 }
 
