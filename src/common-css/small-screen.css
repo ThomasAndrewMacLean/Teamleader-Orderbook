@@ -10,8 +10,9 @@
   
   
     li{
+        
       padding-bottom: 20px;
-  
+    /* font-size: 14px; */
     }
   
     .clear-small{ background: var(--color-aqua-lightest);
@@ -24,7 +25,7 @@
         font-size: 12px;
         text-overflow: ellipsis;
         overflow: hidden;
-        margin-right: -20px;
+        margin-right: -20px !important;
     }
 
 

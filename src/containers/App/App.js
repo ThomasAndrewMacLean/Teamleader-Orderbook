@@ -20,7 +20,7 @@ class App extends Component {
             <ul className="list">
 
               <li className="grid-header">
-                <div className="quatreCol">
+                <div className="quatreCol id-and-name">
                   id
                   <p className="username pullright">
                     customer
