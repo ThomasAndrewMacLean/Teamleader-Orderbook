@@ -18,7 +18,20 @@
   /* height: 120%; */
   background: white;
 }
-
+.help-button{
+  width: 40px;
+  background:none;
+  color:var(--color-mint-lightest);
+  font-weight: 400;
+  border-color:var(--color-mint-lightest);
+}
+.help-button:active{
+  background:var(--color-mint-light);
+  color:var(--color-mint-dark);
+  
+  border-color:var(--color-mint-lightest);
+  box-shadow: none;
+}
 .username{
   display: inline;
   /* font-size: 13px; */

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './containers/App/App';
 import Detail from './containers/Detail/Detail';
+import Help from './containers/Help/Help';
 
 import { Provider } from 'react-redux';
 import configStore from './store/configureStore';
@@ -28,6 +29,7 @@ ReactDOM.render(<Provider store={store}>
         <div>
             <Route exact path="/" component={App} />
             <Route path="/detail/:id" component={Detail} />
+            <Route path="/help" component={Help} />
         </div>
     </ConnectedRouter>
 </Provider>, document.getElementById('root'));

@@ -14,6 +14,9 @@ class App extends Component {
           <div className="halfCol header">
             {this.test}
           </div>
+          <div className="halfCol header ">
+            <button className="pullright help-button" onClick={() => this.props.history.push('/help')}>?</button>
+          </div>
         </header>
         {this.props.orders.length === 0 ? 'loading...' :
           <div>
