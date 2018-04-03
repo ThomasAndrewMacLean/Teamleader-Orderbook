@@ -47,10 +47,12 @@ export default function orderReducer(state = initialState.orders, action) {
 
             order.items.push({
                 'product-id': action.payload.product.id,
-                'quantity': '0',
+                'quantity': '1',
                 'unit-price': action.payload.product.price,
-                'total': '0'
+                'total': action.payload.product.price
             })
+
+            order.total = order.items.reduce((a, b) => a += parseFloat(b.total, 10), 0)
 
             return state;
 

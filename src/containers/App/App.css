@@ -1,5 +1,3 @@
-
-
 .App-header {
   background-color:var(--color-mint);
   height: 60px;
@@ -8,8 +6,6 @@
   color: white;
   font-weight: 100;
 }
-
-
 .App{
   position: relative;
   margin: auto;
@@ -37,7 +33,6 @@
   /* font-size: 13px; */
   margin-right: -40px;
 }
-
 .orderList{
   clear: both;
 }
