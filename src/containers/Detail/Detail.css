@@ -1,0 +1,48 @@
+
+
+.modalBackDrop {
+  position: fixed;
+  left:-110vw;
+  height: 100vh;
+  width: 110vw;
+  z-index: 1000;
+  background: var(--color-aqua-darkest);
+  opacity: 0.5;
+  /* will-change: auto */
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.modal{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin:auto;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: absolute;
+  left:-100vw;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1001;
+  pointer-events: none;
+}
+.modal-content{
+  pointer-events: auto;
+  background: whitesmoke;
+  color:black;
+  opacity: 1;
+  /* height: 100px; */
+  width: 300px;
+}
+.showModal{
+  transform: translate(100vw)
+}
+.quantityAndButtons{
+display: flex;
+/* justify-content: space-between; */
+}
+.pad{
+  margin:0 20px;
+}
+.big-button{
+  margin-top:-1px;
+  width: 100%;
+}
