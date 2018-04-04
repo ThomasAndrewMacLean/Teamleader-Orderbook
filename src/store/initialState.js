@@ -3,6 +3,5 @@ export default {
         orders: [],
         products: [],
         users: []
-    },
-    products: []
-}
+    }
+};

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 
 
 class List extends Component {
     goToDetail(orderId) {
         //debugger;
         //this.props.dispatch(push(`/about`))
-        this.props.history.push(`/detail/${orderId}`)
+        this.props.history.push(`/detail/${orderId}`);
     }
     render() {
         return (
@@ -30,15 +30,15 @@ class List extends Component {
                     </li>
                     : '....'}
             </div>
-        )
+        );
     }
-};
+}
 
 
 const mapStateToProps = (state) => {
     return {
         users: state.orders.users
-    }
-}
+    };
+};
 
 export default connect(mapStateToProps)(List);

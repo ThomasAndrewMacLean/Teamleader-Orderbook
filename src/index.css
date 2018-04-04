@@ -28,6 +28,10 @@ div{    box-sizing: border-box;}
   margin:20px 0px;
   padding:0px 20px; 
 }
+.button-padding{
+  margin:20px 0px;
+  padding:0px 20px; 
+}
 
 .threeQuatreCol{
   width:75%;

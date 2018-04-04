@@ -9,10 +9,10 @@ import { Provider } from 'react-redux';
 import configStore from './store/configureStore';
 import registerServiceWorker from './registerServiceWorker';
 import { loadOrders, loadProducts, loadUsers } from './actions/actions';
-import createHistory from 'history/createBrowserHistory'
-import { Route } from 'react-router'
-import { ConnectedRouter } from 'react-router-redux'
-const history = createHistory()
+import createHistory from 'history/createBrowserHistory';
+import { Route } from 'react-router';
+import { ConnectedRouter } from 'react-router-redux';
+const history = createHistory();
 const store = configStore();
 
 // store.subscribe(() => {

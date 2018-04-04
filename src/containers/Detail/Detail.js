@@ -1,53 +1,53 @@
 import React, { Component } from 'react';
-import { connect } from "react-redux";
-import DetailList from "./../DetailList/DetailList"
+import { connect } from 'react-redux';
+import DetailList from './../DetailList/DetailList';
 import './Detail.css';
-import { addProduct, placeOrder } from './../../actions/actions'
-import Hammer from 'hammerjs'
+import { addProduct, placeOrder } from './../../actions/actions';
+import Hammer from 'hammerjs';
 
 class Detail extends Component {
-    order = {}
-    showModal = false;
+    // order = {}
+    // showModal = false;
     test(p) {
         console.log(p);
         this.toggleModal();
-        this.props.addProduct(p, this.order.id)
+        this.props.addProduct(p, this.order.id);
     }
 
     toggleModal() {
         this.showModal = !this.showModal;
-        this.forceUpdate()
+        this.forceUpdate();
     }
 
     addProduct() {
         let productsOnScreen = this.order.items.map(i => i['product-id']);
         let otherProducts = this.props.products.filter(p => !productsOnScreen.includes(p.id));
 
-        this.toggleModal()
+        this.toggleModal();
 
-        const modal = document.getElementById('modal')
+        const modal = document.getElementById('modal');
         modal.innerHTML = '';
         otherProducts.forEach(p => {
-            let b = document.createElement("button");
+            let b = document.createElement('button');
             b.innerHTML = p.description;
-            b.classList.add('big-button')
-            b.addEventListener('click', () => this.test(p))
+            b.classList.add('big-button');
+            b.addEventListener('click', () => this.test(p));
             modal.appendChild(b);
-        })
-        let b = document.createElement("button");
+        });
+        let b = document.createElement('button');
         b.innerHTML = 'CANCEL';
-        b.classList.add('big-button')
-        b.addEventListener('click', () => this.toggleModal())
+        b.classList.add('big-button');
+        b.addEventListener('click', () => this.toggleModal());
         modal.appendChild(b);
     }
 
 
     goHome() {
-        this.props.history.push(`/`)
+        this.props.history.push('/');
     }
 
     componentDidMount() {
-        this.hammer = Hammer(this._slider)
+        this.hammer = Hammer(this._slider);
 
         this.hammer.on('swiperight', () => this.goHome());
     }
@@ -65,7 +65,7 @@ class Detail extends Component {
                 <div className={this.showModal ? 'showModal modalBackDrop' : 'modalBackDrop'}
                     onClick={() => {
                         this.showModal = false;
-                        this.forceUpdate() // todo: ??? must be better way than this without keeping boolean in store ???
+                        this.forceUpdate(); // todo: ??? must be better way than this without keeping boolean in store ???
                         //this.setState({}) // triggers the same as forceUpdate...
                     }}>
                 </div>
@@ -78,7 +78,7 @@ class Detail extends Component {
                 {this.order && this.props.users.length > 0 && this.props.products.length > 0 ?
                     <div className="App">
                         <header className="App-header">
-                            <div className="quatreCol header" onClick={() => this.props.history.push(`/`)}>
+                            <div className="quatreCol header" onClick={() => this.props.history.push('/')}>
                                 BACK
                             </div>
                             <div className="threeQuatreCol header">
@@ -99,12 +99,12 @@ class Detail extends Component {
                                     <div className="quatreCol resize-small">
                                         <p className="pullright">
                                             unitprice
-                                    </p>
+                                        </p>
                                     </div>
                                     <div className="quatreCol resize-small">
                                         <p className="pullright">
                                             total
-                                    </p>
+                                        </p>
                                     </div>
                                 </div>
                             </li>
@@ -112,10 +112,10 @@ class Detail extends Component {
                             {this.order.items.map(o => <DetailList key={o['product-id']} parentId={id} item={o} history={this.props.history} />)}
                         </ul>
                         {/* <hr /> */}
-                        <div className="halfCol">
+                        <div className="halfCol button-padding">
                             <button className="big-button" onClick={() => this.addProduct()}>ADD PRODUCT</button>
                         </div>
-                        <div className="halfCol">
+                        <div className="halfCol button-padding">
                             <button className="big-button primary-button" onClick={() => this.props.placeOrder(this.order.id)}>PLACE ORDER</button>
                         </div>
 
@@ -134,8 +134,8 @@ const mapStateToProps = (state) => {
         orders: state.orders.orders,
         products: state.orders.products,
         users: state.orders.users
-    }
-}
+    };
+};
 
 
 const mapDispatchToProps = (dispatch) => {
