@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "TL-O",
+  "name": "Teamleader Orderbook",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,7 +8,7 @@
       "type": "image/x-icon"
     },
     {
-      "src": "teamleader-logo.jpg",
+      "src": "teamleader-logo.png",
       "size": "144x144",
       "type": "image/x-icon"
     }
