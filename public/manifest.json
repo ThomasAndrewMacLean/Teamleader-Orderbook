@@ -10,7 +10,7 @@
     {
       "src": "teamleader-logo.png",
       "sizes": "144x144",
-      "type": "image/x-icon"
+      "type": "image/png"
     }
   ],
   "start_url": "./index.html",
