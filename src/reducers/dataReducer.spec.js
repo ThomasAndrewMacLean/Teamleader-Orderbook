@@ -92,6 +92,27 @@ it('ADD_QUANTITY should change the number of items', () => {
     expect(result.orders[0].items[0].quantity).toBe('13');
 });
 
+it('ADD_QUANTITY should do nothing if order has been placed', () => {
+    const beginState = {
+        orders: mocks.getOrders()
+    };
+    beginState.orders[0].hasBeenPlaced = true;
+    expect(beginState.orders[0].items[0].quantity).toBe('10');
+
+    const action = {
+        'type': types.ADD_QUANTITY,
+        'payload': {
+            'productId': 'B102',
+            'quantity': 3,
+            'orderId': '1'
+        }
+    };
+
+    let result = dataReducer(beginState, action);
+    expect(result).toEqual(beginState);
+    expect(result.orders[0].items[0].quantity).toBe('10');
+});
+
 it('ADD_QUANTITY should change the number of items NEGATIVE', () => {
     const beginState = {
         orders: mocks.getOrders()
@@ -162,8 +183,6 @@ it('ADD_PRODUCT should add a product to item array', () => {
     const action = {
         'type': types.ADD_PRODUCT,
         'payload': {
-            'productId': 'B102',
-            'quantity': -3,
             'orderId': '1',
             product: {
                 id: 'ABC',
@@ -176,6 +195,28 @@ it('ADD_PRODUCT should add a product to item array', () => {
     expect(result.orders[0].items).toHaveLength(2);
 });
 
+it('ADD_PRODUCT should do nothing if order has been placed', () => {
+    const beginState = {
+        orders: mocks.getOrders()
+    };
+    expect(beginState.orders[0].items).toHaveLength(1);
+    beginState.orders[0].hasBeenPlaced = true;
+    const action = {
+        'type': types.ADD_PRODUCT,
+        'payload': {
+            'orderId': '1',
+            product: {
+                id: 'ABC',
+                price: '50'
+            }
+        }
+    };
+
+    let result = dataReducer(beginState, action);
+    expect(result).toEqual(beginState);
+    expect(result.orders[0].items).toHaveLength(1);
+});
+
 it('ADD_PRODUCT should be immutable', () => {
     const beginState = {
         orders: mocks.getOrders()
@@ -185,8 +226,6 @@ it('ADD_PRODUCT should be immutable', () => {
     const action = {
         'type': types.ADD_PRODUCT,
         'payload': {
-            'productId': 'B102',
-            'quantity': -3,
             'orderId': '1',
             product: {
                 id: 'ABC',
@@ -206,8 +245,6 @@ it('ADD_PRODUCT should recalculate total', () => {
     const action = {
         'type': types.ADD_PRODUCT,
         'payload': {
-            'productId': 'B102',
-            'quantity': -3,
             'orderId': '1',
             product: {
                 id: 'ABC',
@@ -228,8 +265,6 @@ it('ADD_PRODUCT adds quantity 1', () => {
     const action = {
         'type': types.ADD_PRODUCT,
         'payload': {
-            'productId': 'B102',
-            'quantity': -3,
             'orderId': '1',
             product: {
                 id: 'ABC',
@@ -250,8 +285,6 @@ it('ADD_PRODUCT cant add a product that has allready been added', () => {
     const action = {
         'type': types.ADD_PRODUCT,
         'payload': {
-            'productId': 'B102',
-            'quantity': -3,
             'orderId': '1',
             product: {
                 id: 'ABC',
