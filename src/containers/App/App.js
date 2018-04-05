@@ -7,13 +7,10 @@ import PropTypes from 'prop-types';
 import './App.css';
 
 class App extends Component {
-    // static propTypes = {
-    //   orders: PropTypes.any
-    // }
 
     constructor(props) {
         super(props);
-        this.test = 'ORDERBOOK';
+        this.title = 'ORDERBOOK';
     }
 
     render() {
@@ -21,7 +18,7 @@ class App extends Component {
             <div className="App">
                 <header className="App-header">
                     <div className="halfCol header">
-                        {this.test}
+                        {this.title}
                     </div>
                     <div className="halfCol header ">
                         <button className="pullright help-button" onClick={() => this.props.history.push('/help')}>?</button>
@@ -33,16 +30,16 @@ class App extends Component {
 
                             <li className="grid-header">
                                 <div className="quatreCol id-and-name">
-                  id
+                                    id
                                     <p className="username pullright">
-                    customer
+                                        customer
                                     </p>
                                 </div>
                                 <div className="quatreCol textright">
-                  # items
+                                    # items
                                 </div>
                                 <div className="quatreCol textright">
-                  total
+                                    total
                                 </div>
                                 <div className="quatreCol">
                                 </div>
@@ -60,15 +57,15 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        orders: state.orders.orders
+        orders: state.data.orders
     };
 
 };
 
 App.propTypes = {
 
-    orders: PropTypes.any,
-    history: PropTypes.array
+    orders: PropTypes.array,
+    history: PropTypes.object
 };
 
 

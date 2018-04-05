@@ -58,7 +58,7 @@ class Help extends Component {
 
 
 Help.propTypes = {
-    history: PropTypes.array,
+    history: PropTypes.object
 };
 
 

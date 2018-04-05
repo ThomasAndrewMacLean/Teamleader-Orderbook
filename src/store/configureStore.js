@@ -1,19 +1,19 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import rootReducer from './../reducers/reducers';
 import thunk from 'redux-thunk';
-import { createLogger } from 'redux-logger'
-import { routerMiddleware } from 'react-router-redux'
+import { createLogger } from 'redux-logger';
+import { routerMiddleware } from 'react-router-redux';
 
-import createHistory from 'history/createBrowserHistory'
+import createHistory from 'history/createBrowserHistory';
 
 
 
 const logger = createLogger({
     collapsed: true
-})
+});
 
-const history = createHistory()
-const routerMw = routerMiddleware(history)
+const history = createHistory();
+const routerMw = routerMiddleware(history);
 
 const composeEnhancers =
     typeof window === 'object' &&

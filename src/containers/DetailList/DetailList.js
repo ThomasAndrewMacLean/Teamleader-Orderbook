@@ -95,7 +95,7 @@ class DetailList extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        products: state.orders.products,
+        products: state.data.products,
     };
 };
 

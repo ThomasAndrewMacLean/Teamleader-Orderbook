@@ -3,7 +3,7 @@ import initialState from './../store/initialState';
 // import { browserHistory } from 'react-router';
 
 
-export default function orderReducer(state = initialState.orders, action) {
+export default function dataReducer(state = initialState.data, action) {
 
     let newState;
     let order;

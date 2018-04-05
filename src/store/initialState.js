@@ -1,5 +1,5 @@
 export default {
-    orders: {
+    data: {
         orders: [],
         products: [],
         customers: []

@@ -14,7 +14,7 @@ class List extends Component {
                         <div className="quatreCol id-and-name">
                             {this.props.order.id}
                             <p className="username pullright">&nbsp;{
-                                this.props.customers.find(u => parseInt(u.id,10) === parseInt(this.props.order['customer-id'], 10)).name}</p>
+                                (this.props.customers.find(u => parseInt(u.id, 10) === parseInt(this.props.order['customer-id'], 10)) || { name: '?' }).name}</p>
                         </div>
                         <div className="quatreCol textright">
                             {this.props.order.items.length}
@@ -35,14 +35,14 @@ class List extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        customers: state.orders.customers
+        customers: state.data.customers
     };
 };
 
 
 List.propTypes = {
     order: PropTypes.object,
-    history: PropTypes.array,
+    history: PropTypes.object,
     products: PropTypes.array,
     customers: PropTypes.array,
 };

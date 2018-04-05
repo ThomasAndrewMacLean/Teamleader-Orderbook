@@ -133,9 +133,9 @@ class Detail extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        orders: state.orders.orders,
-        products: state.orders.products,
-        customers: state.orders.customers
+        orders: state.data.orders,
+        products: state.data.products,
+        customers: state.data.customers
     };
 };
 
@@ -157,7 +157,7 @@ Detail.propTypes = {
 
     orders: PropTypes.array,
     match: PropTypes.any,
-    history: PropTypes.array,
+    history: PropTypes.object,
     products: PropTypes.array,
     customers: PropTypes.array,
     placeOrder: PropTypes.func,
