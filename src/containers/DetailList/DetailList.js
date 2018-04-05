@@ -1,19 +1,22 @@
 import React, { Component } from 'react';
-import { connect } from "react-redux";
-import { addQuantity, deleteProduct } from './../../actions/actions'
-import Hammer from 'hammerjs'
+import { connect } from 'react-redux';
+import { addQuantity, deleteProduct } from './../../actions/actions';
+import Hammer from 'hammerjs';
 import './DetailList.css';
+import PropTypes from 'prop-types';
 
 
 class DetailList extends Component {
-
-    showDelete = false;
+    constructor(props) {
+        super(props);
+        this.showDelete = false;
+    }
     add(quantity) {
-        this.props.addQuantity(quantity, this.props.item['product-id'], this.props.parentId)
+        this.props.addQuantity(quantity, this.props.item['product-id'], this.props.parentId);
     }
 
     deleteProduct() {
-        this.props.deleteProduct(this.props.item['product-id'], this.props.parentId)
+        this.props.deleteProduct(this.props.item['product-id'], this.props.parentId);
     }
 
     togglePromptDelete() {
@@ -30,8 +33,8 @@ class DetailList extends Component {
     // }
 
     componentDidMount() {
-        this.hammer = Hammer(this._slider)
-        this.hammer.get("press").set({ time: 500 });
+        this.hammer = Hammer(this._slider);
+        this.hammer.get('press').set({ time: 500 });
         this.hammer.on('press', () => this.togglePromptDelete());
         //this.hammer.on('swipeleft', () => this.moveOver());
     }
@@ -84,17 +87,17 @@ class DetailList extends Component {
                     </li>
                     : '....'}
             </div>
-        )
+        );
     }
-};
+}
 
 
 
 const mapStateToProps = (state) => {
     return {
         products: state.orders.products,
-    }
-}
+    };
+};
 
 const mapDispatchToProps = (dispatch) => {
     return {
@@ -105,6 +108,18 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(deleteProduct(orderId, productId));
         }
     };
+};
+
+
+DetailList.propTypes = {
+
+    item: PropTypes.object,
+    parentId: PropTypes.any,
+    products: PropTypes.array,
+
+    addQuantity: PropTypes.func,
+    deleteProduct: PropTypes.func,
+
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(DetailList);

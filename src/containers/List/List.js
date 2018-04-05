@@ -9,12 +9,12 @@ class List extends Component {
     render() {
         return (
             <div className="Detail">
-                {this.props.order && this.props.users.length > 0 ?
+                {this.props.order && this.props.customers.length > 0 ?
                     <li>
                         <div className="quatreCol id-and-name">
                             {this.props.order.id}
                             <p className="username pullright">&nbsp;{
-                                this.props.users.find(u => u.id === parseInt(this.props.order['customer-id'], 10)).name}</p>
+                                this.props.customers.find(u => parseInt(u.id,10) === parseInt(this.props.order['customer-id'], 10)).name}</p>
                         </div>
                         <div className="quatreCol textright">
                             {this.props.order.items.length}
@@ -35,7 +35,7 @@ class List extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        users: state.orders.users
+        customers: state.orders.customers
     };
 };
 
@@ -44,7 +44,7 @@ List.propTypes = {
     order: PropTypes.object,
     history: PropTypes.array,
     products: PropTypes.array,
-    users: PropTypes.array,
+    customers: PropTypes.array,
 };
 
 

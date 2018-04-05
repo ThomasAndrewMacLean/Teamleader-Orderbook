@@ -20,10 +20,10 @@ export function loadProducts() {
     };
 }
 
-export function loadUsers() {
+export function loadCustomers() {
     return function (dispatch) {
-        return Api.getAllUsers().then(users => {
-            dispatch(loadUsersSuccess(users));
+        return Api.getAllCustomers().then(customers => {
+            dispatch(loadCustomersSuccess(customers));
         }).catch(error => {
             throw (error);
         });
@@ -36,22 +36,22 @@ export function loadOrdersSuccess(orders) {
 export function loadProductsSuccess(products) {
     return { type: LOAD_PRODUCTS_SUCCESS, products };
 }
-export function loadUsersSuccess(users) {
-    return { type: LOAD_USERS_SUCCESS, users };
+export function loadCustomersSuccess(customers) {
+    return { type: LOAD_CUSTOMERS_SUCCESS, customers };
 }
 
 export function addQuantity(quantity, productId, orderId) {
     return {
         type: ADD_QUANTITY,
         payload: { 'quantity': quantity, 'productId': productId, 'orderId': orderId }
-    }
+    };
 }
 
 export function addProduct(product, orderId) {
     return {
         type: ADD_PRODUCT,
         payload: { 'product': product, 'orderId': orderId }
-    }
+    };
 }
 
 
@@ -59,7 +59,7 @@ export function deleteProduct(productId, orderId) {
     return {
         type: DELETE_PRODUCT,
         payload: { 'productId': productId, 'orderId': orderId }
-    }
+    };
 }
 
 
@@ -67,15 +67,15 @@ export function placeOrder(orderId) {
     return {
         type: PLACE_ORDER,
         payload: { 'orderId': orderId }
-    }
+    };
 }
 
 
 
 export const LOAD_ORDERS_SUCCESS = 'LOAD_ORDERS_SUCCESS';
 export const LOAD_PRODUCTS_SUCCESS = 'LOAD_PRODUCTS_SUCCESS';
-export const LOAD_USERS_SUCCESS = 'LOAD_USERS_SUCCESS';
+export const LOAD_CUSTOMERS_SUCCESS = 'LOAD_CUSTOMERS_SUCCESS';
 export const ADD_QUANTITY = 'ADD_QUANTITY';
-export const PLACE_ORDER = 'PLACE_ORDER'
+export const PLACE_ORDER = 'PLACE_ORDER';
 export const ADD_PRODUCT = 'ADD_PRODUCT';
 export const DELETE_PRODUCT = 'DELETE_PRODUCT';

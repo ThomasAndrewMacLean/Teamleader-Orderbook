@@ -77,7 +77,7 @@ class Detail extends Component {
                     </div>
                 </div>
 
-                {this.order && this.props.users.length > 0 && this.props.products.length > 0 ?
+                {this.order && this.props.customers.length > 0 && this.props.products.length > 0 ?
                     <div className="App">
                         <header className="App-header">
                             <div className="quatreCol header" onClick={() => this.props.history.push('/')}>
@@ -85,7 +85,7 @@ class Detail extends Component {
                             </div>
                             <div className="threeQuatreCol header">
                                 <p className="pullright detail-header-info">
-                                    id: {this.order.id} name: {this.props.users.find(u => u.id === parseInt(this.order['customer-id'], 10)).name} total: {new Intl.NumberFormat('nl-BE', { style: 'currency', currency: 'EUR' }).format(this.order.total)}
+                                    id: {this.order.id} customer: {this.props.customers.find(u => parseInt(u.id, 10) === parseInt(this.order['customer-id'], 10)).name} total: {new Intl.NumberFormat('nl-BE', { style: 'currency', currency: 'EUR' }).format(this.order.total)}
                                 </p>
                             </div>
                         </header>
@@ -135,7 +135,7 @@ const mapStateToProps = (state) => {
     return {
         orders: state.orders.orders,
         products: state.orders.products,
-        users: state.orders.users
+        customers: state.orders.customers
     };
 };
 
@@ -159,7 +159,7 @@ Detail.propTypes = {
     match: PropTypes.any,
     history: PropTypes.array,
     products: PropTypes.array,
-    users: PropTypes.array,
+    customers: PropTypes.array,
     placeOrder: PropTypes.func,
     addProduct: PropTypes.func,
 
