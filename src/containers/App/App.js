@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import List from './../List/List';
+import PropTypes from 'prop-types';
+
 
 import './App.css';
 
@@ -9,12 +11,11 @@ class App extends Component {
     //   orders: PropTypes.any
     // }
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.test = 'ORDERBOOK';
     }
 
-    testm() { return 8; }
     render() {
         return (
             <div className="App">
@@ -58,13 +59,17 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => {
-    //console.log(state);
-    //debugger;
-
     return {
         orders: state.orders.orders
     };
 
 };
+
+App.propTypes = {
+
+    orders: PropTypes.any,
+    history: PropTypes.array
+};
+
 
 export default connect(mapStateToProps)(App);

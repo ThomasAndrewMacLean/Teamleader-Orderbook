@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 
 import './Help.css';
 import Hammer from 'hammerjs';
+import PropTypes from 'prop-types';
+
 
 class Help extends Component {
 
@@ -53,6 +55,11 @@ class Help extends Component {
         );
     }
 }
+
+
+Help.propTypes = {
+    history: PropTypes.array,
+};
 
 
 export default connect()(Help);

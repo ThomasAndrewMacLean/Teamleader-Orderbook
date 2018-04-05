@@ -4,6 +4,8 @@ import DetailList from './../DetailList/DetailList';
 import './Detail.css';
 import { addProduct, placeOrder } from './../../actions/actions';
 import Hammer from 'hammerjs';
+import PropTypes from 'prop-types';
+
 
 class Detail extends Component {
     // order = {}
@@ -148,4 +150,21 @@ const mapDispatchToProps = (dispatch) => {
         }
     };
 };
+
+
+
+Detail.propTypes = {
+
+    orders: PropTypes.array,
+    match: PropTypes.any,
+    history: PropTypes.array,
+    products: PropTypes.array,
+    users: PropTypes.array,
+    placeOrder: PropTypes.func,
+    addProduct: PropTypes.func,
+
+};
+
+
+
 export default connect(mapStateToProps, mapDispatchToProps)(Detail);

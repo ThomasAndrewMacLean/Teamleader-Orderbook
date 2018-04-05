@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
+import PropTypes from 'prop-types';
 
 class List extends Component {
     goToDetail(orderId) {
-        //debugger;
-        //this.props.dispatch(push(`/about`))
         this.props.history.push(`/detail/${orderId}`);
     }
     render() {
@@ -40,5 +38,14 @@ const mapStateToProps = (state) => {
         users: state.orders.users
     };
 };
+
+
+List.propTypes = {
+    order: PropTypes.object,
+    history: PropTypes.array,
+    products: PropTypes.array,
+    users: PropTypes.array,
+};
+
 
 export default connect(mapStateToProps)(List);
