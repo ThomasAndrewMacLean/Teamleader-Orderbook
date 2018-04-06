@@ -17,15 +17,16 @@
   background: white;
 }
 
-.help-button {
+.header-button {
   width: 40px;
   background: none;
   color: var(--color-mint-lightest);
   font-weight: 400;
+  margin-left:20px;
   border-color: var(--color-mint-lightest);
 }
 
-.help-button:active {
+.header-button:active {
   background: var(--color-mint-light);
   color: var(--color-mint-dark);
   border-color: var(--color-mint-lightest);

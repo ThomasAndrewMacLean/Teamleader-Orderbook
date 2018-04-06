@@ -16,6 +16,14 @@ export const helperFunctions = {
         order.hasBeenPlaced = false;
         console.log('ORDER HAS BEEN REOPEND: ');
         console.log(order);
+    },
+    getNewId(orders) {
+        let o = orders.sort((a, b) => { return parseInt(a.id, 10) < parseInt(b.id, 10); })[0];
+
+        return (o && (parseInt(o.id, 10) + 1).toString()) || '1';
+    },
+    returnOrderById(id, orders) {
+        return orders.find(o => parseInt(o.id, 10) === parseInt(id, 10));
     }
 };
 
@@ -30,7 +38,7 @@ export default function dataReducer(state = initialState.data, action) {
         //  const newState = JSON.parse(JSON.stringify(state)); 
         state = {
             ...state,
-            orders: action.orders
+            orders: action.orders//
         };
 
         return state;
@@ -53,7 +61,7 @@ export default function dataReducer(state = initialState.data, action) {
     case types.ADD_QUANTITY:
         state = JSON.parse(JSON.stringify(state));
 
-        order = state.orders.find(o => parseInt(o.id, 10) === parseInt(action.payload.orderId, 10));
+        order = helperFunctions.returnOrderById(action.payload.orderId, state.orders);
 
         if (!order.hasBeenPlaced) {
             item = order.items.find(i => i['product-id'] === action.payload.productId);
@@ -68,7 +76,7 @@ export default function dataReducer(state = initialState.data, action) {
 
     case types.ADD_PRODUCT:
         state = JSON.parse(JSON.stringify(state));
-        order = state.orders.find(o => parseInt(o.id, 10) === parseInt(action.payload.orderId, 10));
+        order = helperFunctions.returnOrderById(action.payload.orderId, state.orders);
 
         if (!order.hasBeenPlaced && !order.items.find(i => i['product-id'] === action.payload.product.id)) {
 
@@ -88,7 +96,7 @@ export default function dataReducer(state = initialState.data, action) {
 
     case types.PLACE_ORDER:
         state = JSON.parse(JSON.stringify(state));
-        order = state.orders.find(o => parseInt(o.id, 10) === parseInt(action.payload.orderId, 10));
+        order = helperFunctions.returnOrderById(action.payload.orderId, state.orders);
         if (!order.hasBeenPlaced) {
             helperFunctions.placeOrder(order);
             state.selectedOrder = order;
@@ -99,7 +107,7 @@ export default function dataReducer(state = initialState.data, action) {
 
     case types.REOPEN_ORDER:
         state = JSON.parse(JSON.stringify(state));
-        order = state.orders.find(o => parseInt(o.id, 10) === parseInt(action.payload.orderId, 10));
+        order = helperFunctions.returnOrderById(action.payload.orderId, state.orders);
         if (order.hasBeenPlaced) {
             helperFunctions.reopenOrder(order);
             state.selectedOrder = order;
@@ -110,7 +118,7 @@ export default function dataReducer(state = initialState.data, action) {
 
     case types.DELETE_PRODUCT:
         state = JSON.parse(JSON.stringify(state));
-        order = state.orders.find(o => parseInt(o.id, 10) === parseInt(action.payload.orderId, 10));
+        order = helperFunctions.returnOrderById(action.payload.orderId, state.orders);
         order.items = order.items.filter(i => i['product-id'] !== action.payload.productId);
         order.total = helperFunctions.getTotal(order);
         state.selectedOrder = order;
@@ -119,7 +127,7 @@ export default function dataReducer(state = initialState.data, action) {
 
     case types.CHECK_FOR_DISCOUNT_SUCCESS:
         state = JSON.parse(JSON.stringify(state));
-        order = state.orders.find(o => parseInt(o.id, 10) === parseInt(action.payload.order.id, 10));
+        order = helperFunctions.returnOrderById(action.payload.order.id, state.orders);
 
         if (action.payload.order.discount !== '0') {
             if (!order.timestamp || order.timestamp < action.payload.order.timestamp) {
@@ -132,14 +140,29 @@ export default function dataReducer(state = initialState.data, action) {
             order.discount = undefined;
             order.priceWithDiscount = undefined;
         }
-        state.selectedOrder = order;
+
+        if(!action.payload.initialCheck){
+            state.selectedOrder = order;
+        }
 
         return state;
     case types.SET_SELECTED_ORDER:
         state = JSON.parse(JSON.stringify(state));
-        order = state.orders.find(o => parseInt(o.id, 10) === parseInt(action.payload.orderId, 10));
+        order = helperFunctions.returnOrderById(action.payload.orderId, state.orders);
 
         state.selectedOrder = order;
+
+        return state;
+
+    case types.ADD_ORDER:
+        state = JSON.parse(JSON.stringify(state));
+        order = {
+            'customer-id': action.payload.customerId.toString(),
+            id: helperFunctions.getNewId(state.orders),
+            items: [],
+            total: '0'
+        };
+        state.orders.push(order);
 
         return state;
 

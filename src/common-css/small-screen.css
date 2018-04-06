@@ -36,4 +36,10 @@
   .detail-header-info {
     font-size: 14px;
   }
+  .discount {
+    font-size: 12px !important;
+  }
+  .App-header{
+    font-weight: 400 !important;
+  }
 }

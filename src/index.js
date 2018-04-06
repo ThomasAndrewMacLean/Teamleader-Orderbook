@@ -16,9 +16,9 @@ import { ConnectedRouter } from 'react-router-redux';
 const history = createHistory();
 const store = configStore();
 
-// store.subscribe(() => {
-//     console.log(store.getState());
-// })
+store.subscribe(() => {
+    console.log(store.getState());
+});
 
 store.dispatch(loadProducts());
 store.dispatch(loadOrders());

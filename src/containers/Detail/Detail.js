@@ -65,8 +65,9 @@ class Detail extends Component {
         this.props.checkForDiscount(this.props.order);
     }
 
-    componentWillUpdate() {
+    componentDidUpdate() {
         if (!this.props.order.id && this.props.orders.length > 0) {
+            
             let id = this.props.match.params.id;
             this.props.setSelectedOrder(id);
         }

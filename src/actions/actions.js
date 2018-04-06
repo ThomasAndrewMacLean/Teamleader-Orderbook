@@ -5,11 +5,11 @@ export function loadOrders() {
         return Api
             .getAllOrders()
             .then(orders => {
-                orders.forEach(order => dispatch(checkForDiscount(order)));
+                orders.forEach(order => dispatch(checkForDiscount(order, true)));
                 dispatch(loadOrdersSuccess(orders));
             })
             .catch(error => {
-                throw(error);
+                throw (error);
             });
     };
 }
@@ -21,7 +21,7 @@ export function loadProducts() {
                 dispatch(loadProductsSuccess(products));
             })
             .catch(error => {
-                throw(error);
+                throw (error);
             });
     };
 }
@@ -33,37 +33,39 @@ export function loadCustomers() {
                 dispatch(loadCustomersSuccess(customers));
             })
             .catch(error => {
-                throw(error);
+                throw (error);
             });
     };
 }
-export function checkForDiscount(order) {
+export function checkForDiscount(order, initialCheck = false) {
     return function (dispatch) {
         return Api
             .checkForDiscount(order)
             .then(data => {
-                dispatch(checkForDiscountSuccess(data.order));
+                dispatch(checkForDiscountSuccess(data.order, initialCheck));
             })
             .catch(error => {
-                throw(error);
+                throw (error);
             });
     };
 }
-export function checkForDiscountSuccess(order) {
-    return {type: CHECK_FOR_DISCOUNT_SUCCESS, payload: {
-        order
-    }};
+export function checkForDiscountSuccess(order, initialCheck) {
+    return {
+        type: CHECK_FOR_DISCOUNT_SUCCESS, payload: {
+            order, initialCheck
+        }
+    };
 }
 export function loadOrdersSuccess(orders) {
     orders.forEach(o => checkForDiscount(o));
 
-    return {type: LOAD_ORDERS_SUCCESS, orders};
+    return { type: LOAD_ORDERS_SUCCESS, orders };
 }
 export function loadProductsSuccess(products) {
-    return {type: LOAD_PRODUCTS_SUCCESS, products};
+    return { type: LOAD_PRODUCTS_SUCCESS, products };
 }
 export function loadCustomersSuccess(customers) {
-    return {type: LOAD_CUSTOMERS_SUCCESS, customers};
+    return { type: LOAD_CUSTOMERS_SUCCESS, customers };
 }
 export function addQuantity(quantity, productId, orderId) {
     return {
@@ -81,6 +83,14 @@ export function addProduct(product, orderId) {
         payload: {
             'product': product,
             'orderId': orderId
+        }
+    };
+}
+export function addOrder(customerId) {
+    return {
+        type: ADD_ORDER,
+        payload: {
+            customerId
         }
     };
 }
@@ -122,6 +132,7 @@ export const LOAD_ORDERS_SUCCESS = 'LOAD_ORDERS_SUCCESS';
 export const LOAD_PRODUCTS_SUCCESS = 'LOAD_PRODUCTS_SUCCESS';
 export const LOAD_CUSTOMERS_SUCCESS = 'LOAD_CUSTOMERS_SUCCESS';
 export const ADD_QUANTITY = 'ADD_QUANTITY';
+export const ADD_ORDER = 'ADD_ORDER';
 export const PLACE_ORDER = 'PLACE_ORDER';
 export const REOPEN_ORDER = 'REOPEN_ORDER';
 export const ADD_PRODUCT = 'ADD_PRODUCT';

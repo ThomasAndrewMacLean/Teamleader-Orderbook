@@ -541,3 +541,122 @@ it('CHECK_FOR_DISCOUNT_SUCCESS should be immutable', () => {
 
     expect(result).not.toEqual(beginState);
 });
+
+it('SET_SELECTED_ORDER should set order as selected', () => {
+    const beginState = {
+        orders: mocks.getOrders()
+    };
+    const action = {
+        'type': types.SET_SELECTED_ORDER,
+        'payload': { orderId: 2 }
+    };
+
+    let result = dataReducer(beginState, action);
+
+    expect(result.selectedOrder).toEqual(helperFunctions.returnOrderById(2, beginState.orders));
+});
+
+it('SET_SELECTED_ORDER should be immutable', () => {
+    const beginState = {
+        orders: mocks.getOrders()
+    };
+    const action = {
+        'type': types.SET_SELECTED_ORDER,
+        'payload': { orderId: 2 }
+    };
+
+    let result = dataReducer(beginState, action);
+
+    expect(result).not.toEqual(beginState);
+});
+
+it('should return new id', () => {
+    let orders = mocks.getOrders();
+
+    let result = helperFunctions.getNewId(orders);
+    expect(result).toBe('4');
+});
+
+
+it('should return new id of 1 for empty list', () => {
+    let orders = [];
+
+    let result = helperFunctions.getNewId(orders);
+    expect(result).toBe('1');
+});
+
+it('should get order by id', () => {
+    let orders = mocks.getOrders();
+    let result = helperFunctions.returnOrderById(1, orders);
+    expect(result.id).toBe('1');
+});
+it('should get order by id empty orders: return undefined', () => {
+    let orders = [];
+    let result = helperFunctions.returnOrderById(1, orders);
+    expect(result).toBe(undefined);
+});
+
+it('should get order by id, wrong id: return undefined', () => {
+    let orders = mocks.getOrders();
+    let result = helperFunctions.returnOrderById(34, orders);
+    expect(result).toBe(undefined);
+});
+
+
+it('ADD_ORDER should add a new order', () => {
+    const beginState = {
+        orders: mocks.getOrders()
+    };
+    const action = {
+        'type': types.ADD_ORDER,
+        'payload': { customerId: 2 }
+    };
+
+    let result = dataReducer(beginState, action);
+
+    expect(result.orders).toHaveLength(beginState.orders.length + 1);
+});
+
+
+it('ADD_ORDER should add a new order, with correct customerId', () => {
+    const beginState = {
+        orders: []
+    };
+    const action = {
+        'type': types.ADD_ORDER,
+        'payload': { customerId: 22 }
+    };
+
+    let result = dataReducer(beginState, action);
+
+    expect(result.orders[0]['customer-id']).toBe('22');
+});
+
+it('ADD_ORDER should add a new order, with no items and total 0', () => {
+    const beginState = {
+        orders: []
+    };
+    const action = {
+        'type': types.ADD_ORDER,
+        'payload': { customerId: 2 }
+    };
+
+    let result = dataReducer(beginState, action);
+
+    expect(result.orders[0].items).toEqual([]);
+    expect(result.orders[0].total).toBe('0');
+});
+
+it('ADD_ORDER should be immutable', () => {
+    const beginState = {
+        orders: mocks.getOrders()
+    };
+    const action = {
+        'type': types.ADD_ORDER,
+        'payload': { customerId: 2 }
+    };
+
+    let result = dataReducer(beginState, action);
+
+    expect(result).not.toEqual(beginState);
+});

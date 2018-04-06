@@ -1,5 +1,7 @@
 @import './common-css/reset.css';
 @import './common-css/colors.css';
+@import './common-css/modal.css';
+
 body {
   margin: 0;
   padding: 0;
