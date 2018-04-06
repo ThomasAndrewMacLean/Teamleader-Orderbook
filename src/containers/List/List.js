@@ -22,7 +22,7 @@ class List extends Component {
                             {this.props.order.items.length}
                         </div>
                         <div className="quatreCol textright">
-                            {new Intl.NumberFormat('nl-BE', { style: 'currency', currency: 'EUR' }).format(this.props.order.total)}
+                            {new Intl.NumberFormat('nl-BE', { style: 'currency', currency: 'EUR' }).format(this.props.order.priceWithDiscount || this.props.order.total)}
                         </div>
                         <div className="quatreCol">
                             <button className="pullright" onClick={() => this.goToDetail(this.props.order.id)}>DETAILS</button>

@@ -3,13 +3,13 @@ import Api from './../api/api';
 export function loadOrders() {
     return function (dispatch) {
         return Api.getAllOrders().then(orders => {
+            orders.forEach(order => dispatch(checkForDiscount(order)));
             dispatch(loadOrdersSuccess(orders));
         }).catch(error => {
             throw (error);
         });
     };
 }
-
 export function loadProducts() {
     return function (dispatch) {
         return Api.getAllProducts().then(products => {
@@ -19,7 +19,6 @@ export function loadProducts() {
         });
     };
 }
-
 export function loadCustomers() {
     return function (dispatch) {
         return Api.getAllCustomers().then(customers => {
@@ -29,13 +28,7 @@ export function loadCustomers() {
         });
     };
 }
-
 export function checkForDiscount(order) {
-    console.log('order');
-    console.log(order);
-
-    console.log('order');
-
     return function (dispatch) {
         return Api.checkForDiscount(order).then(data => {
             dispatch(checkForDiscountSuccess(data.order));
@@ -44,12 +37,12 @@ export function checkForDiscount(order) {
         });
     };
 }
-
 export function checkForDiscountSuccess(order) {
     return { type: CHECK_FOR_DISCOUNT_SUCCESS, payload: { order } };
 }
-
 export function loadOrdersSuccess(orders) {
+    orders.forEach(o => checkForDiscount(o));
+
     return { type: LOAD_ORDERS_SUCCESS, orders };
 }
 export function loadProductsSuccess(products) {
@@ -58,38 +51,30 @@ export function loadProductsSuccess(products) {
 export function loadCustomersSuccess(customers) {
     return { type: LOAD_CUSTOMERS_SUCCESS, customers };
 }
-
 export function addQuantity(quantity, productId, orderId) {
     return {
         type: ADD_QUANTITY,
         payload: { 'quantity': quantity, 'productId': productId, 'orderId': orderId }
     };
 }
-
 export function addProduct(product, orderId) {
     return {
         type: ADD_PRODUCT,
         payload: { 'product': product, 'orderId': orderId }
     };
 }
-
-
 export function deleteProduct(productId, orderId) {
     return {
         type: DELETE_PRODUCT,
         payload: { 'productId': productId, 'orderId': orderId }
     };
 }
-
-
 export function placeOrder(orderId) {
     return {
         type: PLACE_ORDER,
         payload: { 'orderId': orderId }
     };
 }
-
-
 export function reopenOrder(orderId) {
     return {
         type: REOPEN_ORDER,
@@ -102,8 +87,6 @@ export function setSelectedOrder(orderId) {
         payload: { 'orderId': orderId }
     };
 }
-
-
 export const SET_SELECTED_ORDER = 'SET_SELECTED_ORDER';
 export const LOAD_ORDERS_SUCCESS = 'LOAD_ORDERS_SUCCESS';
 export const LOAD_PRODUCTS_SUCCESS = 'LOAD_PRODUCTS_SUCCESS';

@@ -10,8 +10,9 @@
   position: relative;
   margin: auto;
   max-width: 800px;
-  height: 100vh;
-  /* height: 120%; */
+  min-height: 100vh;
+  height: auto;
+  display: flow-root;
   background: white;
 }
 .help-button{

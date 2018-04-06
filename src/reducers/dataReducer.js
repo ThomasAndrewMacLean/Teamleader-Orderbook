@@ -118,15 +118,11 @@ export default function dataReducer(state = initialState.data, action) {
         return state;
 
     case types.CHECK_FOR_DISCOUNT_SUCCESS:
-
         state = JSON.parse(JSON.stringify(state));
         order = state.orders.find(o => parseInt(o.id, 10) === parseInt(action.payload.order.id, 10));
-        console.log(action.payload.order.discount);
 
         if (action.payload.order.discount !== '0') {
-
             if (!order.timestamp || order.timestamp < action.payload.order.timestamp) {
-
                 order.discount = action.payload.order.discount;
                 order.priceWithDiscount = action.payload.order.priceWithDiscount;
             }
