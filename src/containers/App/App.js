@@ -16,11 +16,11 @@ class App extends Component {
 
     toggleModal() {
         this.showModal = !this.showModal;
+        window.navigator.vibrate(100);
         this.forceUpdate();
     }
 
     addOrder() {
-        console.log(this.selectCustomer.value);
         this.props.addOrder(this.selectCustomer.value);
         this.toggleModal();
     }

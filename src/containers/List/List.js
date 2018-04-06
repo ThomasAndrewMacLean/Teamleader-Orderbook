@@ -5,13 +5,9 @@ import PropTypes from 'prop-types';
 
 class List extends Component {
     goToDetail(orderId) {
-        this
-            .props
-            .setSelectedOrder(orderId);
-        this
-            .props
-            .history
-            .push(`/detail/${orderId}`);
+        window.navigator.vibrate(100);
+        this.props.setSelectedOrder(orderId);
+        this.props.history.push(`/detail/${orderId}`);
     }
     render() {
         return (

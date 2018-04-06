@@ -13,17 +13,22 @@ class DetailList extends Component {
     }
     add(quantity) {
         this.props.addQuantity(quantity, this.props.item['product-id'], this.props.order.id);
+        window.navigator.vibrate(100);
         setTimeout(() => this.props.discount(), 100);
     }
 
     deleteProduct() {
         this.props.deleteProduct(this.props.item['product-id'], this.props.order.id);
+        window.navigator.vibrate([100, 30, 100, 30, 100]);
         setTimeout(() => this.props.discount(), 100);
     }
 
     togglePromptDelete() {
         if (!this.props.order.hasBeenPlaced) {
             this.showDelete = !this.showDelete;
+            if (this.showDelete) {
+                window.navigator.vibrate(200);
+            }
             this.setState({});
         }
     }
