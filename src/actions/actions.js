@@ -5,6 +5,8 @@ export function loadOrders() {
         return Api
             .getAllOrders()
             .then(orders => {
+                console.log(orders);
+
                 orders.forEach(order => dispatch(checkForDiscount(order, true)));
                 dispatch(loadOrdersSuccess(orders));
             })
