@@ -8,16 +8,19 @@ beforeEach(() => {
     jest.clearAllMocks();
 });
 
+
+it('test', () => {
+    expect(true).toBeTruthy();
+});
+
 it('should return initial state with empty input', () => {
     expect(dataReducer(undefined, { type: undefined })).toEqual(initialState.data);
 });
-
 
 it('getTotal should get total amount of items', () => {
     let order = { items: [{ total: 3.5 }, { total: 4 }, { total: 5.9 }] };
     expect(helperFunctions.getTotal(order)).toEqual((3.5 + 4 + 5.9).toString());
 });
-
 
 it('should add orders when type is LOAD_ORDERS_SUCCESS', () => {
     let orders = mocks.getOrders();
