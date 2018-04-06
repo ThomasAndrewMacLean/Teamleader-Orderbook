@@ -27,36 +27,41 @@ class App extends Component {
     render() {
         return (
             <div>
-
-                <div className={this.showModal ? 'showModal modalBackDrop' : 'modalBackDrop'}
-                    onClick={() => {
-                        this.showModal = false;
-                        this.forceUpdate(); // todo: ??? must be better way than this without keeping boolean in store ???
-                        //this.setState({}) // triggers the same as forceUpdate...
-                    }}>
-                </div>
-                <div className={this.showModal ? 'showModal modal' : 'modal'}>
-                    <div id="modal" className="modal-content add-order-modal">
-                        <div className="modal-header">
-                            Add order
+                {this.props.customers.length > 0 ?
+                    <div>
+                        < div className={this.showModal ? 'showModal modalBackDrop' : 'modalBackDrop'}
+                            onClick={() => {
+                                this.showModal = false;
+                                this.forceUpdate(); // todo: ??? must be better way than this without keeping boolean in store ???
+                                //this.setState({}) // triggers the same as forceUpdate...
+                            }}>
                         </div>
+                        <div className={this.showModal ? 'showModal modal' : 'modal'}>
+                            <div id="modal" className="modal-content add-order-modal">
+                                <div className="modal-header">
+                                    Add order
+                                </div>
 
-                        <div className="modal-body">
-                            Select customer:
+                                <div className="modal-body">
+                                    Select customer:
 
-                            <select id="select-customer" ref={(input) => this.selectCustomer = input} >
-                                {this.props.customers.length >0 && this.props.customers.map(c => {
-                                    return <option key={c.id} value={c.id}>{c.name}</option>;
-                                })}
-                            </select>
-                        </div>
+                                    <select id="select-customer" ref={(input) => this.selectCustomer = input} >
+                                        {this.props.customers.map(c => {
+                                            return <option key={c.id} value={c.id}>{c.name}</option>;
+                                        })}
+                                    </select>
+                                </div>
 
-                        <div className="modal-footer">
-                            <button onClick={() => this.toggleModal()}>cancel</button>
-                            <button onClick={() => this.addOrder()} className="primary-button">ok</button>
+                                <div className="modal-footer">
+                                    <button onClick={() => this.toggleModal()}>cancel</button>
+                                    <button onClick={() => this.addOrder()} className="primary-button">ok</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+
+                    : ''
+                }
                 <div className="App">
 
 
@@ -105,7 +110,7 @@ class App extends Component {
                         </div>
                     }
                 </div>
-            </div>
+            </div >
 
         );
     }
