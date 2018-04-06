@@ -3,6 +3,8 @@ node_js:
  - "node"
 before_script:
   - yarn install
+script:
+  - yarn test
 notifications:
   email:
     - thomas.maclean@gmail.com
