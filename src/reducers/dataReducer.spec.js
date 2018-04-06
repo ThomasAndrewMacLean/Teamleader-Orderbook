@@ -10,7 +10,7 @@ beforeEach(() => {
 
 
 it('test', () => {
-    expect(true).toBeTruthy();
+    expect(false).toBeTruthy();
 });
 
 it('should return initial state with empty input', () => {
