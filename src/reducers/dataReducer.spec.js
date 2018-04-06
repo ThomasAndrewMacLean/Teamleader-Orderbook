@@ -132,6 +132,29 @@ it('ADD_QUANTITY should change the number of items NEGATIVE', () => {
     expect(result.orders[0].items[0].quantity).toBe('7');
 });
 
+it('ADD_QUANTITY should change the number of items NEGATIVE cant go under 0', () => {
+    const beginState = {
+        orders: mocks.getOrders()
+    };
+
+    expect(beginState.orders[2].items[1].quantity).toBe('1');
+
+    const action = {
+        'type': types.ADD_QUANTITY,
+        'payload': {
+            'productId': 'A102',
+            'quantity': -1,
+            'orderId': '3'
+        }
+    };
+
+    let result = dataReducer(beginState, action);
+    expect(result.orders[2].items[1].quantity).toBe('0');
+
+    let result2 = dataReducer(result, action);
+    expect(result2.orders[2].items[1].quantity).toBe('0');
+});
+
 it('ADD_QUANTITY should calculate total', () => {
     const beginState = {
         orders: mocks.getOrders()

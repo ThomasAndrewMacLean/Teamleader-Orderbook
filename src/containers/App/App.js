@@ -45,7 +45,7 @@ class App extends Component {
                             Select customer:
 
                             <select id="select-customer" ref={(input) => this.selectCustomer = input} >
-                                {this.props.customers.map(c => {
+                                {this.props.customers.length >0 && this.props.customers.map(c => {
                                     return <option key={c.id} value={c.id}>{c.name}</option>;
                                 })}
                             </select>

@@ -66,7 +66,12 @@ export default function dataReducer(state = initialState.data, action) {
         if (!order.hasBeenPlaced) {
             item = order.items.find(i => i['product-id'] === action.payload.productId);
             item.quantity = (parseInt(item.quantity, 10) + parseInt(action.payload.quantity, 10)).toString();
-            item.total = item['unit-price'] * item.quantity;
+
+            if (parseInt(item.quantity, 10) < 0) {
+                item.quantity = '0';
+            }
+
+            item.total = item['unit-price'] * parseInt(item.quantity, 10);
 
             order.total = helperFunctions.getTotal(order);
 
@@ -141,7 +146,7 @@ export default function dataReducer(state = initialState.data, action) {
             order.priceWithDiscount = undefined;
         }
 
-        if(!action.payload.initialCheck){
+        if (!action.payload.initialCheck) {
             state.selectedOrder = order;
         }
 
