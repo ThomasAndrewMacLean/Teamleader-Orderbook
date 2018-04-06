@@ -477,3 +477,67 @@ it('DELETE_PRODUCT should recalculate the total', () => {
     dataReducer(beginState, action);
     expect(spy).toHaveBeenCalled();
 });
+
+it('CHECK_FOR_DISCOUNT_SUCCESS should add discount', () => {
+    const beginState = {
+        orders: mocks.getOrders()
+    };
+    const action = {
+        'type': types.CHECK_FOR_DISCOUNT_SUCCESS,
+        'payload': { 'order': { priceWithDiscount: '9', id: '1', discount: '1' } }
+    };
+    let result = dataReducer(beginState, action);
+
+    expect(result.orders[0].priceWithDiscount).toBe('9');
+    expect(result.orders[0].discount).toBe('1');
+});
+
+it('CHECK_FOR_DISCOUNT_SUCCESS should not add discount if discount is 0', () => {
+    const beginState = {
+        orders: mocks.getOrders()
+    };
+    const action = {
+        'type': types.CHECK_FOR_DISCOUNT_SUCCESS,
+        'payload': { 'order': { priceWithDiscount: '9', id: '1', discount: '0' } }
+    };
+    let result = dataReducer(beginState, action);
+
+    expect(result.orders[0].priceWithDiscount).toBeUndefined();
+    expect(result.orders).toEqual(beginState.orders);
+
+});
+
+it('CHECK_FOR_DISCOUNT_SUCCESS should set discount to undefined if discount is 0', () => {
+    const beginState = {
+        orders: mocks.getOrders()
+    };
+    let action = {
+        'type': types.CHECK_FOR_DISCOUNT_SUCCESS,
+        'payload': { 'order': { priceWithDiscount: '9', id: '1', discount: '10' } }
+    };
+    let result = dataReducer(beginState, action);
+
+    action = {
+        'type': types.CHECK_FOR_DISCOUNT_SUCCESS,
+        'payload': { 'order': { priceWithDiscount: '9', id: '1', discount: '0' } }
+    };
+    let result2 = dataReducer(result, action);
+
+
+    expect(result2.orders[0].priceWithDiscount).toBeUndefined();
+
+});
+
+
+it('CHECK_FOR_DISCOUNT_SUCCESS should be immutable', () => {
+    const beginState = {
+        orders: mocks.getOrders()
+    };
+    const action = {
+        'type': types.CHECK_FOR_DISCOUNT_SUCCESS,
+        'payload': { 'order': { priceWithDiscount: '9', id: '1', discount: '1' } }
+    };
+    let result = dataReducer(beginState, action);
+
+    expect(result).not.toEqual(beginState);
+});

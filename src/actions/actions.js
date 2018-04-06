@@ -30,6 +30,25 @@ export function loadCustomers() {
     };
 }
 
+export function checkForDiscount(order) {
+    console.log('order');
+    console.log(order);
+
+    console.log('order');
+
+    return function (dispatch) {
+        return Api.checkForDiscount(order).then(data => {
+            dispatch(checkForDiscountSuccess(data.order));
+        }).catch(error => {
+            throw (error);
+        });
+    };
+}
+
+export function checkForDiscountSuccess(order) {
+    return { type: CHECK_FOR_DISCOUNT_SUCCESS, payload: { order } };
+}
+
 export function loadOrdersSuccess(orders) {
     return { type: LOAD_ORDERS_SUCCESS, orders };
 }
@@ -77,9 +96,15 @@ export function reopenOrder(orderId) {
         payload: { 'orderId': orderId }
     };
 }
+export function setSelectedOrder(orderId) {
+    return {
+        type: SET_SELECTED_ORDER,
+        payload: { 'orderId': orderId }
+    };
+}
 
 
-
+export const SET_SELECTED_ORDER = 'SET_SELECTED_ORDER';
 export const LOAD_ORDERS_SUCCESS = 'LOAD_ORDERS_SUCCESS';
 export const LOAD_PRODUCTS_SUCCESS = 'LOAD_PRODUCTS_SUCCESS';
 export const LOAD_CUSTOMERS_SUCCESS = 'LOAD_CUSTOMERS_SUCCESS';
@@ -88,3 +113,5 @@ export const PLACE_ORDER = 'PLACE_ORDER';
 export const REOPEN_ORDER = 'REOPEN_ORDER';
 export const ADD_PRODUCT = 'ADD_PRODUCT';
 export const DELETE_PRODUCT = 'DELETE_PRODUCT';
+export const CHECK_FOR_DISCOUNT_SUCCESS = 'CHECK_FOR_DISCOUNT_SUCCESS';
+

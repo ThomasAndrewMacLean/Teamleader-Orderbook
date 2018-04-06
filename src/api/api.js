@@ -2,8 +2,11 @@ const apiEndpointOrders = 'https://nameless-citadel-45339.herokuapp.com/getOrder
 const apiEndpointProducts = 'https://nameless-citadel-45339.herokuapp.com/getProducts';
 // const apiEndpointCustomers = 'https://jsonplaceholder.typicode.com/users';
 const apiEndpointCustomers = 'https://nameless-citadel-45339.herokuapp.com/getCustomers';
+const apiEndpointcheckForDiscount = 'https://nameless-citadel-45339.herokuapp.com/calculateDiscount';
+
 
 class Api {
+
     static getAllOrders() {
         return fetch(apiEndpointOrders).then(response => {
             return response.json();
@@ -22,6 +25,21 @@ class Api {
 
     static getAllCustomers() {
         return fetch(apiEndpointCustomers).then(response => {
+            return response.json();
+        }).catch(error => {
+            return error;
+        });
+    }
+
+    static checkForDiscount(order) {
+        return fetch(apiEndpointcheckForDiscount, {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            method: 'POST',
+            body: JSON.stringify({ order: order })
+        }).then(response => {
             return response.json();
         }).catch(error => {
             return error;

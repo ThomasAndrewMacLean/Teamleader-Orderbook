@@ -2,6 +2,7 @@ export default {
     data: {
         orders: [],
         products: [],
-        customers: []
+        customers: [],
+        selectedOrder: {}
     }
 };

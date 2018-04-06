@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { setSelectedOrder } from './../../actions/actions';
 import PropTypes from 'prop-types';
 
 class List extends Component {
     goToDetail(orderId) {
+        this.props.setSelectedOrder(orderId);
         this.props.history.push(`/detail/${orderId}`);
     }
     render() {
@@ -39,13 +41,22 @@ const mapStateToProps = (state) => {
     };
 };
 
+const mapDispatchToProps = (dispatch) => {
+    return {
+        setSelectedOrder: (orderId) => {
+            dispatch(setSelectedOrder(orderId));
+        }
+    };
+};
+
 
 List.propTypes = {
     order: PropTypes.object,
     history: PropTypes.object,
     products: PropTypes.array,
     customers: PropTypes.array,
+    setSelectedOrder: PropTypes.func
 };
 
 
-export default connect(mapStateToProps)(List);
+export default connect(mapStateToProps, mapDispatchToProps)(List);

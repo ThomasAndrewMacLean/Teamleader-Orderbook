@@ -21,7 +21,7 @@ export const helperFunctions = {
 
 export default function dataReducer(state = initialState.data, action) {
 
-    let newState;
+
     let order;
     let item;
 
@@ -51,9 +51,9 @@ export default function dataReducer(state = initialState.data, action) {
 
         return state;
     case types.ADD_QUANTITY:
-        newState = JSON.parse(JSON.stringify(state));
+        state = JSON.parse(JSON.stringify(state));
 
-        order = newState.orders.find(o => parseInt(o.id, 10) === parseInt(action.payload.orderId, 10));
+        order = state.orders.find(o => parseInt(o.id, 10) === parseInt(action.payload.orderId, 10));
 
         if (!order.hasBeenPlaced) {
             item = order.items.find(i => i['product-id'] === action.payload.productId);
@@ -61,8 +61,10 @@ export default function dataReducer(state = initialState.data, action) {
             item.total = item['unit-price'] * item.quantity;
 
             order.total = helperFunctions.getTotal(order);
+
+            state.selectedOrder = order;
         }
-        return newState;
+        return state;
 
     case types.ADD_PRODUCT:
         state = JSON.parse(JSON.stringify(state));
@@ -78,6 +80,8 @@ export default function dataReducer(state = initialState.data, action) {
             });
 
             order.total = helperFunctions.getTotal(order);
+            state.selectedOrder = order;
+
         }
 
         return state;
@@ -87,6 +91,8 @@ export default function dataReducer(state = initialState.data, action) {
         order = state.orders.find(o => parseInt(o.id, 10) === parseInt(action.payload.orderId, 10));
         if (!order.hasBeenPlaced) {
             helperFunctions.placeOrder(order);
+            state.selectedOrder = order;
+
         }
 
         return state;
@@ -96,6 +102,8 @@ export default function dataReducer(state = initialState.data, action) {
         order = state.orders.find(o => parseInt(o.id, 10) === parseInt(action.payload.orderId, 10));
         if (order.hasBeenPlaced) {
             helperFunctions.reopenOrder(order);
+            state.selectedOrder = order;
+
         }
 
         return state;
@@ -105,8 +113,40 @@ export default function dataReducer(state = initialState.data, action) {
         order = state.orders.find(o => parseInt(o.id, 10) === parseInt(action.payload.orderId, 10));
         order.items = order.items.filter(i => i['product-id'] !== action.payload.productId);
         order.total = helperFunctions.getTotal(order);
+        state.selectedOrder = order;
 
         return state;
+
+    case types.CHECK_FOR_DISCOUNT_SUCCESS:
+
+        state = JSON.parse(JSON.stringify(state));
+        order = state.orders.find(o => parseInt(o.id, 10) === parseInt(action.payload.order.id, 10));
+        console.log(action.payload.order.discount);
+
+        if (action.payload.order.discount !== '0') {
+
+            if (!order.timestamp || order.timestamp < action.payload.order.timestamp) {
+
+                order.discount = action.payload.order.discount;
+                order.priceWithDiscount = action.payload.order.priceWithDiscount;
+            }
+
+        }
+        if (action.payload.order.discount === '0') {
+            order.discount = undefined;
+            order.priceWithDiscount = undefined;
+        }
+        state.selectedOrder = order;
+
+        return state;
+    case types.SET_SELECTED_ORDER:
+        state = JSON.parse(JSON.stringify(state));
+        order = state.orders.find(o => parseInt(o.id, 10) === parseInt(action.payload.orderId, 10));
+
+        state.selectedOrder = order;
+
+        return state;
+
     default:
         return state;
     }

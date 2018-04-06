@@ -12,31 +12,27 @@ class DetailList extends Component {
         this.showDelete = false;
     }
     add(quantity) {
-        this.props.addQuantity(quantity, this.props.item['product-id'], this.props.parentId);
+        this.props.addQuantity(quantity, this.props.item['product-id'], this.props.order.id);
+        setTimeout(() => this.props.discount(), 100);
     }
 
     deleteProduct() {
-        this.props.deleteProduct(this.props.item['product-id'], this.props.parentId);
+        this.props.deleteProduct(this.props.item['product-id'], this.props.order.id);
+        setTimeout(() => this.props.discount(), 100);
     }
 
     togglePromptDelete() {
-        // this.props.item['product-id']
-
-        this.showDelete = !this.showDelete;
-        this.setState({});
-
+        if (!this.props.order.hasBeenPlaced) {
+            this.showDelete = !this.showDelete;
+            this.setState({});
+        }
     }
 
-    // moveOver() {
-    //     console.log(this.hammer);
-
-    // }
 
     componentDidMount() {
         this.hammer = Hammer(this._slider);
         this.hammer.get('press').set({ time: 500 });
         this.hammer.on('press', () => this.togglePromptDelete());
-        //this.hammer.on('swipeleft', () => this.moveOver());
     }
 
     render() {
@@ -66,11 +62,11 @@ class DetailList extends Component {
                             {this.props.item['product-id']}:{this.props.products.find(p => p.id === this.props.item['product-id']).description}
                         </div>
                         <div className="quatreCol resize-small quantityAndButtons">
-                            <button className={this.props.hasBeenPlaced ? 'round-button orderPlacedHide' : 'round-button'} onClick={() => this.add(-1)}>-</button>
+                            <button className={this.props.order.hasBeenPlaced ? 'round-button orderPlacedHide' : 'round-button'} onClick={() => this.add(-1)}>-</button>
                             <p className="pad">
                                 {this.props.item.quantity}
                             </p>
-                            <button className={this.props.hasBeenPlaced ? 'round-button orderPlacedHide' : 'round-button'} onClick={() => this.add(1)}>+</button>
+                            <button className={this.props.order.hasBeenPlaced ? 'round-button orderPlacedHide' : 'round-button'} onClick={() => this.add(1)}>+</button>
                         </div>
                         <div className="clear-small">
                             <div className="quatreCol resize-small">
@@ -95,6 +91,7 @@ class DetailList extends Component {
 
 const mapStateToProps = (state) => {
     return {
+        order: state.data.selectedOrder,
         products: state.data.products,
     };
 };
@@ -112,14 +109,13 @@ const mapDispatchToProps = (dispatch) => {
 
 
 DetailList.propTypes = {
-    hasBeenPlaced: PropTypes.object,
     item: PropTypes.object,
-    parentId: PropTypes.any,
+    order: PropTypes.object,
     products: PropTypes.array,
 
     addQuantity: PropTypes.func,
     deleteProduct: PropTypes.func,
-
+    discount: PropTypes.func
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(DetailList);

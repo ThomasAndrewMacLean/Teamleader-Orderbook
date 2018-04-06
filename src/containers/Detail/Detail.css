@@ -53,3 +53,10 @@ display: flex;
 .displaynone{
   display: none;
 }
+.discount{
+  text-decoration: line-through;
+  font-size: 16px;
+}
+.marginright{
+  margin-right: 15px;
+}
