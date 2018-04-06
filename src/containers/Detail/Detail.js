@@ -101,8 +101,7 @@ class Detail extends Component {
                             </div>
                             <div className="threeQuatreCol header">
                                 <p className="pullright detail-header-info">
-                                    id: {this.props.order.id} customer: {this.props.customers.find(u => parseInt(u.id, 10) === parseInt(this.props.order['customer-id'], 10)).name}
-                                    total:<i className={this.props.order.discount ? 'discount marginright' : 'marginright'}> {new Intl.NumberFormat('nl-BE', { style: 'currency', currency: 'EUR' }).format(this.props.order.total)}
+                                    id: {this.props.order.id} customer: {this.props.customers.find(u => parseInt(u.id, 10) === parseInt(this.props.order['customer-id'], 10)).name}                                    total:<i className={this.props.order.discount ? 'discount marginright' : 'marginright'}> {new Intl.NumberFormat('nl-BE', { style: 'currency', currency: 'EUR' }).format(this.props.order.total)}
                                     </i>
                                     {this.props.order.discount ? new Intl.NumberFormat('nl-BE', { style: 'currency', currency: 'EUR' }).format(this.props.order.priceWithDiscount) : ''}
 
@@ -131,9 +130,9 @@ class Detail extends Component {
                                 </div>
                             </li>
                             <hr />
-                            {this.props.order.items.map(o => <DetailList key={o['product-id']} discount={()=>this.checkForDiscountTest()} item={o} history={this.props.history} />)}
+                            {this.props.order.items.map(o => <DetailList key={o['product-id']} discount={() => this.checkForDiscountTest()} item={o} history={this.props.history} />)}
                         </ul>
-                        
+
                         <div className="halfCol button-padding">
                             <button className={this.props.order.hasBeenPlaced ? 'big-button orderPlacedHide' : 'big-button'} onClick={() => this.addProduct()}>ADD PRODUCT</button>
                         </div>
