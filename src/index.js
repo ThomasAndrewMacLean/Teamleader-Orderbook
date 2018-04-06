@@ -4,6 +4,7 @@ import './index.css';
 import App from './containers/App/App';
 import Detail from './containers/Detail/Detail';
 import Help from './containers/Help/Help';
+import Loader from './components/Loader/Loader';
 
 import { Provider } from 'react-redux';
 import configStore from './store/configureStore';
@@ -30,6 +31,7 @@ ReactDOM.render(<Provider store={store}>
             <Route exact path="/" component={App} />
             <Route path="/detail/:id" component={Detail} />
             <Route path="/help" component={Help} />
+            <Route path="/loader" component={Loader} />
         </div>
     </ConnectedRouter>
 </Provider>, document.getElementById('root'));

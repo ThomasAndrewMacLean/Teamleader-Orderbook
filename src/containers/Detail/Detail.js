@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import DetailList from './../DetailList/DetailList';
+import Loader from './../../components/Loader/Loader';
 import './Detail.css';
 import { addProduct, placeOrder } from './../../actions/actions';
 import Hammer from 'hammerjs';
@@ -125,7 +126,7 @@ class Detail extends Component {
                     </div>
 
 
-                    : '...loading'}
+                    : <Loader />}
             </div>
         );
     }

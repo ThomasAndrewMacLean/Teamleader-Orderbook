@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import List from './../List/List';
 import PropTypes from 'prop-types';
-
+import Loader from './../../components/Loader/Loader';
 
 import './App.css';
 
@@ -24,7 +24,7 @@ class App extends Component {
                         <button className="pullright help-button" onClick={() => this.props.history.push('/help')}>?</button>
                     </div>
                 </header>
-                {this.props.orders.length === 0 ? 'loading...' :
+                {this.props.orders.length === 0 ? <Loader /> :
                     <div>
                         <ul className="list">
 
