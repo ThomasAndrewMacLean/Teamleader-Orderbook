@@ -45,7 +45,6 @@ class App extends Component {
                                 </div>
                             </li>
                             <hr />
-
                             {this.props.orders.map(o => <List className="orderList" key={o.id} order={o} history={this.props.history} />)}
                         </ul>
                     </div>
