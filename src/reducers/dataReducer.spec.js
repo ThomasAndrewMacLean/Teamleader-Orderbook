@@ -9,7 +9,7 @@ beforeEach(() => {
 });
 
 it('should return initial state with empty input', () => {
-    expect(dataReducer(undefined, { type: undefined })).not.toEqual(initialState.data);
+    expect(dataReducer(undefined, { type: undefined })).toEqual(initialState.data);
 });
 
 it('getTotal should get total amount of items', () => {
