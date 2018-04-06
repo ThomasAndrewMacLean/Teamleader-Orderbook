@@ -8,11 +8,6 @@ beforeEach(() => {
     jest.clearAllMocks();
 });
 
-
-it('test', () => {
-    expect(true).toBeTruthy();
-});
-
 it('should return initial state with empty input', () => {
     expect(dataReducer(undefined, { type: undefined })).toEqual(initialState.data);
 });
