@@ -1,83 +1,89 @@
 @import './common-css/reset.css';
 @import './common-css/colors.css';
-
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  width:100vw;
+  width: 100vw;
   overflow-x: hidden;
-  color:#333;
+  color: #333;
   background: var(--color-mint-lightest);
 }
 
-div{    box-sizing: border-box;}
-.quatreCol{
-  width:25%;
-  float:left;
-  
+div {
+  box-sizing: border-box;
 }
-.halfCol{
+
+.quatreCol {
+  width: 25%;
+  float: left;
+}
+
+.halfCol {
   width: 50%;
   /* margin:20px 0px;
   padding:0px 20px;  */
-  float:left;
-  
-}
-.header{
-  margin:20px 0px;
-  padding:0px 20px; 
-}
-.button-padding{
-  margin:20px 0px;
-  padding:0px 20px; 
+  float: left;
 }
 
-.threeQuatreCol{
-  width:75%;
-  float:left;
+.header {
+  margin: 20px 0px;
+  padding: 0px 20px;
 }
 
-li.grid-header{
-  
+.button-padding {
+  margin: 20px 0px;
+  padding: 0px 20px;
+}
+
+.threeQuatreCol {
+  width: 75%;
+  float: left;
+}
+
+li.grid-header {
   padding-top: 0px;
-  padding-bottom:20px;
+  padding-bottom: 20px;
 }
-li{
+
+li {
   clear: both;
   /* text-align: center; */
   padding-bottom: 40px;
   padding-top: 20px;
-  
 }
-ul{
+
+ul {
   list-style: none;
   max-width: 800px;
-  padding:20px ;
-  margin:0;
+  padding: 20px;
+  margin: 0;
   margin-bottom: 30px;
 }
-.pullright{
+
+.pullright {
   float: right !important;
 }
-.textright{
+
+.textright {
   text-align: right;
 }
 
-button{
-  border:1px solid var(--color-mint-dark);
+button {
+  border: 1px solid var(--color-mint-dark);
   color: var(--color-mint-dark);
   background: white;
   border-radius: 2px;
-  height:40px;
+  height: 40px;
   line-height: 20px;
-  margin-top:-10px;
+  margin-top: -10px;
   outline: none;
   z-index: 100;
   cursor: pointer;
 }
-.round-button{
-  width:40px !important;
+
+.round-button {
+  width: 40px !important;
   z-index: 100;
   /* border-radius: 100%; */
   font-size: 20px;
@@ -85,20 +91,23 @@ button{
   justify-content: center;
   align-items: center;
 }
+
 /* button:focus, */
-button:active{
-  border:1px solid var(--color-mint-darkest);
+
+button:active {
+  border: 1px solid var(--color-mint-darkest);
   background: var(--color-mint-lightest);
   box-shadow: 1px 1px var(--color-mint-lightest);
 }
 
-.primary-button{
-  border:1px solid var(--color-ruby);
+.primary-button {
+  border: 1px solid var(--color-ruby);
   background: var(--color-ruby);
-  color:white;
+  color: white;
 }
 
-
-
+.pointer{
+  cursor: pointer;
+}
 
 @import './common-css/small-screen.css';

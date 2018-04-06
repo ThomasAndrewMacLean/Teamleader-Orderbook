@@ -42,31 +42,34 @@ class DetailList extends Component {
             }>
                 {this.props.item && this.props.products.length > 0 ?
                     <li className={this.showDelete ? 'showDelete deletePrompt' : 'deletePrompt'}>
-
-                        DELETE {this.props.products.find(p => p.id === this.props.item['product-id']).description}?
-                        <div className="clear-small">
-                            <div className="quatreCol resize-small">
-                                <button className="big-button" onClick={() => this.togglePromptDelete()}>NO</button>
-                            </div>
-                            <div className="quatreCol resize-small">
-                                <button className="big-button" onClick={() => this.deleteProduct()}>YES</button>
-                            </div>
+                        <div>
+                            DELETE {this.props.products.find(p => p.id === this.props.item['product-id']).description}?
                         </div>
+                        {/* <div className="clear-small"> */}
+                        <div className="quatreCol resize-small">
+                            <button className="big-button" onClick={() => this.togglePromptDelete()}>NO</button>
+                        </div>
+                        <div className="quatreCol resize-small">
+                            <button className="big-button" onClick={() => this.deleteProduct()}>YES</button>
+                        </div>
+                        {/* </div> */}
 
                     </li> : '...'}
                 {this.props.item && this.props.products.length > 0 ?
 
 
-                    <li>
+                    <li className="list-item-detail">
                         <div className="quatreCol resize-small">
                             {this.props.item['product-id']}:{this.props.products.find(p => p.id === this.props.item['product-id']).description}
                         </div>
                         <div className="quatreCol resize-small quantityAndButtons">
-                            <button className={this.props.order.hasBeenPlaced ? 'round-button orderPlacedHide' : 'round-button'} onClick={() => this.add(-1)}>-</button>
-                            <p className="pad">
-                                {this.props.item.quantity}
-                            </p>
-                            <button className={this.props.order.hasBeenPlaced ? 'round-button orderPlacedHide' : 'round-button'} onClick={() => this.add(1)}>+</button>
+                            <div className="buttonwrap">
+                                <button className={this.props.order.hasBeenPlaced ? 'round-button orderPlacedHide' : 'round-button'} onClick={() => this.add(-1)}>-</button>
+                                <p className="pad">
+                                    {this.props.item.quantity}
+                                </p>
+                                <button className={this.props.order.hasBeenPlaced ? 'round-button orderPlacedHide' : 'round-button'} onClick={() => this.add(1)}>+</button>
+                            </div>
                         </div>
                         <div className="clear-small">
                             <div className="quatreCol resize-small">
@@ -80,6 +83,8 @@ class DetailList extends Component {
                                 </p>
                             </div>
                         </div>
+
+                        <div className="delete-cross" onClick={() => this.togglePromptDelete()}>x</div>
                     </li>
                     : '....'}
             </div>

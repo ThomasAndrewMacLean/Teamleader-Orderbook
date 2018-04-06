@@ -1,12 +1,46 @@
-.showDelete{
-    left:0 !important;
-} 
-.deletePrompt{
-    left:-100vw;
+.showDelete {
+    left: 0 !important;
+}
+
+.deletePrompt {
+    left: -100vw;
     position: absolute;
     width: 100%;
     height: 60px;
     z-index: 999;
-    background: tomato;
-    /* display: flex; */
+    background: var(--color-ruby);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0;
+}
+
+.Detail:hover {
+    background: var( --color-teal-lightest);
+}
+
+.buttonwrap {
+    display: flex;
+    width: 140px;
+    justify-content: space-between;
+}
+
+@media only screen and (min-width: 500px) {
+    .delete-cross {
+        opacity: 0;
+        position: absolute;
+        right: 30px;
+        transition: opacity 0.1s ease-in;
+    }
+    .delete-cross:hover {
+        color: var(--color-ruby-darkest);
+        font-weight: 800;
+        cursor: pointer;
+    }
+    .list-item-detail:hover .delete-cross {
+        opacity: 1;
+    }
+    .list-item-detail {
+        padding-right: 40px;
+    }
 }

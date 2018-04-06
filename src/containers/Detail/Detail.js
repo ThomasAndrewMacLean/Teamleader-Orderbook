@@ -96,7 +96,7 @@ class Detail extends Component {
                 {this.props.order.id && this.props.customers.length > 0 && this.props.products.length > 0 ?
                     <div className="App">
                         <header className="App-header">
-                            <div className="quatreCol header" onClick={() => this.props.history.push('/')}>
+                            <div className="quatreCol header pointer" onClick={() => this.props.history.push('/')}>
                                 BACK
                             </div>
                             <div className="threeQuatreCol header">
@@ -109,7 +109,7 @@ class Detail extends Component {
                             </div>
                         </header>
                         <ul>
-                            <li className="grid-header">
+                            <li className="grid-header list-item-detail">
                                 <div className="quatreCol resize-small">
                                     product
                                 </div>

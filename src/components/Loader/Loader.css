@@ -1,38 +1,36 @@
-.loader{
-    background:rgba(255,255,255,0.1);
+.loader {
+    background: rgba(255, 255, 255, 0.1);
     width: 100vw;
     height: 100vh;
     z-index: 9999;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
-    
 }
 
-.spinner{
-opacity: 1 !important;
-animation: rotating 3s linear infinite;
--webkit-animation: rotating 3s linear infinite;
-
-width:30px;
-height:30px;
-background: var(--color-mint);
-} 
+.spinner {
+    opacity: 1 !important;
+    animation: rotating 3s linear infinite;
+    -webkit-animation: rotating 3s linear infinite;
+    width: 30px;
+    height: 30px;
+    background: var(--color-mint);
+}
 
 @-webkit-keyframes rotating {
-    from{
+    from {
         -webkit-transform: rotate(0deg);
     }
-    to{
+    to {
         -webkit-transform: rotate(360deg);
     }
 }
 
 @keyframes rotating {
-    from{
+    from {
         -webkit-transform: rotate(0deg);
     }
-    to{
+    to {
         -webkit-transform: rotate(360deg);
     }
 }
