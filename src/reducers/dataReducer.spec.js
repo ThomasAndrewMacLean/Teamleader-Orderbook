@@ -365,6 +365,67 @@ it('PLACE_ORDER should be immutable', () => {
     expect(result).not.toEqual(beginState);
 });
 
+
+
+it('REOPEN_ORDER should call function reopen0rder', () => {
+    const beginState = {
+        orders: mocks.getOrders()
+    };
+    beginState.orders[0].hasBeenPlaced = true;
+    const action = {
+        'type': types.REOPEN_ORDER,
+        'payload': { 'orderId': '1' }
+    };
+    const spy = jest.spyOn(helperFunctions, 'reopenOrder');
+    dataReducer(beginState, action);
+    expect(spy).toHaveBeenCalled();
+});
+
+it('REOPEN_ORDER can only be called once', () => {
+    const beginState = {
+        orders: mocks.getOrders()
+    };
+    beginState.orders[0].hasBeenPlaced = true;
+
+    const action = {
+        'type': types.REOPEN_ORDER,
+        'payload': { 'orderId': '1' }
+    };
+    const spy = jest.spyOn(helperFunctions, 'reopenOrder');
+    let state1 = dataReducer(beginState, action);
+    let state2 = dataReducer(state1, action);
+    dataReducer(state2, action);
+
+    expect(spy).toHaveBeenCalledTimes(1);
+});
+it('REOPEN_ORDER does nothing if order is not placed', () => {
+    const beginState = {
+        orders: mocks.getOrders()
+    };
+    const action = {
+        'type': types.REOPEN_ORDER,
+        'payload': { 'orderId': '1' }
+    };
+    const spy = jest.spyOn(helperFunctions, 'reopenOrder');
+    let result = dataReducer(beginState, action);
+
+    expect(result).toEqual(beginState);
+    expect(spy).not.toBeCalled();
+});
+it('REOPEN_ORDER should be immutable', () => {
+    const beginState = {
+        orders: mocks.getOrders()
+    };
+    beginState.orders[0].hasBeenPlaced = true;
+
+    const action = {
+        'type': types.REOPEN_ORDER,
+        'payload': { 'orderId': '1' }
+    };
+    let result = dataReducer(beginState, action);
+    expect(result).not.toEqual(beginState);
+});
+
 it('DELETE_PRODUCT deletes a product', () => {
     const beginState = {
         orders: mocks.getOrders()

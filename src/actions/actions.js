@@ -71,11 +71,20 @@ export function placeOrder(orderId) {
 }
 
 
+export function reopenOrder(orderId) {
+    return {
+        type: REOPEN_ORDER,
+        payload: { 'orderId': orderId }
+    };
+}
+
+
 
 export const LOAD_ORDERS_SUCCESS = 'LOAD_ORDERS_SUCCESS';
 export const LOAD_PRODUCTS_SUCCESS = 'LOAD_PRODUCTS_SUCCESS';
 export const LOAD_CUSTOMERS_SUCCESS = 'LOAD_CUSTOMERS_SUCCESS';
 export const ADD_QUANTITY = 'ADD_QUANTITY';
 export const PLACE_ORDER = 'PLACE_ORDER';
+export const REOPEN_ORDER = 'REOPEN_ORDER';
 export const ADD_PRODUCT = 'ADD_PRODUCT';
 export const DELETE_PRODUCT = 'DELETE_PRODUCT';

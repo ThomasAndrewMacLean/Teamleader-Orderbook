@@ -33,6 +33,10 @@
   /* font-size: 13px; */
   margin-right: -40px;
 }
+
+.placed-orders-header{
+  margin-top:30px;
+}
 .orderList{
   clear: both;
 }

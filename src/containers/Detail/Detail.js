@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import DetailList from './../DetailList/DetailList';
 import Loader from './../../components/Loader/Loader';
 import './Detail.css';
-import { addProduct, placeOrder } from './../../actions/actions';
+import { addProduct, placeOrder, reopenOrder } from './../../actions/actions';
 import Hammer from 'hammerjs';
 import PropTypes from 'prop-types';
 
@@ -112,16 +112,18 @@ class Detail extends Component {
                                 </div>
                             </li>
                             <hr />
-                            {this.order.items.map(o => <DetailList key={o['product-id']} parentId={id} item={o} history={this.props.history} />)}
+                            {this.order.items.map(o => <DetailList key={o['product-id']} parentId={id} hasBeenPlaced={this.order.hasBeenPlaced} item={o} history={this.props.history} />)}
                         </ul>
                         {/* <hr /> */}
                         <div className="halfCol button-padding">
-                            <button className="big-button" onClick={() => this.addProduct()}>ADD PRODUCT</button>
+                            <button className={this.order.hasBeenPlaced ? 'big-button orderPlacedHide' : 'big-button'} onClick={() => this.addProduct()}>ADD PRODUCT</button>
                         </div>
-                        <div className="halfCol button-padding">
-                            <button className="big-button primary-button" onClick={() => this.props.placeOrder(this.order.id)}>PLACE ORDER</button>
+                        <div className={this.order.hasBeenPlaced ? 'halfCol button-padding displaynone' : 'halfCol button-padding'}>
+                            <button className={this.order.hasBeenPlaced ? 'big-button orderPlacedHide primary-button' : 'big-button primary-button'} onClick={() => this.props.placeOrder(this.order.id)}>PLACE ORDER</button>
                         </div>
-
+                        <div className="halfCol button-padding pullright">
+                            <button className={this.order.hasBeenPlaced ? 'big-button' : 'orderPlacedHide big-button'} onClick={() => this.props.reopenOrder(this.order.id)}>REOPEN ORDER</button>
+                        </div>
 
                     </div>
 
@@ -148,7 +150,10 @@ const mapDispatchToProps = (dispatch) => {
         },
         placeOrder: (order) => {
             dispatch(placeOrder(order));
-        }
+        },
+        reopenOrder: (order) => {
+            dispatch(reopenOrder(order));
+        },
     };
 };
 
@@ -162,7 +167,9 @@ Detail.propTypes = {
     products: PropTypes.array,
     customers: PropTypes.array,
     placeOrder: PropTypes.func,
+    reopenOrder: PropTypes.func,
     addProduct: PropTypes.func,
+
 
 };
 

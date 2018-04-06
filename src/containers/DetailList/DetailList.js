@@ -66,11 +66,11 @@ class DetailList extends Component {
                             {this.props.item['product-id']}:{this.props.products.find(p => p.id === this.props.item['product-id']).description}
                         </div>
                         <div className="quatreCol resize-small quantityAndButtons">
-                            <button className="round-button" onClick={() => this.add(-1)}>-</button>
+                            <button className={this.props.hasBeenPlaced ? 'round-button orderPlacedHide' : 'round-button'} onClick={() => this.add(-1)}>-</button>
                             <p className="pad">
                                 {this.props.item.quantity}
                             </p>
-                            <button className="round-button" onClick={() => this.add(1)}>+</button>
+                            <button className={this.props.hasBeenPlaced ? 'round-button orderPlacedHide' : 'round-button'} onClick={() => this.add(1)}>+</button>
                         </div>
                         <div className="clear-small">
                             <div className="quatreCol resize-small">
@@ -112,7 +112,7 @@ const mapDispatchToProps = (dispatch) => {
 
 
 DetailList.propTypes = {
-
+    hasBeenPlaced: PropTypes.object,
     item: PropTypes.object,
     parentId: PropTypes.any,
     products: PropTypes.array,

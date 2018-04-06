@@ -11,6 +11,11 @@ export const helperFunctions = {
         order.hasBeenPlaced = true;
         console.log('ORDER HAS BEEN PLACED: ');
         console.log(order);
+    },
+    reopenOrder(order) {
+        order.hasBeenPlaced = false;
+        console.log('ORDER HAS BEEN REOPEND: ');
+        console.log(order);
     }
 };
 
@@ -49,12 +54,12 @@ export default function dataReducer(state = initialState.data, action) {
         newState = JSON.parse(JSON.stringify(state));
 
         order = newState.orders.find(o => parseInt(o.id, 10) === parseInt(action.payload.orderId, 10));
-       
-        if(!order.hasBeenPlaced){   
+
+        if (!order.hasBeenPlaced) {
             item = order.items.find(i => i['product-id'] === action.payload.productId);
             item.quantity = (parseInt(item.quantity, 10) + parseInt(action.payload.quantity, 10)).toString();
             item.total = item['unit-price'] * item.quantity;
-            
+
             order.total = helperFunctions.getTotal(order);
         }
         return newState;
@@ -82,6 +87,15 @@ export default function dataReducer(state = initialState.data, action) {
         order = state.orders.find(o => parseInt(o.id, 10) === parseInt(action.payload.orderId, 10));
         if (!order.hasBeenPlaced) {
             helperFunctions.placeOrder(order);
+        }
+
+        return state;
+
+    case types.REOPEN_ORDER:
+        state = JSON.parse(JSON.stringify(state));
+        order = state.orders.find(o => parseInt(o.id, 10) === parseInt(action.payload.orderId, 10));
+        if (order.hasBeenPlaced) {
+            helperFunctions.reopenOrder(order);
         }
 
         return state;

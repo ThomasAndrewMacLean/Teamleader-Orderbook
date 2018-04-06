@@ -45,8 +45,17 @@ class App extends Component {
                                 </div>
                             </li>
                             <hr />
-                            {this.props.orders.map(o => <List className="orderList" key={o.id} order={o} history={this.props.history} />)}
+                            {this.props.orders.filter(o => !o.hasBeenPlaced).map(o => <List className="orderList" key={o.id} order={o} history={this.props.history} />)}
+
+                            {this.props.orders.filter(o => o.hasBeenPlaced).length > 0 ?
+                                <li className="grid-header placed-orders-header">Placed Orders
+                                    <hr />
+                                </li> : ''
+                            }
+                            {this.props.orders.filter(o => o.hasBeenPlaced).map(o => <List className="orderList" key={o.id} order={o} history={this.props.history} />)}
+
                         </ul>
+
                     </div>
                 }
             </div>
