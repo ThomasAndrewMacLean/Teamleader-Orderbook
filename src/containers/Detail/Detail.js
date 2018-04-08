@@ -8,52 +8,29 @@ import Hammer from 'hammerjs';
 import PropTypes from 'prop-types';
 
 
-class Detail extends Component {
+export class Detail extends Component {
     // order = {}
     // showModal = false;
-    test(p) {
+    addProduct(product) {
         this.toggleModal();
-        this.props.addProduct(p, this.props.order.id);
+        this.props.addProduct(product, this.props.order.id);
         this.props.checkForDiscount(this.props.order);
     }
 
     toggleModal() {
         this.showModal = !this.showModal;
         this.forceUpdate();
-
-
     }
 
-    addProduct() {
+    getProductsNotOnScreen() {
         let productsOnScreen = this.props.order.items.map(i => i['product-id']);
-        let otherProducts = this.props.products.filter(p => !productsOnScreen.includes(p.id));
-
-        this.toggleModal();
-
-        const modal = document.getElementById('modal');
-        modal.innerHTML = '';
-        otherProducts.forEach(p => {
-            let b = document.createElement('button');
-            b.innerHTML = p.description;
-            b.classList.add('big-button');
-            b.addEventListener('click', () => this.test(p));
-            modal.appendChild(b);
-        });
-        let b = document.createElement('button');
-        b.innerHTML = 'CANCEL';
-        b.classList.add('big-button');
-        b.addEventListener('click', () => this.toggleModal());
-        modal.appendChild(b);
+        return this.props.products.filter(p => !productsOnScreen.includes(p.id));
     }
-
 
     goHome() {
         this.props.history.push('/');
     }
-
-    checkForDiscountTest() {
-        this.props.checkForDiscount(this.props.order);
-    }
+    checkForDiscountTest() { this.props.checkForDiscount(this.props.order); }
 
     componentDidMount() {
         this.hammer = Hammer(this._slider);
@@ -67,7 +44,7 @@ class Detail extends Component {
 
     componentDidUpdate() {
         if (!this.props.order.id && this.props.orders.length > 0) {
-            
+
             let id = this.props.match.params.id;
             this.props.setSelectedOrder(id);
         }
@@ -88,16 +65,22 @@ class Detail extends Component {
                         //this.setState({}) // triggers the same as forceUpdate...
                     }}>
                 </div>
-                <div className={this.showModal ? 'showModal modal' : 'modal'}>
-                    <div id="modal" className="modal-content">
-                        hellooowkes
-                    </div>
-                </div>
+                {this.props.order.items ?
+
+                    <div className={this.showModal ? 'showModal modal' : 'modal'}>
+                        <div id="modal" className="modal-content">
+                            {this.getProductsNotOnScreen().map(product => {
+                                return <button key={product.id} onClick={() => this.addProduct(product)} className="big-button add-product-list">{product.description}</button>;
+                            })}
+                            <button id="cancel-button" className="big-button" onClick={() => this.toggleModal()}>CANCEL</button>
+                        </div>
+                    </div> : ''
+                }
 
                 {this.props.order.id && this.props.customers.length > 0 && this.props.products.length > 0 ?
                     <div className="App">
                         <header className="App-header">
-                            <div className="quatreCol header pointer" onClick={() => this.props.history.push('/')}>
+                            <div id="back-button" className="quatreCol header pointer" onClick={() => this.goHome()}>
                                 BACK
                             </div>
                             <div className="threeQuatreCol header">
@@ -135,13 +118,13 @@ class Detail extends Component {
                         </ul>
 
                         <div className="halfCol button-padding">
-                            <button className={this.props.order.hasBeenPlaced ? 'big-button orderPlacedHide' : 'big-button'} onClick={() => this.addProduct()}>ADD PRODUCT</button>
+                            <button id="add-product-button" className={this.props.order.hasBeenPlaced ? 'big-button orderPlacedHide' : 'big-button'} onClick={() => this.toggleModal()}>ADD PRODUCT</button>
                         </div>
                         <div className={this.props.order.hasBeenPlaced ? 'halfCol button-padding displaynone' : 'halfCol button-padding'}>
-                            <button className={this.props.order.hasBeenPlaced ? 'big-button orderPlacedHide primary-button' : 'big-button primary-button'} onClick={() => this.placeOrder(this.props.order.id)}>PLACE ORDER</button>
+                            <button id="place-order-button" className={this.props.order.hasBeenPlaced ? 'big-button orderPlacedHide primary-button' : 'big-button primary-button'} onClick={() => this.placeOrder(this.props.order.id)}>PLACE ORDER</button>
                         </div>
                         <div className="halfCol button-padding pullright">
-                            <button className={this.props.order.hasBeenPlaced ? 'big-button' : 'orderPlacedHide big-button'} onClick={() => this.props.reopenOrder(this.props.order.id)}>REOPEN ORDER</button>
+                            <button id="reopen-order-button" className={this.props.order.hasBeenPlaced ? 'big-button' : 'orderPlacedHide big-button'} onClick={() => this.props.reopenOrder(this.props.order.id)}>REOPEN ORDER</button>
                         </div>
 
                     </div>

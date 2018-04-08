@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {setSelectedOrder} from './../../actions/actions';
 import PropTypes from 'prop-types';
 
-class List extends Component {
+export class List extends Component {
     goToDetail(orderId) {
         this.props.setSelectedOrder(orderId);
         this.props.history.push(`/detail/${orderId}`);
@@ -32,7 +32,7 @@ class List extends Component {
                         </div>
                         <div className="quatreCol">
                             <button
-                                className="pullright"
+                                className="pullright go-to-details-button"
                                 onClick={() => this.goToDetail(this.props.order.id)}>DETAILS</button>
                         </div>
                     </li>

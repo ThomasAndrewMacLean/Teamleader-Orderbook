@@ -7,11 +7,12 @@ import Loader from './../../components/Loader/Loader';
 
 import './App.css';
 
-class App extends Component {
+export class App extends Component {
 
     constructor(props) {
         super(props);
         this.title = 'ORDERBOOK';
+
     }
 
     toggleModal() {
@@ -52,8 +53,8 @@ class App extends Component {
                                 </div>
 
                                 <div className="modal-footer">
-                                    <button onClick={() => this.toggleModal()}>cancel</button>
-                                    <button onClick={() => this.addOrder()} className="primary-button">ok</button>
+                                    <button id="cancel-button" onClick={() => this.toggleModal()}>cancel</button>
+                                    <button id="ok-button" onClick={() => this.addOrder()} className="primary-button">ok</button>
                                 </div>
                             </div>
                         </div>
@@ -69,8 +70,8 @@ class App extends Component {
                             {this.title}
                         </div>
                         <div className="halfCol header ">
-                            <button className="pullright header-button" onClick={() => this.props.history.push('/help')}>?</button>
-                            <button className="pullright header-button" onClick={() => this.toggleModal()}>+</button>
+                            <button id="go-to-help-button" className="pullright header-button" onClick={() => this.props.history.push('/help')}>?</button>
+                            <button id="add-order-button" className="pullright header-button" onClick={() => this.toggleModal()}>+</button>
                         </div>
                     </header>
                     {this.props.orders.length === 0 ? <Loader /> :
@@ -102,7 +103,7 @@ class App extends Component {
                                         <hr />
                                     </li> : ''
                                 }
-                                {this.props.orders.filter(o => o.hasBeenPlaced).sort((a, b) => parseInt(a.id, 10) > parseInt(b.id, 10)).map(o => <List className="orderList" key={o.id} order={o} history={this.props.history} />)}
+                                {this.props.orders.filter(o => o.hasBeenPlaced).sort((a, b) => parseInt(a.id, 10) > parseInt(b.id, 10)).map(o => <List className="orderList placed-order" key={o.id} order={o} history={this.props.history} />)}
 
                             </ul>
 
@@ -128,7 +129,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         addOrder: (customerId) => {
             dispatch(addOrder(customerId));
-        },
+        }
     };
 };
 

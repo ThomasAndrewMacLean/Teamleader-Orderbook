@@ -6,7 +6,7 @@ import './DetailList.css';
 import PropTypes from 'prop-types';
 
 
-class DetailList extends Component {
+export class DetailList extends Component {
     constructor(props) {
         super(props);
         this.showDelete = false;
@@ -48,10 +48,10 @@ class DetailList extends Component {
                         </div>
                         {/* <div className="clear-small"> */}
                         <div className="quatreCol resize-small">
-                            <button className="big-button" onClick={() => this.togglePromptDelete()}>NO</button>
+                            <button className="big-button no-button" onClick={() => this.togglePromptDelete()}>NO</button>
                         </div>
                         <div className="quatreCol resize-small">
-                            <button className="big-button" onClick={() => this.deleteProduct()}>YES</button>
+                            <button className="big-button yes-button" onClick={() => this.deleteProduct()}>YES</button>
                         </div>
                         {/* </div> */}
 

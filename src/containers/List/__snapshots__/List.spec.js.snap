@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot 1`] = `
+<div
+  className="Detail"
+>
+  ....
+</div>
+`;
+
+exports[`snapshot2 1`] = `
+<div
+  className="Detail"
+>
+  ....
+</div>
+`;

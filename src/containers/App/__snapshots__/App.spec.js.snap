@@ -1,0 +1,244 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot 1`] = `
+<div>
+  <div>
+    <div
+      className="modalBackDrop"
+      onClick={[Function]}
+    />
+    <div
+      className="modal"
+    >
+      <div
+        className="modal-content add-order-modal"
+        id="modal"
+      >
+        <div
+          className="modal-header"
+        >
+          Add order
+        </div>
+        <div
+          className="modal-body"
+        >
+          Select customer:
+          <select
+            id="select-customer"
+          >
+            <option
+              value="1"
+            >
+              Coca Cola
+            </option>
+            <option
+              value="2"
+            >
+              Teamleader
+            </option>
+            <option
+              value="3"
+            >
+              Jeroen De Wit
+            </option>
+          </select>
+        </div>
+        <div
+          className="modal-footer"
+        >
+          <button
+            id="cancel-button"
+            onClick={[Function]}
+          >
+            cancel
+          </button>
+          <button
+            className="primary-button"
+            id="ok-button"
+            onClick={[Function]}
+          >
+            ok
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="App"
+  >
+    <header
+      className="App-header"
+    >
+      <div
+        className="halfCol header"
+      >
+        ORDERBOOK
+      </div>
+      <div
+        className="halfCol header "
+      >
+        <button
+          className="pullright header-button"
+          id="go-to-help-button"
+          onClick={[Function]}
+        >
+          ?
+        </button>
+        <button
+          className="pullright header-button"
+          id="add-order-button"
+          onClick={[Function]}
+        >
+          +
+        </button>
+      </div>
+    </header>
+    <div>
+      <ul
+        className="list"
+      >
+        <li
+          className="grid-header"
+        >
+          <div
+            className="quatreCol id-and-name"
+          >
+            id
+            <p
+              className="username pullright"
+            >
+              customer
+            </p>
+          </div>
+          <div
+            className="quatreCol textright"
+          >
+            # items
+          </div>
+          <div
+            className="quatreCol textright"
+          >
+            total
+          </div>
+          <div
+            className="quatreCol"
+          />
+        </li>
+        <hr />
+        <div
+          className="Detail"
+        >
+          <li>
+            <div
+              className="quatreCol id-and-name"
+            >
+              1
+              <p
+                className="username pullright"
+              >
+                 
+                Coca Cola
+              </p>
+            </div>
+            <div
+              className="quatreCol textright"
+            >
+              1
+            </div>
+            <div
+              className="quatreCol textright"
+            >
+              €49.90
+            </div>
+            <div
+              className="quatreCol"
+            >
+              <button
+                className="pullright go-to-details-button"
+                onClick={[Function]}
+              >
+                DETAILS
+              </button>
+            </div>
+          </li>
+        </div>
+        <div
+          className="Detail"
+        >
+          <li>
+            <div
+              className="quatreCol id-and-name"
+            >
+              2
+              <p
+                className="username pullright"
+              >
+                 
+                Teamleader
+              </p>
+            </div>
+            <div
+              className="quatreCol textright"
+            >
+              1
+            </div>
+            <div
+              className="quatreCol textright"
+            >
+              €24.95
+            </div>
+            <div
+              className="quatreCol"
+            >
+              <button
+                className="pullright go-to-details-button"
+                onClick={[Function]}
+              >
+                DETAILS
+              </button>
+            </div>
+          </li>
+        </div>
+        <div
+          className="Detail"
+        >
+          <li>
+            <div
+              className="quatreCol id-and-name"
+            >
+              3
+              <p
+                className="username pullright"
+              >
+                 
+                Jeroen De Wit
+              </p>
+            </div>
+            <div
+              className="quatreCol textright"
+            >
+              2
+            </div>
+            <div
+              className="quatreCol textright"
+            >
+              €69.00
+            </div>
+            <div
+              className="quatreCol"
+            >
+              <button
+                className="pullright go-to-details-button"
+                onClick={[Function]}
+              >
+                DETAILS
+              </button>
+            </div>
+          </li>
+        </div>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+`;
