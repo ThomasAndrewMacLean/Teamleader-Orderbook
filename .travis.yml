@@ -1,6 +1,6 @@
 language: node_js
 node_js:
- - "9"
+ - "9.6.2"
 before_script:
   - yarn install
 script:
