@@ -13,9 +13,20 @@
     align-items: center;
     justify-content: space-evenly;
     padding: 0;
+    transition: 0.3s left cubic-bezier(0.075, 0.82, 0.165, 1);
 }
+.detail{
+    transform:translateX(0);
+    height: 60px;
+    overflow: hidden;
+    transition: 0.3s all cubic-bezier(0.075, 0.82, 0.165, 1);
 
-.Detail:hover {
+}
+.detail.detail-deleted{
+    height: 0 !important;
+    transform:translateX(-100vw)  !important;
+}
+.detail:hover {
     background: var( --color-teal-lightest);
 }
 

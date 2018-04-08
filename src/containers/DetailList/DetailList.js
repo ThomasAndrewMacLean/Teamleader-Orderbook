@@ -10,6 +10,7 @@ export class DetailList extends Component {
     constructor(props) {
         super(props);
         this.showDelete = false;
+        this.isDeleted = false;
     }
     add(quantity) {
         this.props.addQuantity(quantity, this.props.item['product-id'], this.props.order.id);
@@ -17,6 +18,13 @@ export class DetailList extends Component {
     }
 
     deleteProduct() {
+        this.showDelete = !this.showDelete;
+        this.isDeleted = !this.isDeleted;
+        this.setState({});
+        setTimeout(() => this.del(), 300);
+    }
+
+    del() {
         this.props.deleteProduct(this.props.item['product-id'], this.props.order.id);
         setTimeout(() => this.props.discount(), 100);
     }
@@ -24,7 +32,7 @@ export class DetailList extends Component {
     togglePromptDelete() {
         if (!this.props.order.hasBeenPlaced) {
             this.showDelete = !this.showDelete;
-           
+
             this.setState({});
         }
     }
@@ -38,7 +46,7 @@ export class DetailList extends Component {
 
     render() {
         return (
-            <div className="Detail" ref={
+            <div className={this.isDeleted ? 'detail-deleted detail' : 'detail'} ref={
                 (el) => this._slider = el
             }>
                 {this.props.item && this.props.products.length > 0 ?

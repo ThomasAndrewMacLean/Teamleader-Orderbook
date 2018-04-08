@@ -11,6 +11,9 @@
   .deletePrompt {
     padding: 20px 0 40px 0 !important;
   }
+  .detail{
+  height: 120px !important;
+}
   li {
     padding-bottom: 20px;
     /* font-size: 14px; */

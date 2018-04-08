@@ -97,11 +97,13 @@ it('yes-button click hides deletePrompt', () => {
     wrapper.find('.delete-cross').simulate('click');
     wrapper.find('.yes-button').simulate('click');
 
-    expect(wrapper.find('.deletePrompt').hasClass('showDelete')).toBeTruthy();
+    expect(wrapper.find('.deletePrompt').hasClass('showDelete')).toBeFalsy();
 });
-it('yes-button click triggers deletefunction with product id and order id', () => {
+it('yes-button click triggers deletefunction with product id and order id', (done) => {
     wrapper.find('.delete-cross').simulate('click');
     wrapper.find('.yes-button').simulate('click');
 
-    expect(mockDeleteProduct).toHaveBeenCalledWith('B102', '1');
+    setTimeout(() => {
+        expect(mockDeleteProduct).toHaveBeenCalledWith('B102', '1'); done();
+    }, 300);
 });

@@ -172,7 +172,7 @@ ShallowWrapper {
           </div>
 </li>,
       ],
-      "className": "Detail",
+      "className": "detail",
     },
     "ref": [Function],
     "rendered": Array [
@@ -689,7 +689,7 @@ ShallowWrapper {
             </div>
 </li>,
         ],
-        "className": "Detail",
+        "className": "detail",
       },
       "ref": [Function],
       "rendered": Array [

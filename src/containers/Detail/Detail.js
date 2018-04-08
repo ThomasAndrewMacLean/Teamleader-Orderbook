@@ -77,60 +77,62 @@ export class Detail extends Component {
                     </div> : ''
                 }
 
-                {this.props.order.id && this.props.customers.length > 0 && this.props.products.length > 0 ?
-                    <div className="App">
-                        <header className="App-header">
-                            <div id="back-button" className="quatreCol header pointer" onClick={() => this.goHome()}>
-                                BACK
-                            </div>
-                            <div className="threeQuatreCol header">
-                                <p className="pullright detail-header-info">
-                                    id: {this.props.order.id} customer: {this.props.customers.find(u => parseInt(u.id, 10) === parseInt(this.props.order['customer-id'], 10)).name}                                    total:<i className={this.props.order.discount ? 'discount marginright' : 'marginright'}> {new Intl.NumberFormat('nl-BE', { style: 'currency', currency: 'EUR' }).format(this.props.order.total)}
-                                    </i>
-                                    {this.props.order.discount ? new Intl.NumberFormat('nl-BE', { style: 'currency', currency: 'EUR' }).format(this.props.order.priceWithDiscount) : ''}
+                <div className="App">
+                    {this.props.order.id && this.props.customers.length > 0 && this.props.products.length > 0 ?
+                        <div>
+                            <header className="App-header">
+                                <div id="back-button" className="quatreCol header pointer" onClick={() => this.goHome()}>
+                                    BACK
+                                </div>
+                                <div className="threeQuatreCol header">
+                                    <p className="pullright detail-header-info">
+                                        id: {this.props.order.id} customer: {this.props.customers.find(u => parseInt(u.id, 10) === parseInt(this.props.order['customer-id'], 10)).name}                                    total:<i className={this.props.order.discount ? 'discount marginright' : 'marginright'}> {new Intl.NumberFormat('nl-BE', { style: 'currency', currency: 'EUR' }).format(this.props.order.total)}
+                                        </i>
+                                        {this.props.order.discount ? new Intl.NumberFormat('nl-BE', { style: 'currency', currency: 'EUR' }).format(this.props.order.priceWithDiscount) : ''}
 
-                                </p>
-                            </div>
-                        </header>
-                        <ul>
-                            <li className="grid-header list-item-detail">
-                                <div className="quatreCol resize-small">
-                                    product
+                                    </p>
                                 </div>
-                                <div className="quatreCol resize-small">
-                                    quantity
-                                </div>
-                                <div className="clear-small">
+                            </header>
+                            <ul>
+                                <li className="grid-header list-item-detail">
                                     <div className="quatreCol resize-small">
-                                        <p className="pullright">
-                                            unitprice
-                                        </p>
+                                        product
                                     </div>
                                     <div className="quatreCol resize-small">
-                                        <p className="pullright">
-                                            total
-                                        </p>
+                                        quantity
                                     </div>
-                                </div>
-                            </li>
-                            <hr />
-                            {this.props.order.items.map(o => <DetailList key={o['product-id']} discount={() => this.checkForDiscountTest()} item={o} history={this.props.history} />)}
-                        </ul>
+                                    <div className="clear-small">
+                                        <div className="quatreCol resize-small">
+                                            <p className="pullright">
+                                                unitprice
+                                            </p>
+                                        </div>
+                                        <div className="quatreCol resize-small">
+                                            <p className="pullright">
+                                                total
+                                            </p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <hr />
+                                {this.props.order.items.map(o => <DetailList key={o['product-id']} discount={() => this.checkForDiscountTest()} item={o} history={this.props.history} />)}
+                            </ul>
 
-                        <div className="halfCol button-padding">
-                            <button id="add-product-button" className={this.props.order.hasBeenPlaced ? 'big-button orderPlacedHide' : 'big-button'} onClick={() => this.toggleModal()}>ADD PRODUCT</button>
+                            <div className="halfCol button-padding">
+                                <button id="add-product-button" className={this.props.order.hasBeenPlaced ? 'big-button orderPlacedHide' : 'big-button'} onClick={() => this.toggleModal()}>ADD PRODUCT</button>
+                            </div>
+                            <div className={this.props.order.hasBeenPlaced ? 'halfCol button-padding displaynone' : 'halfCol button-padding'}>
+                                <button id="place-order-button" className={this.props.order.hasBeenPlaced ? 'big-button orderPlacedHide primary-button' : 'big-button primary-button'} onClick={() => this.placeOrder(this.props.order.id)}>PLACE ORDER</button>
+                            </div>
+                            <div className="halfCol button-padding pullright">
+                                <button id="reopen-order-button" className={this.props.order.hasBeenPlaced ? 'big-button' : 'orderPlacedHide big-button'} onClick={() => this.props.reopenOrder(this.props.order.id)}>REOPEN ORDER</button>
+                            </div>
+
+
                         </div>
-                        <div className={this.props.order.hasBeenPlaced ? 'halfCol button-padding displaynone' : 'halfCol button-padding'}>
-                            <button id="place-order-button" className={this.props.order.hasBeenPlaced ? 'big-button orderPlacedHide primary-button' : 'big-button primary-button'} onClick={() => this.placeOrder(this.props.order.id)}>PLACE ORDER</button>
-                        </div>
-                        <div className="halfCol button-padding pullright">
-                            <button id="reopen-order-button" className={this.props.order.hasBeenPlaced ? 'big-button' : 'orderPlacedHide big-button'} onClick={() => this.props.reopenOrder(this.props.order.id)}>REOPEN ORDER</button>
-                        </div>
 
-                    </div>
-
-
-                    : <Loader />}
+                        : <Loader />}
+                </div>
             </div>
         );
     }

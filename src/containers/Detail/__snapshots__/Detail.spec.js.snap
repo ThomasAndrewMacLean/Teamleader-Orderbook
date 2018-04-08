@@ -137,120 +137,122 @@ ShallowWrapper {
         <div
           className="App"
 >
-          <header
-                    className="App-header"
-          >
-                    <div
-                              className="quatreCol header pointer"
-                              id="back-button"
-                              onClick={[Function]}
+          <div>
+                    <header
+                              className="App-header"
                     >
-                              BACK
-                    </div>
-                    <div
-                              className="threeQuatreCol header"
-                    >
-                              <p
-                                        className="pullright detail-header-info"
+                              <div
+                                        className="quatreCol header pointer"
+                                        id="back-button"
+                                        onClick={[Function]}
                               >
-                                        id: 
-                                        1
-                                         customer: 
-                                        Coca Cola
-                                                                            total:
-                                        <i
-                                                  className="marginright"
+                                        BACK
+                              </div>
+                              <div
+                                        className="threeQuatreCol header"
+                              >
+                                        <p
+                                                  className="pullright detail-header-info"
                                         >
-                                                   
-                                                  €49.90
-                                        </i>
-                                        
-                              </p>
-                    </div>
-          </header>
-          <ul>
-                    <li
-                              className="grid-header list-item-detail"
-                    >
-                              <div
-                                        className="quatreCol resize-small"
-                              >
-                                        product
+                                                  id: 
+                                                  1
+                                                   customer: 
+                                                  Coca Cola
+                                                                                      total:
+                                                  <i
+                                                            className="marginright"
+                                                  >
+                                                             
+                                                            €49.90
+                                                  </i>
+                                                  
+                                        </p>
                               </div>
-                              <div
-                                        className="quatreCol resize-small"
-                              >
-                                        quantity
-                              </div>
-                              <div
-                                        className="clear-small"
+                    </header>
+                    <ul>
+                              <li
+                                        className="grid-header list-item-detail"
                               >
                                         <div
                                                   className="quatreCol resize-small"
                                         >
-                                                  <p
-                                                            className="pullright"
-                                                  >
-                                                            unitprice
-                                                  </p>
+                                                  product
                                         </div>
                                         <div
                                                   className="quatreCol resize-small"
                                         >
-                                                  <p
-                                                            className="pullright"
-                                                  >
-                                                            total
-                                                  </p>
+                                                  quantity
                                         </div>
-                              </div>
-                    </li>
-                    <hr />
-                    <Connect(DetailList)
-                              discount={[Function]}
-                              history={undefined}
-                              item={
-                                        Object {
-                                                  "product-id": "B102",
-                                                  "quantity": "10",
-                                                  "total": "49.90",
-                                                  "unit-price": "4.99",
-                                                }
-                              }
-                    />
-          </ul>
-          <div
-                    className="halfCol button-padding"
-          >
-                    <button
-                              className="big-button"
-                              id="add-product-button"
-                              onClick={[Function]}
+                                        <div
+                                                  className="clear-small"
+                                        >
+                                                  <div
+                                                            className="quatreCol resize-small"
+                                                  >
+                                                            <p
+                                                                      className="pullright"
+                                                            >
+                                                                      unitprice
+                                                            </p>
+                                                  </div>
+                                                  <div
+                                                            className="quatreCol resize-small"
+                                                  >
+                                                            <p
+                                                                      className="pullright"
+                                                            >
+                                                                      total
+                                                            </p>
+                                                  </div>
+                                        </div>
+                              </li>
+                              <hr />
+                              <Connect(DetailList)
+                                        discount={[Function]}
+                                        history={undefined}
+                                        item={
+                                                  Object {
+                                                            "product-id": "B102",
+                                                            "quantity": "10",
+                                                            "total": "49.90",
+                                                            "unit-price": "4.99",
+                                                          }
+                                        }
+                              />
+                    </ul>
+                    <div
+                              className="halfCol button-padding"
                     >
-                              ADD PRODUCT
-                    </button>
-          </div>
-          <div
-                    className="halfCol button-padding"
-          >
-                    <button
-                              className="big-button primary-button"
-                              id="place-order-button"
-                              onClick={[Function]}
+                              <button
+                                        className="big-button"
+                                        id="add-product-button"
+                                        onClick={[Function]}
+                              >
+                                        ADD PRODUCT
+                              </button>
+                    </div>
+                    <div
+                              className="halfCol button-padding"
                     >
-                              PLACE ORDER
-                    </button>
-          </div>
-          <div
-                    className="halfCol button-padding pullright"
-          >
-                    <button
-                              className="orderPlacedHide big-button"
-                              id="reopen-order-button"
-                              onClick={[Function]}
+                              <button
+                                        className="big-button primary-button"
+                                        id="place-order-button"
+                                        onClick={[Function]}
+                              >
+                                        PLACE ORDER
+                              </button>
+                    </div>
+                    <div
+                              className="halfCol button-padding pullright"
                     >
-                              REOPEN ORDER
-                    </button>
+                              <button
+                                        className="orderPlacedHide big-button"
+                                        id="reopen-order-button"
+                                        onClick={[Function]}
+                              >
+                                        REOPEN ORDER
+                              </button>
+                    </div>
           </div>
 </div>,
       ],
@@ -434,658 +436,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": Array [
-            <header
-              className="App-header"
->
-              <div
-                            className="quatreCol header pointer"
-                            id="back-button"
-                            onClick={[Function]}
-              >
-                            BACK
-              </div>
-              <div
-                            className="threeQuatreCol header"
-              >
-                            <p
-                                          className="pullright detail-header-info"
-                            >
-                                          id: 
-                                          1
-                                           customer: 
-                                          Coca Cola
-                                                                              total:
-                                          <i
-                                                        className="marginright"
-                                          >
-                                                         
-                                                        €49.90
-                                          </i>
-                                          
-                            </p>
-              </div>
-</header>,
-            <ul>
-              <li
-                            className="grid-header list-item-detail"
-              >
-                            <div
-                                          className="quatreCol resize-small"
-                            >
-                                          product
-                            </div>
-                            <div
-                                          className="quatreCol resize-small"
-                            >
-                                          quantity
-                            </div>
-                            <div
-                                          className="clear-small"
-                            >
-                                          <div
-                                                        className="quatreCol resize-small"
-                                          >
-                                                        <p
-                                                                      className="pullright"
-                                                        >
-                                                                      unitprice
-                                                        </p>
-                                          </div>
-                                          <div
-                                                        className="quatreCol resize-small"
-                                          >
-                                                        <p
-                                                                      className="pullright"
-                                                        >
-                                                                      total
-                                                        </p>
-                                          </div>
-                            </div>
-              </li>
-              <hr />
-              <Connect(DetailList)
-                            discount={[Function]}
-                            history={undefined}
-                            item={
-                                          Object {
-                                                        "product-id": "B102",
-                                                        "quantity": "10",
-                                                        "total": "49.90",
-                                                        "unit-price": "4.99",
-                                                      }
-                            }
-              />
-</ul>,
-            <div
-              className="halfCol button-padding"
->
-              <button
-                            className="big-button"
-                            id="add-product-button"
-                            onClick={[Function]}
-              >
-                            ADD PRODUCT
-              </button>
-</div>,
-            <div
-              className="halfCol button-padding"
->
-              <button
-                            className="big-button primary-button"
-                            id="place-order-button"
-                            onClick={[Function]}
-              >
-                            PLACE ORDER
-              </button>
-</div>,
-            <div
-              className="halfCol button-padding pullright"
->
-              <button
-                            className="orderPlacedHide big-button"
-                            id="reopen-order-button"
-                            onClick={[Function]}
-              >
-                            REOPEN ORDER
-              </button>
-</div>,
-          ],
-          "className": "App",
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                <div
-                  className="quatreCol header pointer"
-                  id="back-button"
-                  onClick={[Function]}
->
-                  BACK
-</div>,
-                <div
-                  className="threeQuatreCol header"
->
-                  <p
-                                    className="pullright detail-header-info"
-                  >
-                                    id: 
-                                    1
-                                     customer: 
-                                    Coca Cola
-                                                                        total:
-                                    <i
-                                                      className="marginright"
-                                    >
-                                                       
-                                                      €49.90
-                                    </i>
-                                    
-                  </p>
-</div>,
-              ],
-              "className": "App-header",
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "BACK",
-                  "className": "quatreCol header pointer",
-                  "id": "back-button",
-                  "onClick": [Function],
-                },
-                "ref": null,
-                "rendered": "BACK",
-                "type": "div",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": <p
-                    className="pullright detail-header-info"
->
-                    id: 
-                    1
-                     customer: 
-                    Coca Cola
-                                                        total:
-                    <i
-                                        className="marginright"
-                    >
-                                         
-                                        €49.90
-                    </i>
-                    
-</p>,
-                  "className": "threeQuatreCol header",
-                },
-                "ref": null,
-                "rendered": Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": Array [
-                      "id: ",
-                      "1",
-                      " customer: ",
-                      "Coca Cola",
-                      "                                    total:",
-                      <i
-                        className="marginright"
->
-                         
-                        €49.90
-</i>,
-                      "",
-                    ],
-                    "className": "pullright detail-header-info",
-                  },
-                  "ref": null,
-                  "rendered": Array [
-                    "id: ",
-                    "1",
-                    " customer: ",
-                    "Coca Cola",
-                    "                                    total:",
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": Array [
-                          " ",
-                          "€49.90",
-                        ],
-                        "className": "marginright",
-                      },
-                      "ref": null,
-                      "rendered": Array [
-                        " ",
-                        "€49.90",
-                      ],
-                      "type": "i",
-                    },
-                    "",
-                  ],
-                  "type": "p",
-                },
-                "type": "div",
-              },
-            ],
-            "type": "header",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                <li
-                  className="grid-header list-item-detail"
->
-                  <div
-                                    className="quatreCol resize-small"
-                  >
-                                    product
-                  </div>
-                  <div
-                                    className="quatreCol resize-small"
-                  >
-                                    quantity
-                  </div>
-                  <div
-                                    className="clear-small"
-                  >
-                                    <div
-                                                      className="quatreCol resize-small"
-                                    >
-                                                      <p
-                                                                        className="pullright"
-                                                      >
-                                                                        unitprice
-                                                      </p>
-                                    </div>
-                                    <div
-                                                      className="quatreCol resize-small"
-                                    >
-                                                      <p
-                                                                        className="pullright"
-                                                      >
-                                                                        total
-                                                      </p>
-                                    </div>
-                  </div>
-</li>,
-                <hr />,
-                Array [
-                  <Connect(DetailList)
-                    discount={[Function]}
-                    history={undefined}
-                    item={
-                                        Object {
-                                                            "product-id": "B102",
-                                                            "quantity": "10",
-                                                            "total": "49.90",
-                                                            "unit-price": "4.99",
-                                                          }
-                    }
-/>,
-                ],
-              ],
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": Array [
-                    <div
-                      className="quatreCol resize-small"
->
-                      product
-</div>,
-                    <div
-                      className="quatreCol resize-small"
->
-                      quantity
-</div>,
-                    <div
-                      className="clear-small"
->
-                      <div
-                                            className="quatreCol resize-small"
-                      >
-                                            <p
-                                                                  className="pullright"
-                                            >
-                                                                  unitprice
-                                            </p>
-                      </div>
-                      <div
-                                            className="quatreCol resize-small"
-                      >
-                                            <p
-                                                                  className="pullright"
-                                            >
-                                                                  total
-                                            </p>
-                      </div>
-</div>,
-                  ],
-                  "className": "grid-header list-item-detail",
-                },
-                "ref": null,
-                "rendered": Array [
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "product",
-                      "className": "quatreCol resize-small",
-                    },
-                    "ref": null,
-                    "rendered": "product",
-                    "type": "div",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "quantity",
-                      "className": "quatreCol resize-small",
-                    },
-                    "ref": null,
-                    "rendered": "quantity",
-                    "type": "div",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": Array [
-                        <div
-                          className="quatreCol resize-small"
->
-                          <p
-                                                    className="pullright"
-                          >
-                                                    unitprice
-                          </p>
-</div>,
-                        <div
-                          className="quatreCol resize-small"
->
-                          <p
-                                                    className="pullright"
-                          >
-                                                    total
-                          </p>
-</div>,
-                      ],
-                      "className": "clear-small",
-                    },
-                    "ref": null,
-                    "rendered": Array [
-                      Object {
-                        "instance": null,
-                        "key": undefined,
-                        "nodeType": "host",
-                        "props": Object {
-                          "children": <p
-                            className="pullright"
->
-                            unitprice
-</p>,
-                          "className": "quatreCol resize-small",
-                        },
-                        "ref": null,
-                        "rendered": Object {
-                          "instance": null,
-                          "key": undefined,
-                          "nodeType": "host",
-                          "props": Object {
-                            "children": "unitprice",
-                            "className": "pullright",
-                          },
-                          "ref": null,
-                          "rendered": "unitprice",
-                          "type": "p",
-                        },
-                        "type": "div",
-                      },
-                      Object {
-                        "instance": null,
-                        "key": undefined,
-                        "nodeType": "host",
-                        "props": Object {
-                          "children": <p
-                            className="pullright"
->
-                            total
-</p>,
-                          "className": "quatreCol resize-small",
-                        },
-                        "ref": null,
-                        "rendered": Object {
-                          "instance": null,
-                          "key": undefined,
-                          "nodeType": "host",
-                          "props": Object {
-                            "children": "total",
-                            "className": "pullright",
-                          },
-                          "ref": null,
-                          "rendered": "total",
-                          "type": "p",
-                        },
-                        "type": "div",
-                      },
-                    ],
-                    "type": "div",
-                  },
-                ],
-                "type": "li",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {},
-                "ref": null,
-                "rendered": null,
-                "type": "hr",
-              },
-              Object {
-                "instance": null,
-                "key": "B102",
-                "nodeType": "class",
-                "props": Object {
-                  "discount": [Function],
-                  "history": undefined,
-                  "item": Object {
-                    "product-id": "B102",
-                    "quantity": "10",
-                    "total": "49.90",
-                    "unit-price": "4.99",
-                  },
-                },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-            ],
-            "type": "ul",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": <button
-                className="big-button"
-                id="add-product-button"
-                onClick={[Function]}
->
-                ADD PRODUCT
-</button>,
-              "className": "halfCol button-padding",
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "ADD PRODUCT",
-                "className": "big-button",
-                "id": "add-product-button",
-                "onClick": [Function],
-              },
-              "ref": null,
-              "rendered": "ADD PRODUCT",
-              "type": "button",
-            },
-            "type": "div",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": <button
-                className="big-button primary-button"
-                id="place-order-button"
-                onClick={[Function]}
->
-                PLACE ORDER
-</button>,
-              "className": "halfCol button-padding",
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "PLACE ORDER",
-                "className": "big-button primary-button",
-                "id": "place-order-button",
-                "onClick": [Function],
-              },
-              "ref": null,
-              "rendered": "PLACE ORDER",
-              "type": "button",
-            },
-            "type": "div",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": <button
-                className="orderPlacedHide big-button"
-                id="reopen-order-button"
-                onClick={[Function]}
->
-                REOPEN ORDER
-</button>,
-              "className": "halfCol button-padding pullright",
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "REOPEN ORDER",
-                "className": "orderPlacedHide big-button",
-                "id": "reopen-order-button",
-                "onClick": [Function],
-              },
-              "ref": null,
-              "rendered": "REOPEN ORDER",
-              "type": "button",
-            },
-            "type": "div",
-          },
-        ],
-        "type": "div",
-      },
-    ],
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": Array [
-          <div
-            className="modalBackDrop"
-            onClick={[Function]}
-/>,
-          <div
-            className="modal"
->
-            <div
-                        className="modal-content"
-                        id="modal"
-            >
-                        <button
-                                    className="big-button add-product-list"
-                                    onClick={[Function]}
-                        >
-                                    Screwdriver
-                        </button>
-                        <button
-                                    className="big-button add-product-list"
-                                    onClick={[Function]}
-                        >
-                                    Electric screwdriver
-                        </button>
-                        <button
-                                    className="big-button add-product-list"
-                                    onClick={[Function]}
-                        >
-                                    Basic on-off switch
-                        </button>
-                        <button
-                                    className="big-button add-product-list"
-                                    onClick={[Function]}
-                        >
-                                    Switch with motion detector
-                        </button>
-                        <button
-                                    className="big-button"
-                                    id="cancel-button"
-                                    onClick={[Function]}
-                        >
-                                    CANCEL
-                        </button>
-            </div>
-</div>,
-          <div
-            className="App"
->
+          "children": <div>
             <header
                         className="App-header"
             >
@@ -1202,183 +553,10 @@ ShallowWrapper {
                         </button>
             </div>
 </div>,
-        ],
-      },
-      "ref": [Function],
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "className": "modalBackDrop",
-            "onClick": [Function],
-          },
-          "ref": null,
-          "rendered": null,
-          "type": "div",
+          "className": "App",
         },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": <div
-              className="modal-content"
-              id="modal"
->
-              <button
-                            className="big-button add-product-list"
-                            onClick={[Function]}
-              >
-                            Screwdriver
-              </button>
-              <button
-                            className="big-button add-product-list"
-                            onClick={[Function]}
-              >
-                            Electric screwdriver
-              </button>
-              <button
-                            className="big-button add-product-list"
-                            onClick={[Function]}
-              >
-                            Basic on-off switch
-              </button>
-              <button
-                            className="big-button add-product-list"
-                            onClick={[Function]}
-              >
-                            Switch with motion detector
-              </button>
-              <button
-                            className="big-button"
-                            id="cancel-button"
-                            onClick={[Function]}
-              >
-                            CANCEL
-              </button>
-</div>,
-            "className": "modal",
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                Array [
-                  <button
-                    className="big-button add-product-list"
-                    onClick={[Function]}
->
-                    Screwdriver
-</button>,
-                  <button
-                    className="big-button add-product-list"
-                    onClick={[Function]}
->
-                    Electric screwdriver
-</button>,
-                  <button
-                    className="big-button add-product-list"
-                    onClick={[Function]}
->
-                    Basic on-off switch
-</button>,
-                  <button
-                    className="big-button add-product-list"
-                    onClick={[Function]}
->
-                    Switch with motion detector
-</button>,
-                ],
-                <button
-                  className="big-button"
-                  id="cancel-button"
-                  onClick={[Function]}
->
-                  CANCEL
-</button>,
-              ],
-              "className": "modal-content",
-              "id": "modal",
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": "A101",
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Screwdriver",
-                  "className": "big-button add-product-list",
-                  "onClick": [Function],
-                },
-                "ref": null,
-                "rendered": "Screwdriver",
-                "type": "button",
-              },
-              Object {
-                "instance": null,
-                "key": "A102",
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Electric screwdriver",
-                  "className": "big-button add-product-list",
-                  "onClick": [Function],
-                },
-                "ref": null,
-                "rendered": "Electric screwdriver",
-                "type": "button",
-              },
-              Object {
-                "instance": null,
-                "key": "B101",
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Basic on-off switch",
-                  "className": "big-button add-product-list",
-                  "onClick": [Function],
-                },
-                "ref": null,
-                "rendered": "Basic on-off switch",
-                "type": "button",
-              },
-              Object {
-                "instance": null,
-                "key": "B103",
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Switch with motion detector",
-                  "className": "big-button add-product-list",
-                  "onClick": [Function],
-                },
-                "ref": null,
-                "rendered": "Switch with motion detector",
-                "type": "button",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "CANCEL",
-                  "className": "big-button",
-                  "id": "cancel-button",
-                  "onClick": [Function],
-                },
-                "ref": null,
-                "rendered": "CANCEL",
-                "type": "button",
-              },
-            ],
-            "type": "div",
-          },
-          "type": "div",
-        },
-        Object {
+        "ref": null,
+        "rendered": Object {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
@@ -1500,7 +678,6 @@ ShallowWrapper {
                 </button>
 </div>,
             ],
-            "className": "App",
           },
           "ref": null,
           "rendered": Array [
@@ -1976,6 +1153,1085 @@ ShallowWrapper {
               "type": "div",
             },
           ],
+          "type": "div",
+        },
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="modalBackDrop"
+            onClick={[Function]}
+/>,
+          <div
+            className="modal"
+>
+            <div
+                        className="modal-content"
+                        id="modal"
+            >
+                        <button
+                                    className="big-button add-product-list"
+                                    onClick={[Function]}
+                        >
+                                    Screwdriver
+                        </button>
+                        <button
+                                    className="big-button add-product-list"
+                                    onClick={[Function]}
+                        >
+                                    Electric screwdriver
+                        </button>
+                        <button
+                                    className="big-button add-product-list"
+                                    onClick={[Function]}
+                        >
+                                    Basic on-off switch
+                        </button>
+                        <button
+                                    className="big-button add-product-list"
+                                    onClick={[Function]}
+                        >
+                                    Switch with motion detector
+                        </button>
+                        <button
+                                    className="big-button"
+                                    id="cancel-button"
+                                    onClick={[Function]}
+                        >
+                                    CANCEL
+                        </button>
+            </div>
+</div>,
+          <div
+            className="App"
+>
+            <div>
+                        <header
+                                    className="App-header"
+                        >
+                                    <div
+                                                className="quatreCol header pointer"
+                                                id="back-button"
+                                                onClick={[Function]}
+                                    >
+                                                BACK
+                                    </div>
+                                    <div
+                                                className="threeQuatreCol header"
+                                    >
+                                                <p
+                                                            className="pullright detail-header-info"
+                                                >
+                                                            id: 
+                                                            1
+                                                             customer: 
+                                                            Coca Cola
+                                                                                                total:
+                                                            <i
+                                                                        className="marginright"
+                                                            >
+                                                                         
+                                                                        €49.90
+                                                            </i>
+                                                            
+                                                </p>
+                                    </div>
+                        </header>
+                        <ul>
+                                    <li
+                                                className="grid-header list-item-detail"
+                                    >
+                                                <div
+                                                            className="quatreCol resize-small"
+                                                >
+                                                            product
+                                                </div>
+                                                <div
+                                                            className="quatreCol resize-small"
+                                                >
+                                                            quantity
+                                                </div>
+                                                <div
+                                                            className="clear-small"
+                                                >
+                                                            <div
+                                                                        className="quatreCol resize-small"
+                                                            >
+                                                                        <p
+                                                                                    className="pullright"
+                                                                        >
+                                                                                    unitprice
+                                                                        </p>
+                                                            </div>
+                                                            <div
+                                                                        className="quatreCol resize-small"
+                                                            >
+                                                                        <p
+                                                                                    className="pullright"
+                                                                        >
+                                                                                    total
+                                                                        </p>
+                                                            </div>
+                                                </div>
+                                    </li>
+                                    <hr />
+                                    <Connect(DetailList)
+                                                discount={[Function]}
+                                                history={undefined}
+                                                item={
+                                                            Object {
+                                                                        "product-id": "B102",
+                                                                        "quantity": "10",
+                                                                        "total": "49.90",
+                                                                        "unit-price": "4.99",
+                                                                      }
+                                                }
+                                    />
+                        </ul>
+                        <div
+                                    className="halfCol button-padding"
+                        >
+                                    <button
+                                                className="big-button"
+                                                id="add-product-button"
+                                                onClick={[Function]}
+                                    >
+                                                ADD PRODUCT
+                                    </button>
+                        </div>
+                        <div
+                                    className="halfCol button-padding"
+                        >
+                                    <button
+                                                className="big-button primary-button"
+                                                id="place-order-button"
+                                                onClick={[Function]}
+                                    >
+                                                PLACE ORDER
+                                    </button>
+                        </div>
+                        <div
+                                    className="halfCol button-padding pullright"
+                        >
+                                    <button
+                                                className="orderPlacedHide big-button"
+                                                id="reopen-order-button"
+                                                onClick={[Function]}
+                                    >
+                                                REOPEN ORDER
+                                    </button>
+                        </div>
+            </div>
+</div>,
+        ],
+      },
+      "ref": [Function],
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "modalBackDrop",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div
+              className="modal-content"
+              id="modal"
+>
+              <button
+                            className="big-button add-product-list"
+                            onClick={[Function]}
+              >
+                            Screwdriver
+              </button>
+              <button
+                            className="big-button add-product-list"
+                            onClick={[Function]}
+              >
+                            Electric screwdriver
+              </button>
+              <button
+                            className="big-button add-product-list"
+                            onClick={[Function]}
+              >
+                            Basic on-off switch
+              </button>
+              <button
+                            className="big-button add-product-list"
+                            onClick={[Function]}
+              >
+                            Switch with motion detector
+              </button>
+              <button
+                            className="big-button"
+                            id="cancel-button"
+                            onClick={[Function]}
+              >
+                            CANCEL
+              </button>
+</div>,
+            "className": "modal",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                Array [
+                  <button
+                    className="big-button add-product-list"
+                    onClick={[Function]}
+>
+                    Screwdriver
+</button>,
+                  <button
+                    className="big-button add-product-list"
+                    onClick={[Function]}
+>
+                    Electric screwdriver
+</button>,
+                  <button
+                    className="big-button add-product-list"
+                    onClick={[Function]}
+>
+                    Basic on-off switch
+</button>,
+                  <button
+                    className="big-button add-product-list"
+                    onClick={[Function]}
+>
+                    Switch with motion detector
+</button>,
+                ],
+                <button
+                  className="big-button"
+                  id="cancel-button"
+                  onClick={[Function]}
+>
+                  CANCEL
+</button>,
+              ],
+              "className": "modal-content",
+              "id": "modal",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": "A101",
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Screwdriver",
+                  "className": "big-button add-product-list",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "Screwdriver",
+                "type": "button",
+              },
+              Object {
+                "instance": null,
+                "key": "A102",
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Electric screwdriver",
+                  "className": "big-button add-product-list",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "Electric screwdriver",
+                "type": "button",
+              },
+              Object {
+                "instance": null,
+                "key": "B101",
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Basic on-off switch",
+                  "className": "big-button add-product-list",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "Basic on-off switch",
+                "type": "button",
+              },
+              Object {
+                "instance": null,
+                "key": "B103",
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Switch with motion detector",
+                  "className": "big-button add-product-list",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "Switch with motion detector",
+                "type": "button",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "CANCEL",
+                  "className": "big-button",
+                  "id": "cancel-button",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "CANCEL",
+                "type": "button",
+              },
+            ],
+            "type": "div",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div>
+              <header
+                            className="App-header"
+              >
+                            <div
+                                          className="quatreCol header pointer"
+                                          id="back-button"
+                                          onClick={[Function]}
+                            >
+                                          BACK
+                            </div>
+                            <div
+                                          className="threeQuatreCol header"
+                            >
+                                          <p
+                                                        className="pullright detail-header-info"
+                                          >
+                                                        id: 
+                                                        1
+                                                         customer: 
+                                                        Coca Cola
+                                                                                            total:
+                                                        <i
+                                                                      className="marginright"
+                                                        >
+                                                                       
+                                                                      €49.90
+                                                        </i>
+                                                        
+                                          </p>
+                            </div>
+              </header>
+              <ul>
+                            <li
+                                          className="grid-header list-item-detail"
+                            >
+                                          <div
+                                                        className="quatreCol resize-small"
+                                          >
+                                                        product
+                                          </div>
+                                          <div
+                                                        className="quatreCol resize-small"
+                                          >
+                                                        quantity
+                                          </div>
+                                          <div
+                                                        className="clear-small"
+                                          >
+                                                        <div
+                                                                      className="quatreCol resize-small"
+                                                        >
+                                                                      <p
+                                                                                    className="pullright"
+                                                                      >
+                                                                                    unitprice
+                                                                      </p>
+                                                        </div>
+                                                        <div
+                                                                      className="quatreCol resize-small"
+                                                        >
+                                                                      <p
+                                                                                    className="pullright"
+                                                                      >
+                                                                                    total
+                                                                      </p>
+                                                        </div>
+                                          </div>
+                            </li>
+                            <hr />
+                            <Connect(DetailList)
+                                          discount={[Function]}
+                                          history={undefined}
+                                          item={
+                                                        Object {
+                                                                      "product-id": "B102",
+                                                                      "quantity": "10",
+                                                                      "total": "49.90",
+                                                                      "unit-price": "4.99",
+                                                                    }
+                                          }
+                            />
+              </ul>
+              <div
+                            className="halfCol button-padding"
+              >
+                            <button
+                                          className="big-button"
+                                          id="add-product-button"
+                                          onClick={[Function]}
+                            >
+                                          ADD PRODUCT
+                            </button>
+              </div>
+              <div
+                            className="halfCol button-padding"
+              >
+                            <button
+                                          className="big-button primary-button"
+                                          id="place-order-button"
+                                          onClick={[Function]}
+                            >
+                                          PLACE ORDER
+                            </button>
+              </div>
+              <div
+                            className="halfCol button-padding pullright"
+              >
+                            <button
+                                          className="orderPlacedHide big-button"
+                                          id="reopen-order-button"
+                                          onClick={[Function]}
+                            >
+                                          REOPEN ORDER
+                            </button>
+              </div>
+</div>,
+            "className": "App",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <header
+                  className="App-header"
+>
+                  <div
+                                    className="quatreCol header pointer"
+                                    id="back-button"
+                                    onClick={[Function]}
+                  >
+                                    BACK
+                  </div>
+                  <div
+                                    className="threeQuatreCol header"
+                  >
+                                    <p
+                                                      className="pullright detail-header-info"
+                                    >
+                                                      id: 
+                                                      1
+                                                       customer: 
+                                                      Coca Cola
+                                                                                          total:
+                                                      <i
+                                                                        className="marginright"
+                                                      >
+                                                                         
+                                                                        €49.90
+                                                      </i>
+                                                      
+                                    </p>
+                  </div>
+</header>,
+                <ul>
+                  <li
+                                    className="grid-header list-item-detail"
+                  >
+                                    <div
+                                                      className="quatreCol resize-small"
+                                    >
+                                                      product
+                                    </div>
+                                    <div
+                                                      className="quatreCol resize-small"
+                                    >
+                                                      quantity
+                                    </div>
+                                    <div
+                                                      className="clear-small"
+                                    >
+                                                      <div
+                                                                        className="quatreCol resize-small"
+                                                      >
+                                                                        <p
+                                                                                          className="pullright"
+                                                                        >
+                                                                                          unitprice
+                                                                        </p>
+                                                      </div>
+                                                      <div
+                                                                        className="quatreCol resize-small"
+                                                      >
+                                                                        <p
+                                                                                          className="pullright"
+                                                                        >
+                                                                                          total
+                                                                        </p>
+                                                      </div>
+                                    </div>
+                  </li>
+                  <hr />
+                  <Connect(DetailList)
+                                    discount={[Function]}
+                                    history={undefined}
+                                    item={
+                                                      Object {
+                                                                        "product-id": "B102",
+                                                                        "quantity": "10",
+                                                                        "total": "49.90",
+                                                                        "unit-price": "4.99",
+                                                                      }
+                                    }
+                  />
+</ul>,
+                <div
+                  className="halfCol button-padding"
+>
+                  <button
+                                    className="big-button"
+                                    id="add-product-button"
+                                    onClick={[Function]}
+                  >
+                                    ADD PRODUCT
+                  </button>
+</div>,
+                <div
+                  className="halfCol button-padding"
+>
+                  <button
+                                    className="big-button primary-button"
+                                    id="place-order-button"
+                                    onClick={[Function]}
+                  >
+                                    PLACE ORDER
+                  </button>
+</div>,
+                <div
+                  className="halfCol button-padding pullright"
+>
+                  <button
+                                    className="orderPlacedHide big-button"
+                                    id="reopen-order-button"
+                                    onClick={[Function]}
+                  >
+                                    REOPEN ORDER
+                  </button>
+</div>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <div
+                      className="quatreCol header pointer"
+                      id="back-button"
+                      onClick={[Function]}
+>
+                      BACK
+</div>,
+                    <div
+                      className="threeQuatreCol header"
+>
+                      <p
+                                            className="pullright detail-header-info"
+                      >
+                                            id: 
+                                            1
+                                             customer: 
+                                            Coca Cola
+                                                                                total:
+                                            <i
+                                                                  className="marginright"
+                                            >
+                                                                   
+                                                                  €49.90
+                                            </i>
+                                            
+                      </p>
+</div>,
+                  ],
+                  "className": "App-header",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "BACK",
+                      "className": "quatreCol header pointer",
+                      "id": "back-button",
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "rendered": "BACK",
+                    "type": "div",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <p
+                        className="pullright detail-header-info"
+>
+                        id: 
+                        1
+                         customer: 
+                        Coca Cola
+                                                            total:
+                        <i
+                                                className="marginright"
+                        >
+                                                 
+                                                €49.90
+                        </i>
+                        
+</p>,
+                      "className": "threeQuatreCol header",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          "id: ",
+                          "1",
+                          " customer: ",
+                          "Coca Cola",
+                          "                                    total:",
+                          <i
+                            className="marginright"
+>
+                             
+                            €49.90
+</i>,
+                          "",
+                        ],
+                        "className": "pullright detail-header-info",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        "id: ",
+                        "1",
+                        " customer: ",
+                        "Coca Cola",
+                        "                                    total:",
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": Array [
+                              " ",
+                              "€49.90",
+                            ],
+                            "className": "marginright",
+                          },
+                          "ref": null,
+                          "rendered": Array [
+                            " ",
+                            "€49.90",
+                          ],
+                          "type": "i",
+                        },
+                        "",
+                      ],
+                      "type": "p",
+                    },
+                    "type": "div",
+                  },
+                ],
+                "type": "header",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <li
+                      className="grid-header list-item-detail"
+>
+                      <div
+                                            className="quatreCol resize-small"
+                      >
+                                            product
+                      </div>
+                      <div
+                                            className="quatreCol resize-small"
+                      >
+                                            quantity
+                      </div>
+                      <div
+                                            className="clear-small"
+                      >
+                                            <div
+                                                                  className="quatreCol resize-small"
+                                            >
+                                                                  <p
+                                                                                        className="pullright"
+                                                                  >
+                                                                                        unitprice
+                                                                  </p>
+                                            </div>
+                                            <div
+                                                                  className="quatreCol resize-small"
+                                            >
+                                                                  <p
+                                                                                        className="pullright"
+                                                                  >
+                                                                                        total
+                                                                  </p>
+                                            </div>
+                      </div>
+</li>,
+                    <hr />,
+                    Array [
+                      <Connect(DetailList)
+                        discount={[Function]}
+                        history={undefined}
+                        item={
+                                                Object {
+                                                                        "product-id": "B102",
+                                                                        "quantity": "10",
+                                                                        "total": "49.90",
+                                                                        "unit-price": "4.99",
+                                                                      }
+                        }
+/>,
+                    ],
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <div
+                          className="quatreCol resize-small"
+>
+                          product
+</div>,
+                        <div
+                          className="quatreCol resize-small"
+>
+                          quantity
+</div>,
+                        <div
+                          className="clear-small"
+>
+                          <div
+                                                    className="quatreCol resize-small"
+                          >
+                                                    <p
+                                                                              className="pullright"
+                                                    >
+                                                                              unitprice
+                                                    </p>
+                          </div>
+                          <div
+                                                    className="quatreCol resize-small"
+                          >
+                                                    <p
+                                                                              className="pullright"
+                                                    >
+                                                                              total
+                                                    </p>
+                          </div>
+</div>,
+                      ],
+                      "className": "grid-header list-item-detail",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "product",
+                          "className": "quatreCol resize-small",
+                        },
+                        "ref": null,
+                        "rendered": "product",
+                        "type": "div",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "quantity",
+                          "className": "quatreCol resize-small",
+                        },
+                        "ref": null,
+                        "rendered": "quantity",
+                        "type": "div",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": Array [
+                            <div
+                              className="quatreCol resize-small"
+>
+                              <p
+                                                            className="pullright"
+                              >
+                                                            unitprice
+                              </p>
+</div>,
+                            <div
+                              className="quatreCol resize-small"
+>
+                              <p
+                                                            className="pullright"
+                              >
+                                                            total
+                              </p>
+</div>,
+                          ],
+                          "className": "clear-small",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": <p
+                                className="pullright"
+>
+                                unitprice
+</p>,
+                              "className": "quatreCol resize-small",
+                            },
+                            "ref": null,
+                            "rendered": Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "host",
+                              "props": Object {
+                                "children": "unitprice",
+                                "className": "pullright",
+                              },
+                              "ref": null,
+                              "rendered": "unitprice",
+                              "type": "p",
+                            },
+                            "type": "div",
+                          },
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": <p
+                                className="pullright"
+>
+                                total
+</p>,
+                              "className": "quatreCol resize-small",
+                            },
+                            "ref": null,
+                            "rendered": Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "host",
+                              "props": Object {
+                                "children": "total",
+                                "className": "pullright",
+                              },
+                              "ref": null,
+                              "rendered": "total",
+                              "type": "p",
+                            },
+                            "type": "div",
+                          },
+                        ],
+                        "type": "div",
+                      },
+                    ],
+                    "type": "li",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {},
+                    "ref": null,
+                    "rendered": null,
+                    "type": "hr",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": "B102",
+                    "nodeType": "class",
+                    "props": Object {
+                      "discount": [Function],
+                      "history": undefined,
+                      "item": Object {
+                        "product-id": "B102",
+                        "quantity": "10",
+                        "total": "49.90",
+                        "unit-price": "4.99",
+                      },
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                ],
+                "type": "ul",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <button
+                    className="big-button"
+                    id="add-product-button"
+                    onClick={[Function]}
+>
+                    ADD PRODUCT
+</button>,
+                  "className": "halfCol button-padding",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "ADD PRODUCT",
+                    "className": "big-button",
+                    "id": "add-product-button",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": "ADD PRODUCT",
+                  "type": "button",
+                },
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <button
+                    className="big-button primary-button"
+                    id="place-order-button"
+                    onClick={[Function]}
+>
+                    PLACE ORDER
+</button>,
+                  "className": "halfCol button-padding",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "PLACE ORDER",
+                    "className": "big-button primary-button",
+                    "id": "place-order-button",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": "PLACE ORDER",
+                  "type": "button",
+                },
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <button
+                    className="orderPlacedHide big-button"
+                    id="reopen-order-button"
+                    onClick={[Function]}
+>
+                    REOPEN ORDER
+</button>,
+                  "className": "halfCol button-padding pullright",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "REOPEN ORDER",
+                    "className": "orderPlacedHide big-button",
+                    "id": "reopen-order-button",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": "REOPEN ORDER",
+                  "type": "button",
+                },
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
           "type": "div",
         },
       ],
