@@ -29,14 +29,14 @@ beforeEach(() => {
     wrapper = shallow(<List order={mocks.getOrders()[0]} customers={mocks.getCustomers()} />);
 });
 
-it('snapshot', () => {
+xit('snapshot', () => {
     const tree = renderer
         .create(<List />)
         .toJSON();
     expect(tree).toMatchSnapshot();
 });
 
-it('snapshot2', () => {
+xit('snapshot2', () => {
     const tree = renderer
         .create(<Provider store={store}><ConnectedList /></Provider>)
         .toJSON();
