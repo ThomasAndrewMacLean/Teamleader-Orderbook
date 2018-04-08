@@ -6,7 +6,7 @@ import Hammer from 'hammerjs';
 import PropTypes from 'prop-types';
 
 
-class Help extends Component {
+export class Help extends Component {
 
 
 
@@ -26,7 +26,7 @@ class Help extends Component {
                 (el) => this._slider = el
             }>
                 <header className="App-header">
-                    <div className="quatreCol header" onClick={() => this.props.history.push('/')}>
+                    <div id="back-button" className="quatreCol header" onClick={() => this.goHome()}>
                         BACK
                     </div>
                     <div className="threeQuatreCol header">

@@ -54,6 +54,23 @@ it('renders .... if no products are loaded', () => {
 it('does not render .... if all is set', () => {
     expect(wrapper.contains('....')).toBeFalsy();
 });
+it('does render productId if all is set', () => {
+    expect(wrapper.contains('B102')).toBeTruthy();
+});
+it('does render productName if all is set', () => {
+    expect(wrapper.contains('Press button')).toBeTruthy();
+});
+it('does render quantity if all is set', () => {
+    console.log(wrapper.text());
+
+    expect(wrapper.contains('10')).toBeTruthy();
+});
+it('does render unit price if all is set', () => {
+    expect(wrapper.contains('€4.99')).toBeTruthy();
+});
+it('does render totalPrice if all is set', () => {
+    expect(wrapper.contains('€49.90')).toBeTruthy();
+});
 it('first round buttons trigger add quantity with -1', () => {
     wrapper.find('.round-button').at(0).simulate('click');
     expect(mockAddQuantity).toHaveBeenCalledWith(-1, 'B102', '1');
@@ -86,5 +103,5 @@ it('yes-button click triggers deletefunction with product id and order id', () =
     wrapper.find('.delete-cross').simulate('click');
     wrapper.find('.yes-button').simulate('click');
 
-    expect(mockDeleteProduct).toHaveBeenCalledWith('B102','1');
+    expect(mockDeleteProduct).toHaveBeenCalledWith('B102', '1');
 });
