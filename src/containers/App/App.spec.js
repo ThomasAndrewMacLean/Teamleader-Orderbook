@@ -29,7 +29,7 @@ beforeEach(() => {
     wrapper = mount(<Provider store={store}><ConnectedApp /></Provider>);
 });
 
-xit('snapshot', () => {
+it('snapshot', () => {
     const tree = renderer
         .create(<Provider store={store}><ConnectedApp /></Provider>)
         .toJSON();

@@ -34,7 +34,7 @@ it('test', () => {
     expect(wrapper).toBeTruthy();
 });
 
-xit('snapshot', () => {
+it('snapshot', () => {
     const tree = wrapper;
     expect(tree).toMatchSnapshot();
 });

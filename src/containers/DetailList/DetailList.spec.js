@@ -31,7 +31,7 @@ beforeEach(() => {
 });
 
 
-xit('snapshot', () => {
+it('snapshot', () => {
     const tree = wrapper;
     expect(tree).toMatchSnapshot();
 });
