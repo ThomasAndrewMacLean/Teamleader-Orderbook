@@ -12,7 +12,6 @@ export class App extends Component {
     constructor(props) {
         super(props);
         this.title = 'ORDERBOOK';
-
     }
 
     toggleModal() {

@@ -41,6 +41,25 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+  <script>
+    const url = document.URL;
+    window.addEventListener('error', function (event) {
+      fetch('https://us-central1-feedbackcomponent.cloudfunctions.net/saveLogMail', {
+        method: 'POST',
+
+        body: JSON.stringify({
+          text: event.error.stack,
+          username: event.error.message,
+          site: 'Teamleader Orderbook',
+          url: url,
+          email: 'thomasmaclean1+wbyacmpprsagiepuae1m@boards.trello.com',
+          feeling: 'error'
+
+        })
+      });
+    })
+  </script>
 </body>
 
 </html>

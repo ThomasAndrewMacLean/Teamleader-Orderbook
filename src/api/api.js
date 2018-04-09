@@ -1,8 +1,8 @@
 const apiEndpointOrders = 'https://nameless-citadel-45339.herokuapp.com/getOrders';
 const apiEndpointProducts = 'https://nameless-citadel-45339.herokuapp.com/getProducts';
-// const apiEndpointCustomers = 'https://jsonplaceholder.typicode.com/users';
 const apiEndpointCustomers = 'https://nameless-citadel-45339.herokuapp.com/getCustomers';
 const apiEndpointcheckForDiscount = 'https://nameless-citadel-45339.herokuapp.com/calculateDiscount';
+// const apiEndpointCustomers = 'https://jsonplaceholder.typicode.com/users';
 
 
 class Api {
