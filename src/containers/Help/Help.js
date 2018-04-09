@@ -38,13 +38,16 @@ export class Help extends Component {
 
                 <ul className="info-list">
                     <li>
-                        Click on details to see the individual products.
+                        Click on details to see the individual products of an order.
                     </li>
                     <li>
                         On mobile you can delete a product by pressing on it. Not-mobile devices will see a cross on hover. Both will still first ask for confirmation.
                     </li>
                     <li>
-                        You can swipe back to the main overview
+                        You can swipe back to the main overview by swiping from left to right.
+                    </li>
+                    <li>
+                        Extra orders can be placed by clicking on the + button on the order overview page.
                     </li>
                     <li>
                         As long as an order has not been placed you can add extra products. Click the button at the bottom left to choose an extra product. By default one will be added.
