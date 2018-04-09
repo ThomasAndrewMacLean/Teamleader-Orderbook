@@ -2,6 +2,15 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
+## Table of Contents
+
+- [Getting started](#getting-started)
+- [Api](#api)
+- [PWA](#pwa)
+- [Errors](#errors)
+- [Tests](#tests)
+- [CI](#ci)
+
 ### Getting started
 
 You must have node installed. Clone the repository and run `npm install` or `yarn install`.
@@ -19,11 +28,11 @@ On android a banner will be shown, asking to install the app to the homescreen a
 
 ### Errors
 
-All errors are logged and sent to [this trello board](https://trello.com/b/ZeoBOtZq).
+All client side errors are logged and sent to [this trello board](https://trello.com/b/ZeoBOtZq).
 
 ### Tests
 
-Test suites can be run with the command `npm test` or `yarn test`. Testing is done with jest.
+Test suites can be run with the command `npm test` or `yarn test`. Testing is done with jest. Snapshot tests will fail with older versions of node (below 7).
 
 ### CI
 
