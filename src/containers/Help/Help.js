@@ -44,6 +44,9 @@ export class Help extends Component {
                         On mobile you can delete a product by pressing on it. Not-mobile devices will see a cross on hover. Both will still first ask for confirmation.
                     </li>
                     <li>
+                        On every change the price is checked to see if you get any discounts.
+                    </li>
+                    <li>
                         You can swipe back to the main overview by swiping from left to right.
                     </li>
                     <li>
@@ -52,6 +55,7 @@ export class Help extends Component {
                     <li>
                         As long as an order has not been placed you can add extra products. Click the button at the bottom left to choose an extra product. By default one will be added.
                     </li>
+
                 </ul>
 
             </div>

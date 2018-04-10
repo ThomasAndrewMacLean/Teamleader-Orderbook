@@ -108,6 +108,9 @@ ShallowWrapper {
                     On mobile you can delete a product by pressing on it. Not-mobile devices will see a cross on hover. Both will still first ask for confirmation.
           </li>
           <li>
+                    On every change the price is checked to see if you get any discounts.
+          </li>
+          <li>
                     You can swipe back to the main overview by swiping from left to right.
           </li>
           <li>
@@ -206,6 +209,9 @@ ShallowWrapper {
               On mobile you can delete a product by pressing on it. Not-mobile devices will see a cross on hover. Both will still first ask for confirmation.
 </li>,
             <li>
+              On every change the price is checked to see if you get any discounts.
+</li>,
+            <li>
               You can swipe back to the main overview by swiping from left to right.
 </li>,
             <li>
@@ -239,6 +245,17 @@ ShallowWrapper {
             },
             "ref": null,
             "rendered": "On mobile you can delete a product by pressing on it. Not-mobile devices will see a cross on hover. Both will still first ask for confirmation.",
+            "type": "li",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "On every change the price is checked to see if you get any discounts.",
+            },
+            "ref": null,
+            "rendered": "On every change the price is checked to see if you get any discounts.",
             "type": "li",
           },
           Object {
@@ -315,6 +332,9 @@ ShallowWrapper {
             </li>
             <li>
                         On mobile you can delete a product by pressing on it. Not-mobile devices will see a cross on hover. Both will still first ask for confirmation.
+            </li>
+            <li>
+                        On every change the price is checked to see if you get any discounts.
             </li>
             <li>
                         You can swipe back to the main overview by swiping from left to right.
@@ -415,6 +435,9 @@ ShallowWrapper {
                 On mobile you can delete a product by pressing on it. Not-mobile devices will see a cross on hover. Both will still first ask for confirmation.
 </li>,
               <li>
+                On every change the price is checked to see if you get any discounts.
+</li>,
+              <li>
                 You can swipe back to the main overview by swiping from left to right.
 </li>,
               <li>
@@ -448,6 +471,17 @@ ShallowWrapper {
               },
               "ref": null,
               "rendered": "On mobile you can delete a product by pressing on it. Not-mobile devices will see a cross on hover. Both will still first ask for confirmation.",
+              "type": "li",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "On every change the price is checked to see if you get any discounts.",
+              },
+              "ref": null,
+              "rendered": "On every change the price is checked to see if you get any discounts.",
               "type": "li",
             },
             Object {
