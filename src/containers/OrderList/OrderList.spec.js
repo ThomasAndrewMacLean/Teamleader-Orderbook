@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ConnectedList, { List } from './List';
+import ConnectedOrderList, { OrderList } from './OrderList';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import { shallow } from 'enzyme';
@@ -26,36 +26,36 @@ beforeEach(() => {
     //creates the store with any initial state or middleware needed  
     store = mockStore(initialState);
     // wrapper = mount(<Provider store={store}><ConnectedList /></Provider>);
-    wrapper = shallow(<List order={mocks.getOrders()[0]} customers={mocks.getCustomers()} />);
+    wrapper = shallow(<OrderList order={mocks.getOrders()[0]} customers={mocks.getCustomers()} />);
 });
 
 it('snapshot', () => {
     const tree = renderer
-        .create(<List />)
+        .create(<OrderList />)
         .toJSON();
     expect(tree).toMatchSnapshot();
 });
 
 it('snapshot2', () => {
     const tree = renderer
-        .create(<Provider store={store}><ConnectedList /></Provider>)
+        .create(<Provider store={store}><ConnectedOrderList /></Provider>)
         .toJSON();
     expect(tree).toMatchSnapshot();
 });
 
 it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<Provider store={store}><ConnectedList /></Provider>, div);
+    ReactDOM.render(<Provider store={store}><ConnectedOrderList /></Provider>, div);
     ReactDOM.unmountComponentAtNode(div);
 });
 
 it('renders .... if no order is set', () => {
-    wrapper = shallow(<List customers={mocks.getCustomers()} />);
+    wrapper = shallow(<OrderList customers={mocks.getCustomers()} />);
     expect(wrapper.contains('....')).toBeTruthy();
 });
 
 it('renders .... if no customers are loaded', () => {
-    wrapper = shallow(<List customers={[]} order={mocks.getOrders()[0]} />);
+    wrapper = shallow(<OrderList customers={[]} order={mocks.getOrders()[0]} />);
     expect(wrapper.contains('....')).toBeTruthy();
 });
 
@@ -68,7 +68,7 @@ it('renders count of items in order', () => {
         items:[{},{},{},{},{}],
     };
 
-    wrapper = shallow(<List order={order} customers={[{}]} />);
+    wrapper = shallow(<OrderList order={order} customers={[{}]} />);
     expect(wrapper.text()).toContain('5');
 });
 
@@ -78,7 +78,7 @@ it('renders orderID', () => {
         id:'orderID'
     };
 
-    wrapper = shallow(<List order={order} customers={[{}]} />);
+    wrapper = shallow(<OrderList order={order} customers={[{}]} />);
     expect(wrapper.text()).toContain('orderID');
 });
 
@@ -92,7 +92,7 @@ it('renders name from customer array', () => {
         name:'Thomas MacLean'
     };
 
-    wrapper = shallow(<List order={order} customers={[customer]} />);
+    wrapper = shallow(<OrderList order={order} customers={[customer]} />);
     expect(wrapper.text()).toContain('Thomas MacLean');
 });
 
@@ -101,7 +101,7 @@ it('renders ? from customer array if cant find id', () => {
         items:[]
     };
     order['customer-id']='non existing id';
-    wrapper = shallow(<List order={order} customers={mocks.getCustomers()} />);
+    wrapper = shallow(<OrderList order={order} customers={mocks.getCustomers()} />);
     expect(wrapper.text()).toContain('?');
 });
 
@@ -116,7 +116,7 @@ it('click gotoDetailbutton sets selected order', () => {
     let history = [];
     const mockHistory = { push: (x) => mock(history.push(x)) };
 
-    wrapper = shallow(<List setSelectedOrder={mockSetSelectedOrder} order={mocks.getOrders()[0]} customers={mocks.getCustomers()} history={mockHistory} />);
+    wrapper = shallow(<OrderList setSelectedOrder={mockSetSelectedOrder} order={mocks.getOrders()[0]} customers={mocks.getCustomers()} history={mockHistory} />);
     wrapper.find('.go-to-details-button').simulate('click');
 
     expect(mockSetSelectedOrder).toHaveBeenCalledTimes(1);
@@ -129,7 +129,7 @@ it('click gotoDetailbutton sets pushes detail and id on history', () => {
     let history = [];
     const mockHistory = { push: (x) => mock(history.push(x)) };
 
-    wrapper = shallow(<List setSelectedOrder={mockSetSelectedOrder} order={mocks.getOrders()[0]} customers={mocks.getCustomers()} history={mockHistory} />);
+    wrapper = shallow(<OrderList setSelectedOrder={mockSetSelectedOrder} order={mocks.getOrders()[0]} customers={mocks.getCustomers()} history={mockHistory} />);
 
     wrapper.find('.go-to-details-button').simulate('click');
 

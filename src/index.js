@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './containers/App/App';
+import Orders from './containers/Orders/Orders';
 import Detail from './containers/Detail/Detail';
 import Help from './containers/Help/Help';
 import Loader from './components/Loader/Loader';
@@ -30,7 +30,7 @@ store.dispatch(loadCustomers());
 ReactDOM.render(<Provider store={store}>
     <ConnectedRouter history={history}>
         <div>
-            <Route exact path="/" component={App} />
+            <Route exact path="/" component={Orders} />
             <Route path="/detail/:id" component={Detail} />
             <Route path="/help" component={Help} />
             <Route path="/loader" component={Loader} />

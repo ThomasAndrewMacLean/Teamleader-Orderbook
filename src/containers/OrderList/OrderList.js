@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {setSelectedOrder} from './../../actions/actions';
 import PropTypes from 'prop-types';
 
-export class List extends Component {
+export class OrderList extends Component {
     goToDetail(orderId) {
         this.props.setSelectedOrder(orderId);
         this.props.history.push(`/detail/${orderId}`);
@@ -54,7 +54,7 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-List.propTypes = {
+OrderList.propTypes = {
     order: PropTypes.object,
     history: PropTypes.object,
     products: PropTypes.array,
@@ -62,4 +62,4 @@ List.propTypes = {
     setSelectedOrder: PropTypes.func
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(List);
+export default connect(mapStateToProps, mapDispatchToProps)(OrderList);

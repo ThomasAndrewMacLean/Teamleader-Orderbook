@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import List from './../List/List';
+import OrderList from './../OrderList/OrderList';
 import PropTypes from 'prop-types';
 import { addOrder } from './../../actions/actions';
 import Loader from './../../components/Loader/Loader';
 
-import './App.css';
+import './Orders.css';
 
-export class App extends Component {
+export class Orders extends Component {
 
     constructor(props) {
         super(props);
@@ -93,7 +93,7 @@ export class App extends Component {
                                     </div>
                                 </li>
                                 <hr />
-                                {this.props.orders.filter(o => !o.hasBeenPlaced).sort((a, b) => parseInt(a.id, 10) > parseInt(b.id, 10)).map(o => <List className="orderList" key={o.id} order={o} history={this.props.history} />)}
+                                {this.props.orders.filter(o => !o.hasBeenPlaced).sort((a, b) => parseInt(a.id, 10) > parseInt(b.id, 10)).map(o => <OrderList className="orderList" key={o.id} order={o} history={this.props.history} />)}
 
 
 
@@ -102,7 +102,7 @@ export class App extends Component {
                                         <hr />
                                     </li> : ''
                                 }
-                                {this.props.orders.filter(o => o.hasBeenPlaced).sort((a, b) => parseInt(a.id, 10) > parseInt(b.id, 10)).map(o => <List className="orderList placed-order" key={o.id} order={o} history={this.props.history} />)}
+                                {this.props.orders.filter(o => o.hasBeenPlaced).sort((a, b) => parseInt(a.id, 10) > parseInt(b.id, 10)).map(o => <OrderList className="orderList placed-order" key={o.id} order={o} history={this.props.history} />)}
 
                             </ul>
 
@@ -132,7 +132,7 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-App.propTypes = {
+Orders.propTypes = {
     customers: PropTypes.array,
     orders: PropTypes.array,
     history: PropTypes.object,
@@ -140,4 +140,4 @@ App.propTypes = {
 };
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(Orders);
