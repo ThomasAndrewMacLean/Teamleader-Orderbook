@@ -168,7 +168,11 @@ ShallowWrapper {
                     className="delete-cross"
                     onClick={[Function]}
           >
-                    x
+                    <Icon
+                              color=""
+                              icon="M192 1024h640l64-704h-768zM640 128v-128h-256v128h-320v192l64-64h768l64 64v-192h-320zM576 128h-128v-64h128v64z"
+                              size={16}
+                    />
           </div>
 </li>,
       ],
@@ -356,7 +360,11 @@ ShallowWrapper {
               className="delete-cross"
               onClick={[Function]}
 >
-              x
+              <Icon
+                            color=""
+                            icon="M192 1024h640l64-704h-768zM640 128v-128h-256v128h-320v192l64-64h768l64 64v-192h-320zM576 128h-128v-64h128v64z"
+                            size={16}
+              />
 </div>,
           ],
           "className": "list-item-detail",
@@ -574,12 +582,28 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "x",
+              "children": <Icon
+                color=""
+                icon="M192 1024h640l64-704h-768zM640 128v-128h-256v128h-320v192l64-64h768l64 64v-192h-320zM576 128h-128v-64h128v64z"
+                size={16}
+/>,
               "className": "delete-cross",
               "onClick": [Function],
             },
             "ref": null,
-            "rendered": "x",
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "color": "",
+                "icon": "M192 1024h640l64-704h-768zM640 128v-128h-256v128h-320v192l64-64h768l64 64v-192h-320zM576 128h-128v-64h128v64z",
+                "size": 16,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
             "type": "div",
           },
         ],
@@ -685,7 +709,11 @@ ShallowWrapper {
                         className="delete-cross"
                         onClick={[Function]}
             >
-                        x
+                        <Icon
+                                    color=""
+                                    icon="M192 1024h640l64-704h-768zM640 128v-128h-256v128h-320v192l64-64h768l64 64v-192h-320zM576 128h-128v-64h128v64z"
+                                    size={16}
+                        />
             </div>
 </li>,
         ],
@@ -873,7 +901,11 @@ ShallowWrapper {
                 className="delete-cross"
                 onClick={[Function]}
 >
-                x
+                <Icon
+                                color=""
+                                icon="M192 1024h640l64-704h-768zM640 128v-128h-256v128h-320v192l64-64h768l64 64v-192h-320zM576 128h-128v-64h128v64z"
+                                size={16}
+                />
 </div>,
             ],
             "className": "list-item-detail",
@@ -1091,12 +1123,28 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "x",
+                "children": <Icon
+                  color=""
+                  icon="M192 1024h640l64-704h-768zM640 128v-128h-256v128h-320v192l64-64h768l64 64v-192h-320zM576 128h-128v-64h128v64z"
+                  size={16}
+/>,
                 "className": "delete-cross",
                 "onClick": [Function],
               },
               "ref": null,
-              "rendered": "x",
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "color": "",
+                  "icon": "M192 1024h640l64-704h-768zM640 128v-128h-256v128h-320v192l64-64h768l64 64v-192h-320zM576 128h-128v-64h128v64z",
+                  "size": 16,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
               "type": "div",
             },
           ],
