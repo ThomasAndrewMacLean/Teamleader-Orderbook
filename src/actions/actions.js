@@ -9,7 +9,7 @@ export function loadOrders() {
                 dispatch(loadOrdersSuccess(orders));
             })
             .catch(error => {
-                addToast('Please check network connection', 'danger');
+                dispatch(addToast('Please check network connection', 'danger'));
                 throw (error);
             });
     };
