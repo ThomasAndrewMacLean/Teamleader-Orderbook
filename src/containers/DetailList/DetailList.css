@@ -40,8 +40,9 @@
     .delete-cross {
         opacity: 0;
         position: absolute;
-        right: 30px;
-        transition: opacity 0.1s ease-in;
+        right: 10px;
+        bottom: 28px; 
+        transition: opacity 0.2s ease-in;
     }
     .delete-cross:hover {
         color: var(--color-ruby-darkest);

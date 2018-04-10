@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { addQuantity, deleteProduct } from './../../actions/actions';
 import Hammer from 'hammerjs';
 import './DetailList.css';
+import Icon, { ICONS } from './../../components/Icons/Icons';
 import PropTypes from 'prop-types';
 
 
@@ -93,7 +94,7 @@ export class DetailList extends Component {
                             </div>
                         </div>
 
-                        <div className="delete-cross" onClick={() => this.togglePromptDelete()}>x</div>
+                        <div className="delete-cross" onClick={() => this.togglePromptDelete()}><Icon icon={ICONS.TRASHCAN} color={getComputedStyle(document.body).getPropertyValue('--color-ruby-darkest')} /></div>
                     </li>
                     : '....'}
             </div>
