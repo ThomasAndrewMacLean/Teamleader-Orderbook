@@ -79,7 +79,7 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <li
-          className="deletePrompt"
+          className="delete-prompt"
 >
           <div>
                     DELETE 
@@ -118,7 +118,7 @@ ShallowWrapper {
                     Press button
           </div>
           <div
-                    className="quatre-col resize-small quantityAndButtons"
+                    className="quatre-col resize-small quantity-and-buttons"
           >
                     <div
                               className="buttonwrap"
@@ -212,7 +212,7 @@ ShallowWrapper {
               </button>
 </div>,
           ],
-          "className": "deletePrompt",
+          "className": "delete-prompt",
         },
         "ref": null,
         "rendered": Array [
@@ -310,7 +310,7 @@ ShallowWrapper {
               Press button
 </div>,
             <div
-              className="quatre-col resize-small quantityAndButtons"
+              className="quatre-col resize-small quantity-and-buttons"
 >
               <div
                             className="buttonwrap"
@@ -417,7 +417,7 @@ ShallowWrapper {
                                 +
                 </button>
 </div>,
-              "className": "quatre-col resize-small quantityAndButtons",
+              "className": "quatre-col resize-small quantity-and-buttons",
             },
             "ref": null,
             "rendered": Object {
@@ -620,7 +620,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <li
-            className="deletePrompt"
+            className="delete-prompt"
 >
             <div>
                         DELETE 
@@ -659,7 +659,7 @@ ShallowWrapper {
                         Press button
             </div>
             <div
-                        className="quatre-col resize-small quantityAndButtons"
+                        className="quatre-col resize-small quantity-and-buttons"
             >
                         <div
                                     className="buttonwrap"
@@ -753,7 +753,7 @@ ShallowWrapper {
                 </button>
 </div>,
             ],
-            "className": "deletePrompt",
+            "className": "delete-prompt",
           },
           "ref": null,
           "rendered": Array [
@@ -851,7 +851,7 @@ ShallowWrapper {
                 Press button
 </div>,
               <div
-                className="quatre-col resize-small quantityAndButtons"
+                className="quatre-col resize-small quantity-and-buttons"
 >
                 <div
                                 className="buttonwrap"
@@ -958,7 +958,7 @@ ShallowWrapper {
                                     +
                   </button>
 </div>,
-                "className": "quatre-col resize-small quantityAndButtons",
+                "className": "quatre-col resize-small quantity-and-buttons",
               },
               "ref": null,
               "rendered": Object {

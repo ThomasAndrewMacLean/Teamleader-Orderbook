@@ -1,4 +1,4 @@
-.modalBackDrop {
+.modal-back-drop {
     position: fixed;
     left: -110vw;
     height: 100vh;
@@ -35,7 +35,7 @@
     position: relative;
   }
   
-  .showModal {
+  .show-modal {
     transform: translate(100vw)
   }
   

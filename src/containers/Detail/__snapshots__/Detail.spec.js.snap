@@ -91,7 +91,7 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <div
-          className="modalBackDrop"
+          className="modal-back-drop"
           onClick={[Function]}
 />,
         <div
@@ -264,7 +264,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "className": "modalBackDrop",
+          "className": "modal-back-drop",
           "onClick": [Function],
         },
         "ref": null,
@@ -1168,7 +1168,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <div
-            className="modalBackDrop"
+            className="modal-back-drop"
             onClick={[Function]}
 />,
           <div
@@ -1341,7 +1341,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "className": "modalBackDrop",
+            "className": "modal-back-drop",
             "onClick": [Function],
           },
           "ref": null,

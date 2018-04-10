@@ -100,7 +100,7 @@ it('correct name should be shown', () => {
 });
 
 it('modal should not be shown initially', () => {
-    expect(wrapper.find('.modal').hasClass('showModal')).toBe(false);
+    expect(wrapper.find('.modal').hasClass('show-modal')).toBe(false);
 });
 
 it('modal should not be rendered if customers have not been loaded', () => {
@@ -117,29 +117,29 @@ it('modal should be rendered if customers have been loaded', () => {
 
 it('modal should be shown after click on add order button', () => {
     wrapper.find('#add-order-button').simulate('click');
-    expect(wrapper.find('.modal').hasClass('showModal')).toBe(true);
+    expect(wrapper.find('.modal').hasClass('show-modal')).toBe(true);
 });
 
 it('modal should not be shown if clicked on modal backdrop', () => {
     wrapper.find('#add-order-button').simulate('click');
-    wrapper.find('.modalBackDrop').simulate('click');
+    wrapper.find('.modal-back-drop').simulate('click');
 
-    expect(wrapper.find('.modal').hasClass('showModal')).toBe(false);
+    expect(wrapper.find('.modal').hasClass('show-modal')).toBe(false);
 });
 
 it('modal should not be shown if clicked on cancel button', () => {
     wrapper.find('#add-order-button').simulate('click');
     wrapper.find('#cancel-button').simulate('click');
 
-    expect(wrapper.find('.modal').hasClass('showModal')).toBe(false);
+    expect(wrapper.find('.modal').hasClass('show-modal')).toBe(false);
 });
 
 it('modal should not be shown if clicked on ok button', () => {
     wrapper.find('#add-order-button').simulate('click');
-    expect(wrapper.find('.modal').hasClass('showModal')).toBe(true);
+    expect(wrapper.find('.modal').hasClass('show-modal')).toBe(true);
     wrapper.find('#ok-button').simulate('click');
 
-    expect(wrapper.find('.modal').hasClass('showModal')).toBe(false);
+    expect(wrapper.find('.modal').hasClass('show-modal')).toBe(false);
 });
 
 it('toggleModal function should be triggered on click', () => {

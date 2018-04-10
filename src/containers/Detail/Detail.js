@@ -59,7 +59,7 @@ export class Detail extends Component {
                 (el) => this._slider = el
             }>
 
-                <div className={this.showModal ? 'showModal modalBackDrop' : 'modalBackDrop'}
+                <div className={this.showModal ? 'show-modal modal-back-drop' : 'modal-back-drop'}
                     onClick={() => {
                         this.showModal = false;
                         this.forceUpdate(); // todo: ??? must be better way than this without keeping boolean in store ???
@@ -68,7 +68,7 @@ export class Detail extends Component {
                 </div>
                 {this.props.order.items ?
 
-                    <div className={this.showModal ? 'showModal modal' : 'modal'}>
+                    <div className={this.showModal ? 'show-modal modal' : 'modal'}>
                         <div id="modal" className="modal-content">
                             {this.getProductsNotOnScreen().map(product => {
                                 return <button key={product.id} onClick={() => this.addProduct(product)} className="big-button add-product-list">{product.description}</button>;

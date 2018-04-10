@@ -4,7 +4,7 @@ exports[`snapshot 1`] = `
 <div>
   <div>
     <div
-      className="modalBackDrop"
+      className="modal-back-drop"
       onClick={[Function]}
     />
     <div

@@ -80,24 +80,24 @@ it('second round buttons trigger add quantity with 1', () => {
     expect(mockAddQuantity).toHaveBeenCalledWith(1, 'B102', '1');
 });
 it('deletePrompt is not visible initially', () => {
-    expect(wrapper.find('.deletePrompt').hasClass('showDelete')).toBeFalsy();
+    expect(wrapper.find('.delete-prompt').hasClass('show-delete')).toBeFalsy();
 });
 
 it('delete-cross click shows deletePrompt', () => {
     wrapper.find('.delete-cross').simulate('click');
-    expect(wrapper.find('.deletePrompt').hasClass('showDelete')).toBeTruthy();
+    expect(wrapper.find('.delete-prompt').hasClass('show-delete')).toBeTruthy();
 });
 it('no-button click hides deletePrompt', () => {
     wrapper.find('.delete-cross').simulate('click');
     wrapper.find('.no-button').simulate('click');
 
-    expect(wrapper.find('.deletePrompt').hasClass('showDelete')).toBeFalsy();
+    expect(wrapper.find('.delete-prompt').hasClass('show-delete')).toBeFalsy();
 });
 it('yes-button click hides deletePrompt', () => {
     wrapper.find('.delete-cross').simulate('click');
     wrapper.find('.yes-button').simulate('click');
 
-    expect(wrapper.find('.deletePrompt').hasClass('showDelete')).toBeFalsy();
+    expect(wrapper.find('.delete-prompt').hasClass('show-delete')).toBeFalsy();
 });
 it('yes-button click triggers deletefunction with product id and order id', (done) => {
     wrapper.find('.delete-cross').simulate('click');

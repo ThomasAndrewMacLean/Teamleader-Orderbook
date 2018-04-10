@@ -28,14 +28,14 @@ export class Orders extends Component {
             <div>
                 {this.props.customers.length > 0 ?
                     <div>
-                        < div className={this.showModal ? 'showModal modalBackDrop' : 'modalBackDrop'}
+                        < div className={this.showModal ? 'show-modal modal-back-drop' : 'modal-back-drop'}
                             onClick={() => {
                                 this.showModal = false;
                                 this.forceUpdate(); // todo: ??? must be better way than this without keeping boolean in store ???
                                 //this.setState({}) // triggers the same as forceUpdate...
                             }}>
                         </div>
-                        <div className={this.showModal ? 'showModal modal' : 'modal'}>
+                        <div className={this.showModal ? 'show-modal modal' : 'modal'}>
                             <div id="modal" className="modal-content add-order-modal">
                                 <div className="modal-header">
                                     Add order

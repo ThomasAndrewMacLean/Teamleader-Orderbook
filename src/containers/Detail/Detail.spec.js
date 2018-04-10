@@ -117,20 +117,20 @@ it('back button pushes / on history', () => {
 });
 
 it('modal isnt shown initially', () => {
-    expect(wrapper.find('.modal').hasClass('showModal')).toBe(false);
+    expect(wrapper.find('.modal').hasClass('show-modal')).toBe(false);
 });
 
 it('modal is shown after add product button click', () => {
-    expect(wrapper.find('.modal').hasClass('showModal')).toBe(false);
+    expect(wrapper.find('.modal').hasClass('show-modal')).toBe(false);
     wrapper.find('#add-product-button').simulate('click');
-    expect(wrapper.find('.modal').hasClass('showModal')).toBe(true);
+    expect(wrapper.find('.modal').hasClass('show-modal')).toBe(true);
 });
 
 it('modal is no longer shown after cancel button click', () => {
     wrapper.find('#add-product-button').simulate('click');
-    expect(wrapper.find('.modal').hasClass('showModal')).toBe(true);
+    expect(wrapper.find('.modal').hasClass('show-modal')).toBe(true);
     wrapper.find('#cancel-button').simulate('click');
-    expect(wrapper.find('.modal').hasClass('showModal')).toBe(false);
+    expect(wrapper.find('.modal').hasClass('show-modal')).toBe(false);
 });
 
 it('modal only shows products not in items', () => {
@@ -170,7 +170,7 @@ it('add product button closes modal', () => {
     wrapper = shallow(<Detail checkForDiscount={mockcheckForDiscount} addProduct={mockaddProduct} order={mocks.getOrders()[0]} products={mocks.getProducts()} customers={mocks.getCustomers()} />);
     wrapper.find('#add-product-button').simulate('click');
     wrapper.find('.add-product-list').first().simulate('click');
-    expect(wrapper.find('.modal').hasClass('showModal')).toBe(false);
+    expect(wrapper.find('.modal').hasClass('show-modal')).toBe(false);
 });
 
 it('place order button places order', () => {
@@ -215,7 +215,7 @@ it('reopen order button reopens order', () => {
 });
 
 it('order has not been placed no extra class added to place order button', () => {
-    expect(wrapper.find('#place-order-button').hasClass('orderPlacedHide')).toBe(false);
+    expect(wrapper.find('#place-order-button').hasClass('order-placed-hide')).toBe(false);
 });
 
 it('order has been placed adds class to place order button', () => {
@@ -225,11 +225,11 @@ it('order has been placed adds class to place order button', () => {
     order.hasBeenPlaced = true;
     wrapper = shallow(<Detail checkForDiscount={mockcheckForDiscount} placeOrder={mockplaceOrder} order={order} products={mocks.getProducts()} customers={mocks.getCustomers()} />);
 
-    expect(wrapper.find('#place-order-button').hasClass('orderPlacedHide')).toBe(true);
+    expect(wrapper.find('#place-order-button').hasClass('order-placed-hide')).toBe(true);
 });
 
 it('order has not been placed no extra class added to add product button', () => {
-    expect(wrapper.find('#add-product-button').hasClass('orderPlacedHide')).toBe(false);
+    expect(wrapper.find('#add-product-button').hasClass('order-placed-hide')).toBe(false);
 });
 
 it('order has been placed adds class to add product button', () => {
@@ -239,10 +239,10 @@ it('order has been placed adds class to add product button', () => {
     order.hasBeenPlaced = true;
     wrapper = shallow(<Detail checkForDiscount={mockcheckForDiscount} placeOrder={mockplaceOrder} order={order} products={mocks.getProducts()} customers={mocks.getCustomers()} />);
 
-    expect(wrapper.find('#add-product-button').hasClass('orderPlacedHide')).toBe(true);
+    expect(wrapper.find('#add-product-button').hasClass('order-placed-hide')).toBe(true);
 });
 it('order has not been placed adds extra class added to reopen order button', () => {
-    expect(wrapper.find('#reopen-order-button').hasClass('orderPlacedHide')).toBe(true);
+    expect(wrapper.find('#reopen-order-button').hasClass('order-placed-hide')).toBe(true);
 });
 
 it('order has been placed adds no extra class to reopen order button', () => {
@@ -252,5 +252,5 @@ it('order has been placed adds no extra class to reopen order button', () => {
     order.hasBeenPlaced = true;
     wrapper = shallow(<Detail checkForDiscount={mockcheckForDiscount} placeOrder={mockplaceOrder} order={order} products={mocks.getProducts()} customers={mocks.getCustomers()} />);
 
-    expect(wrapper.find('#reopen-order-button').hasClass('orderPlacedHide')).toBe(false);
+    expect(wrapper.find('#reopen-order-button').hasClass('order-placed-hide')).toBe(false);
 });
