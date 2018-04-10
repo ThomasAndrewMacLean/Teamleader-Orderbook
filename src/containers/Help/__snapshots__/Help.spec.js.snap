@@ -82,14 +82,14 @@ ShallowWrapper {
           className="App-header"
 >
           <div
-                    className="quatreCol header"
+                    className="quatre-col header"
                     id="back-button"
                     onClick={[Function]}
           >
                     BACK
           </div>
           <div
-                    className="threeQuatreCol header"
+                    className="three-quatre-col header"
           >
                     <p
                               className="pullright"
@@ -129,14 +129,14 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <div
-              className="quatreCol header"
+              className="quatre-col header"
               id="back-button"
               onClick={[Function]}
 >
               BACK
 </div>,
             <div
-              className="threeQuatreCol header"
+              className="three-quatre-col header"
 >
               <p
                             className="pullright"
@@ -155,7 +155,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": "BACK",
-              "className": "quatreCol header",
+              "className": "quatre-col header",
               "id": "back-button",
               "onClick": [Function],
             },
@@ -173,7 +173,7 @@ ShallowWrapper {
 >
                 HELP
 </p>,
-              "className": "threeQuatreCol header",
+              "className": "three-quatre-col header",
             },
             "ref": null,
             "rendered": Object {
@@ -291,14 +291,14 @@ ShallowWrapper {
             className="App-header"
 >
             <div
-                        className="quatreCol header"
+                        className="quatre-col header"
                         id="back-button"
                         onClick={[Function]}
             >
                         BACK
             </div>
             <div
-                        className="threeQuatreCol header"
+                        className="three-quatre-col header"
             >
                         <p
                                     className="pullright"
@@ -338,14 +338,14 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <div
-                className="quatreCol header"
+                className="quatre-col header"
                 id="back-button"
                 onClick={[Function]}
 >
                 BACK
 </div>,
               <div
-                className="threeQuatreCol header"
+                className="three-quatre-col header"
 >
                 <p
                                 className="pullright"
@@ -364,7 +364,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": "BACK",
-                "className": "quatreCol header",
+                "className": "quatre-col header",
                 "id": "back-button",
                 "onClick": [Function],
               },
@@ -382,7 +382,7 @@ ShallowWrapper {
 >
                   HELP
 </p>,
-                "className": "threeQuatreCol header",
+                "className": "three-quatre-col header",
               },
               "ref": null,
               "rendered": Object {

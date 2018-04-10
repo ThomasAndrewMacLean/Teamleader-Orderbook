@@ -82,10 +82,10 @@ export class Detail extends Component {
                     {this.props.order.id && this.props.customers.length > 0 && this.props.products.length > 0 ?
                         <div>
                             <header className="App-header">
-                                <div id="back-button" className="quatreCol header pointer" onClick={() => this.goHome()}>
+                                <div id="back-button" className="quatre-col header pointer" onClick={() => this.goHome()}>
                                     BACK
                                 </div>
-                                <div className="threeQuatreCol header">
+                                <div className="three-quatre-col header">
                                     <p className="pullright detail-header-info">
                                         id: {this.props.order.id} customer: {this.props.customers.find(u => parseInt(u.id, 10) === parseInt(this.props.order['customer-id'], 10)).name}                                    total:<i className={this.props.order.discount ? 'discount marginright' : 'marginright'}> {new Intl.NumberFormat('nl-BE', { style: 'currency', currency: 'EUR' }).format(this.props.order.total)}
                                         </i>
@@ -96,19 +96,19 @@ export class Detail extends Component {
                             </header>
                             <ul>
                                 <li className="grid-header list-item-detail">
-                                    <div className="quatreCol resize-small">
+                                    <div className="quatre-col resize-small">
                                         product
                                     </div>
-                                    <div className="quatreCol resize-small">
+                                    <div className="quatre-col resize-small">
                                         quantity
                                     </div>
                                     <div className="clear-small">
-                                        <div className="quatreCol resize-small">
+                                        <div className="quatre-col resize-small">
                                             <p className="pullright">
                                                 unitprice
                                             </p>
                                         </div>
-                                        <div className="quatreCol resize-small">
+                                        <div className="quatre-col resize-small">
                                             <p className="pullright">
                                                 total
                                             </p>
@@ -119,14 +119,14 @@ export class Detail extends Component {
                                 {this.props.order.items.map(o => <DetailList key={o['product-id']} discount={() => this.checkForDiscountTest()} item={o} history={this.props.history} />)}
                             </ul>
 
-                            <div className="halfCol button-padding">
-                                <button id="add-product-button" className={this.props.order.hasBeenPlaced ? 'big-button orderPlacedHide' : 'big-button'} onClick={() => this.toggleModal()}>ADD PRODUCT</button>
+                            <div className="half-col button-padding">
+                                <button id="add-product-button" className={this.props.order.hasBeenPlaced ? 'big-button order-placed-hide' : 'big-button'} onClick={() => this.toggleModal()}>ADD PRODUCT</button>
                             </div>
-                            <div className={this.props.order.hasBeenPlaced ? 'halfCol button-padding displaynone' : 'halfCol button-padding'}>
-                                <button id="place-order-button" className={this.props.order.hasBeenPlaced ? 'big-button orderPlacedHide primary-button' : 'big-button primary-button'} onClick={() => this.placeOrder(this.props.order.id)}>PLACE ORDER</button>
+                            <div className={this.props.order.hasBeenPlaced ? 'half-col button-padding displaynone' : 'half-col button-padding'}>
+                                <button id="place-order-button" className={this.props.order.hasBeenPlaced ? 'big-button order-placed-hide primary-button' : 'big-button primary-button'} onClick={() => this.placeOrder(this.props.order.id)}>PLACE ORDER</button>
                             </div>
-                            <div className="halfCol button-padding pullright">
-                                <button id="reopen-order-button" className={this.props.order.hasBeenPlaced ? 'big-button' : 'orderPlacedHide big-button'} onClick={() => this.props.reopenOrder(this.props.order.id)}>REOPEN ORDER</button>
+                            <div className="half-col button-padding pullright">
+                                <button id="reopen-order-button" className={this.props.order.hasBeenPlaced ? 'big-button' : 'order-placed-hide big-button'} onClick={() => this.props.reopenOrder(this.props.order.id)}>REOPEN ORDER</button>
                             </div>
 
 

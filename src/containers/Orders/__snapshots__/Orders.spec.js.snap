@@ -70,12 +70,12 @@ exports[`snapshot 1`] = `
       className="App-header"
     >
       <div
-        className="halfCol header"
+        className="half-col header"
       >
         ORDERBOOK
       </div>
       <div
-        className="halfCol header "
+        className="half-col header "
       >
         <button
           className="pullright header-button"
@@ -101,7 +101,7 @@ exports[`snapshot 1`] = `
           className="grid-header"
         >
           <div
-            className="quatreCol id-and-name"
+            className="quatre-col id-and-name"
           >
             id
             <p
@@ -111,17 +111,17 @@ exports[`snapshot 1`] = `
             </p>
           </div>
           <div
-            className="quatreCol textright"
+            className="quatre-col textright"
           >
             # items
           </div>
           <div
-            className="quatreCol textright"
+            className="quatre-col textright"
           >
             total
           </div>
           <div
-            className="quatreCol"
+            className="quatre-col"
           />
         </li>
         <hr />
@@ -130,7 +130,7 @@ exports[`snapshot 1`] = `
         >
           <li>
             <div
-              className="quatreCol id-and-name"
+              className="quatre-col id-and-name"
             >
               1
               <p
@@ -141,17 +141,17 @@ exports[`snapshot 1`] = `
               </p>
             </div>
             <div
-              className="quatreCol textright"
+              className="quatre-col textright"
             >
               1
             </div>
             <div
-              className="quatreCol textright"
+              className="quatre-col textright"
             >
               €49.90
             </div>
             <div
-              className="quatreCol"
+              className="quatre-col"
             >
               <button
                 className="pullright go-to-details-button"
@@ -167,7 +167,7 @@ exports[`snapshot 1`] = `
         >
           <li>
             <div
-              className="quatreCol id-and-name"
+              className="quatre-col id-and-name"
             >
               2
               <p
@@ -178,17 +178,17 @@ exports[`snapshot 1`] = `
               </p>
             </div>
             <div
-              className="quatreCol textright"
+              className="quatre-col textright"
             >
               1
             </div>
             <div
-              className="quatreCol textright"
+              className="quatre-col textright"
             >
               €24.95
             </div>
             <div
-              className="quatreCol"
+              className="quatre-col"
             >
               <button
                 className="pullright go-to-details-button"
@@ -204,7 +204,7 @@ exports[`snapshot 1`] = `
         >
           <li>
             <div
-              className="quatreCol id-and-name"
+              className="quatre-col id-and-name"
             >
               3
               <p
@@ -215,17 +215,17 @@ exports[`snapshot 1`] = `
               </p>
             </div>
             <div
-              className="quatreCol textright"
+              className="quatre-col textright"
             >
               2
             </div>
             <div
-              className="quatreCol textright"
+              className="quatre-col textright"
             >
               €69.00
             </div>
             <div
-              className="quatreCol"
+              className="quatre-col"
             >
               <button
                 className="pullright go-to-details-button"

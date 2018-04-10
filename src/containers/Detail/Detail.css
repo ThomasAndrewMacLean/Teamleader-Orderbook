@@ -1,5 +1,5 @@
 
-.quantityAndButtons {
+.quantity-and-buttons {
   display: flex;
   /* justify-content: space-between; */
 }
@@ -13,7 +13,7 @@
   width: 100%;
 }
 
-.orderPlacedHide {
+.order-placed-hide {
   opacity: 0;
   pointer-events: none;
 }

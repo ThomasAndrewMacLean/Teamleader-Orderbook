@@ -1,8 +1,8 @@
-.showDelete {
+.show-delete {
     left: 0 !important;
 }
 
-.deletePrompt {
+.delete-prompt {
     left: -100vw;
     position: absolute;
     width: 100%;

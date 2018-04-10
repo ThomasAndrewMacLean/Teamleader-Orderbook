@@ -26,10 +26,10 @@ export class Help extends Component {
                 (el) => this._slider = el
             }>
                 <header className="App-header">
-                    <div id="back-button" className="quatreCol header" onClick={() => this.goHome()}>
+                    <div id="back-button" className="quatre-col header" onClick={() => this.goHome()}>
                         BACK
                     </div>
-                    <div className="threeQuatreCol header">
+                    <div className="three-quatre-col header">
                         <p className="pullright">
                             HELP
                         </p>

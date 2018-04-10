@@ -65,10 +65,10 @@ export class Orders extends Component {
 
 
                     <header className="App-header">
-                        <div className="halfCol header">
+                        <div className="half-col header">
                             {this.title}
                         </div>
-                        <div className="halfCol header ">
+                        <div className="half-col header ">
                             <button id="go-to-help-button" className="pullright header-button" onClick={() => this.props.history.push('/help')}>?</button>
                             <button id="add-order-button" className="pullright header-button" onClick={() => this.toggleModal()}>+</button>
                         </div>
@@ -77,19 +77,19 @@ export class Orders extends Component {
                         <div>
                             <ul className="list">
                                 <li className="grid-header">
-                                    <div className="quatreCol id-and-name">
+                                    <div className="quatre-col id-and-name">
                                         id
                                         <p className="username pullright">
                                             customer
                                         </p>
                                     </div>
-                                    <div className="quatreCol textright">
+                                    <div className="quatre-col textright">
                                         # items
                                     </div>
-                                    <div className="quatreCol textright">
+                                    <div className="quatre-col textright">
                                         total
                                     </div>
-                                    <div className="quatreCol">
+                                    <div className="quatre-col">
                                     </div>
                                 </li>
                                 <hr />

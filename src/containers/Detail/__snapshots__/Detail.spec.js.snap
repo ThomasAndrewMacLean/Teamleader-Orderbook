@@ -142,14 +142,14 @@ ShallowWrapper {
                               className="App-header"
                     >
                               <div
-                                        className="quatreCol header pointer"
+                                        className="quatre-col header pointer"
                                         id="back-button"
                                         onClick={[Function]}
                               >
                                         BACK
                               </div>
                               <div
-                                        className="threeQuatreCol header"
+                                        className="three-quatre-col header"
                               >
                                         <p
                                                   className="pullright detail-header-info"
@@ -174,12 +174,12 @@ ShallowWrapper {
                                         className="grid-header list-item-detail"
                               >
                                         <div
-                                                  className="quatreCol resize-small"
+                                                  className="quatre-col resize-small"
                                         >
                                                   product
                                         </div>
                                         <div
-                                                  className="quatreCol resize-small"
+                                                  className="quatre-col resize-small"
                                         >
                                                   quantity
                                         </div>
@@ -187,7 +187,7 @@ ShallowWrapper {
                                                   className="clear-small"
                                         >
                                                   <div
-                                                            className="quatreCol resize-small"
+                                                            className="quatre-col resize-small"
                                                   >
                                                             <p
                                                                       className="pullright"
@@ -196,7 +196,7 @@ ShallowWrapper {
                                                             </p>
                                                   </div>
                                                   <div
-                                                            className="quatreCol resize-small"
+                                                            className="quatre-col resize-small"
                                                   >
                                                             <p
                                                                       className="pullright"
@@ -221,7 +221,7 @@ ShallowWrapper {
                               />
                     </ul>
                     <div
-                              className="halfCol button-padding"
+                              className="half-col button-padding"
                     >
                               <button
                                         className="big-button"
@@ -232,7 +232,7 @@ ShallowWrapper {
                               </button>
                     </div>
                     <div
-                              className="halfCol button-padding"
+                              className="half-col button-padding"
                     >
                               <button
                                         className="big-button primary-button"
@@ -243,10 +243,10 @@ ShallowWrapper {
                               </button>
                     </div>
                     <div
-                              className="halfCol button-padding pullright"
+                              className="half-col button-padding pullright"
                     >
                               <button
-                                        className="orderPlacedHide big-button"
+                                        className="order-placed-hide big-button"
                                         id="reopen-order-button"
                                         onClick={[Function]}
                               >
@@ -441,14 +441,14 @@ ShallowWrapper {
                         className="App-header"
             >
                         <div
-                                    className="quatreCol header pointer"
+                                    className="quatre-col header pointer"
                                     id="back-button"
                                     onClick={[Function]}
                         >
                                     BACK
                         </div>
                         <div
-                                    className="threeQuatreCol header"
+                                    className="three-quatre-col header"
                         >
                                     <p
                                                 className="pullright detail-header-info"
@@ -473,12 +473,12 @@ ShallowWrapper {
                                     className="grid-header list-item-detail"
                         >
                                     <div
-                                                className="quatreCol resize-small"
+                                                className="quatre-col resize-small"
                                     >
                                                 product
                                     </div>
                                     <div
-                                                className="quatreCol resize-small"
+                                                className="quatre-col resize-small"
                                     >
                                                 quantity
                                     </div>
@@ -486,7 +486,7 @@ ShallowWrapper {
                                                 className="clear-small"
                                     >
                                                 <div
-                                                            className="quatreCol resize-small"
+                                                            className="quatre-col resize-small"
                                                 >
                                                             <p
                                                                         className="pullright"
@@ -495,7 +495,7 @@ ShallowWrapper {
                                                             </p>
                                                 </div>
                                                 <div
-                                                            className="quatreCol resize-small"
+                                                            className="quatre-col resize-small"
                                                 >
                                                             <p
                                                                         className="pullright"
@@ -520,7 +520,7 @@ ShallowWrapper {
                         />
             </ul>
             <div
-                        className="halfCol button-padding"
+                        className="half-col button-padding"
             >
                         <button
                                     className="big-button"
@@ -531,7 +531,7 @@ ShallowWrapper {
                         </button>
             </div>
             <div
-                        className="halfCol button-padding"
+                        className="half-col button-padding"
             >
                         <button
                                     className="big-button primary-button"
@@ -542,10 +542,10 @@ ShallowWrapper {
                         </button>
             </div>
             <div
-                        className="halfCol button-padding pullright"
+                        className="half-col button-padding pullright"
             >
                         <button
-                                    className="orderPlacedHide big-button"
+                                    className="order-placed-hide big-button"
                                     id="reopen-order-button"
                                     onClick={[Function]}
                         >
@@ -566,14 +566,14 @@ ShallowWrapper {
                 className="App-header"
 >
                 <div
-                                className="quatreCol header pointer"
+                                className="quatre-col header pointer"
                                 id="back-button"
                                 onClick={[Function]}
                 >
                                 BACK
                 </div>
                 <div
-                                className="threeQuatreCol header"
+                                className="three-quatre-col header"
                 >
                                 <p
                                                 className="pullright detail-header-info"
@@ -598,12 +598,12 @@ ShallowWrapper {
                                 className="grid-header list-item-detail"
                 >
                                 <div
-                                                className="quatreCol resize-small"
+                                                className="quatre-col resize-small"
                                 >
                                                 product
                                 </div>
                                 <div
-                                                className="quatreCol resize-small"
+                                                className="quatre-col resize-small"
                                 >
                                                 quantity
                                 </div>
@@ -611,7 +611,7 @@ ShallowWrapper {
                                                 className="clear-small"
                                 >
                                                 <div
-                                                                className="quatreCol resize-small"
+                                                                className="quatre-col resize-small"
                                                 >
                                                                 <p
                                                                                 className="pullright"
@@ -620,7 +620,7 @@ ShallowWrapper {
                                                                 </p>
                                                 </div>
                                                 <div
-                                                                className="quatreCol resize-small"
+                                                                className="quatre-col resize-small"
                                                 >
                                                                 <p
                                                                                 className="pullright"
@@ -645,7 +645,7 @@ ShallowWrapper {
                 />
 </ul>,
               <div
-                className="halfCol button-padding"
+                className="half-col button-padding"
 >
                 <button
                                 className="big-button"
@@ -656,7 +656,7 @@ ShallowWrapper {
                 </button>
 </div>,
               <div
-                className="halfCol button-padding"
+                className="half-col button-padding"
 >
                 <button
                                 className="big-button primary-button"
@@ -667,10 +667,10 @@ ShallowWrapper {
                 </button>
 </div>,
               <div
-                className="halfCol button-padding pullright"
+                className="half-col button-padding pullright"
 >
                 <button
-                                className="orderPlacedHide big-button"
+                                className="order-placed-hide big-button"
                                 id="reopen-order-button"
                                 onClick={[Function]}
                 >
@@ -688,14 +688,14 @@ ShallowWrapper {
               "props": Object {
                 "children": Array [
                   <div
-                    className="quatreCol header pointer"
+                    className="quatre-col header pointer"
                     id="back-button"
                     onClick={[Function]}
 >
                     BACK
 </div>,
                   <div
-                    className="threeQuatreCol header"
+                    className="three-quatre-col header"
 >
                     <p
                                         className="pullright detail-header-info"
@@ -725,7 +725,7 @@ ShallowWrapper {
                   "nodeType": "host",
                   "props": Object {
                     "children": "BACK",
-                    "className": "quatreCol header pointer",
+                    "className": "quatre-col header pointer",
                     "id": "back-button",
                     "onClick": [Function],
                   },
@@ -754,7 +754,7 @@ ShallowWrapper {
                       </i>
                       
 </p>,
-                    "className": "threeQuatreCol header",
+                    "className": "three-quatre-col header",
                   },
                   "ref": null,
                   "rendered": Object {
@@ -822,12 +822,12 @@ ShallowWrapper {
                     className="grid-header list-item-detail"
 >
                     <div
-                                        className="quatreCol resize-small"
+                                        className="quatre-col resize-small"
                     >
                                         product
                     </div>
                     <div
-                                        className="quatreCol resize-small"
+                                        className="quatre-col resize-small"
                     >
                                         quantity
                     </div>
@@ -835,7 +835,7 @@ ShallowWrapper {
                                         className="clear-small"
                     >
                                         <div
-                                                            className="quatreCol resize-small"
+                                                            className="quatre-col resize-small"
                                         >
                                                             <p
                                                                                 className="pullright"
@@ -844,7 +844,7 @@ ShallowWrapper {
                                                             </p>
                                         </div>
                                         <div
-                                                            className="quatreCol resize-small"
+                                                            className="quatre-col resize-small"
                                         >
                                                             <p
                                                                                 className="pullright"
@@ -880,12 +880,12 @@ ShallowWrapper {
                   "props": Object {
                     "children": Array [
                       <div
-                        className="quatreCol resize-small"
+                        className="quatre-col resize-small"
 >
                         product
 </div>,
                       <div
-                        className="quatreCol resize-small"
+                        className="quatre-col resize-small"
 >
                         quantity
 </div>,
@@ -893,7 +893,7 @@ ShallowWrapper {
                         className="clear-small"
 >
                         <div
-                                                className="quatreCol resize-small"
+                                                className="quatre-col resize-small"
                         >
                                                 <p
                                                                         className="pullright"
@@ -902,7 +902,7 @@ ShallowWrapper {
                                                 </p>
                         </div>
                         <div
-                                                className="quatreCol resize-small"
+                                                className="quatre-col resize-small"
                         >
                                                 <p
                                                                         className="pullright"
@@ -922,7 +922,7 @@ ShallowWrapper {
                       "nodeType": "host",
                       "props": Object {
                         "children": "product",
-                        "className": "quatreCol resize-small",
+                        "className": "quatre-col resize-small",
                       },
                       "ref": null,
                       "rendered": "product",
@@ -934,7 +934,7 @@ ShallowWrapper {
                       "nodeType": "host",
                       "props": Object {
                         "children": "quantity",
-                        "className": "quatreCol resize-small",
+                        "className": "quatre-col resize-small",
                       },
                       "ref": null,
                       "rendered": "quantity",
@@ -947,7 +947,7 @@ ShallowWrapper {
                       "props": Object {
                         "children": Array [
                           <div
-                            className="quatreCol resize-small"
+                            className="quatre-col resize-small"
 >
                             <p
                                                         className="pullright"
@@ -956,7 +956,7 @@ ShallowWrapper {
                             </p>
 </div>,
                           <div
-                            className="quatreCol resize-small"
+                            className="quatre-col resize-small"
 >
                             <p
                                                         className="pullright"
@@ -979,7 +979,7 @@ ShallowWrapper {
 >
                               unitprice
 </p>,
-                            "className": "quatreCol resize-small",
+                            "className": "quatre-col resize-small",
                           },
                           "ref": null,
                           "rendered": Object {
@@ -1006,7 +1006,7 @@ ShallowWrapper {
 >
                               total
 </p>,
-                            "className": "quatreCol resize-small",
+                            "className": "quatre-col resize-small",
                           },
                           "ref": null,
                           "rendered": Object {
@@ -1071,7 +1071,7 @@ ShallowWrapper {
 >
                   ADD PRODUCT
 </button>,
-                "className": "halfCol button-padding",
+                "className": "half-col button-padding",
               },
               "ref": null,
               "rendered": Object {
@@ -1102,7 +1102,7 @@ ShallowWrapper {
 >
                   PLACE ORDER
 </button>,
-                "className": "halfCol button-padding",
+                "className": "half-col button-padding",
               },
               "ref": null,
               "rendered": Object {
@@ -1127,13 +1127,13 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": <button
-                  className="orderPlacedHide big-button"
+                  className="order-placed-hide big-button"
                   id="reopen-order-button"
                   onClick={[Function]}
 >
                   REOPEN ORDER
 </button>,
-                "className": "halfCol button-padding pullright",
+                "className": "half-col button-padding pullright",
               },
               "ref": null,
               "rendered": Object {
@@ -1142,7 +1142,7 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": "REOPEN ORDER",
-                  "className": "orderPlacedHide big-button",
+                  "className": "order-placed-hide big-button",
                   "id": "reopen-order-button",
                   "onClick": [Function],
                 },
@@ -1219,14 +1219,14 @@ ShallowWrapper {
                                     className="App-header"
                         >
                                     <div
-                                                className="quatreCol header pointer"
+                                                className="quatre-col header pointer"
                                                 id="back-button"
                                                 onClick={[Function]}
                                     >
                                                 BACK
                                     </div>
                                     <div
-                                                className="threeQuatreCol header"
+                                                className="three-quatre-col header"
                                     >
                                                 <p
                                                             className="pullright detail-header-info"
@@ -1251,12 +1251,12 @@ ShallowWrapper {
                                                 className="grid-header list-item-detail"
                                     >
                                                 <div
-                                                            className="quatreCol resize-small"
+                                                            className="quatre-col resize-small"
                                                 >
                                                             product
                                                 </div>
                                                 <div
-                                                            className="quatreCol resize-small"
+                                                            className="quatre-col resize-small"
                                                 >
                                                             quantity
                                                 </div>
@@ -1264,7 +1264,7 @@ ShallowWrapper {
                                                             className="clear-small"
                                                 >
                                                             <div
-                                                                        className="quatreCol resize-small"
+                                                                        className="quatre-col resize-small"
                                                             >
                                                                         <p
                                                                                     className="pullright"
@@ -1273,7 +1273,7 @@ ShallowWrapper {
                                                                         </p>
                                                             </div>
                                                             <div
-                                                                        className="quatreCol resize-small"
+                                                                        className="quatre-col resize-small"
                                                             >
                                                                         <p
                                                                                     className="pullright"
@@ -1298,7 +1298,7 @@ ShallowWrapper {
                                     />
                         </ul>
                         <div
-                                    className="halfCol button-padding"
+                                    className="half-col button-padding"
                         >
                                     <button
                                                 className="big-button"
@@ -1309,7 +1309,7 @@ ShallowWrapper {
                                     </button>
                         </div>
                         <div
-                                    className="halfCol button-padding"
+                                    className="half-col button-padding"
                         >
                                     <button
                                                 className="big-button primary-button"
@@ -1320,10 +1320,10 @@ ShallowWrapper {
                                     </button>
                         </div>
                         <div
-                                    className="halfCol button-padding pullright"
+                                    className="half-col button-padding pullright"
                         >
                                     <button
-                                                className="orderPlacedHide big-button"
+                                                className="order-placed-hide big-button"
                                                 id="reopen-order-button"
                                                 onClick={[Function]}
                                     >
@@ -1518,14 +1518,14 @@ ShallowWrapper {
                             className="App-header"
               >
                             <div
-                                          className="quatreCol header pointer"
+                                          className="quatre-col header pointer"
                                           id="back-button"
                                           onClick={[Function]}
                             >
                                           BACK
                             </div>
                             <div
-                                          className="threeQuatreCol header"
+                                          className="three-quatre-col header"
                             >
                                           <p
                                                         className="pullright detail-header-info"
@@ -1550,12 +1550,12 @@ ShallowWrapper {
                                           className="grid-header list-item-detail"
                             >
                                           <div
-                                                        className="quatreCol resize-small"
+                                                        className="quatre-col resize-small"
                                           >
                                                         product
                                           </div>
                                           <div
-                                                        className="quatreCol resize-small"
+                                                        className="quatre-col resize-small"
                                           >
                                                         quantity
                                           </div>
@@ -1563,7 +1563,7 @@ ShallowWrapper {
                                                         className="clear-small"
                                           >
                                                         <div
-                                                                      className="quatreCol resize-small"
+                                                                      className="quatre-col resize-small"
                                                         >
                                                                       <p
                                                                                     className="pullright"
@@ -1572,7 +1572,7 @@ ShallowWrapper {
                                                                       </p>
                                                         </div>
                                                         <div
-                                                                      className="quatreCol resize-small"
+                                                                      className="quatre-col resize-small"
                                                         >
                                                                       <p
                                                                                     className="pullright"
@@ -1597,7 +1597,7 @@ ShallowWrapper {
                             />
               </ul>
               <div
-                            className="halfCol button-padding"
+                            className="half-col button-padding"
               >
                             <button
                                           className="big-button"
@@ -1608,7 +1608,7 @@ ShallowWrapper {
                             </button>
               </div>
               <div
-                            className="halfCol button-padding"
+                            className="half-col button-padding"
               >
                             <button
                                           className="big-button primary-button"
@@ -1619,10 +1619,10 @@ ShallowWrapper {
                             </button>
               </div>
               <div
-                            className="halfCol button-padding pullright"
+                            className="half-col button-padding pullright"
               >
                             <button
-                                          className="orderPlacedHide big-button"
+                                          className="order-placed-hide big-button"
                                           id="reopen-order-button"
                                           onClick={[Function]}
                             >
@@ -1643,14 +1643,14 @@ ShallowWrapper {
                   className="App-header"
 >
                   <div
-                                    className="quatreCol header pointer"
+                                    className="quatre-col header pointer"
                                     id="back-button"
                                     onClick={[Function]}
                   >
                                     BACK
                   </div>
                   <div
-                                    className="threeQuatreCol header"
+                                    className="three-quatre-col header"
                   >
                                     <p
                                                       className="pullright detail-header-info"
@@ -1675,12 +1675,12 @@ ShallowWrapper {
                                     className="grid-header list-item-detail"
                   >
                                     <div
-                                                      className="quatreCol resize-small"
+                                                      className="quatre-col resize-small"
                                     >
                                                       product
                                     </div>
                                     <div
-                                                      className="quatreCol resize-small"
+                                                      className="quatre-col resize-small"
                                     >
                                                       quantity
                                     </div>
@@ -1688,7 +1688,7 @@ ShallowWrapper {
                                                       className="clear-small"
                                     >
                                                       <div
-                                                                        className="quatreCol resize-small"
+                                                                        className="quatre-col resize-small"
                                                       >
                                                                         <p
                                                                                           className="pullright"
@@ -1697,7 +1697,7 @@ ShallowWrapper {
                                                                         </p>
                                                       </div>
                                                       <div
-                                                                        className="quatreCol resize-small"
+                                                                        className="quatre-col resize-small"
                                                       >
                                                                         <p
                                                                                           className="pullright"
@@ -1722,7 +1722,7 @@ ShallowWrapper {
                   />
 </ul>,
                 <div
-                  className="halfCol button-padding"
+                  className="half-col button-padding"
 >
                   <button
                                     className="big-button"
@@ -1733,7 +1733,7 @@ ShallowWrapper {
                   </button>
 </div>,
                 <div
-                  className="halfCol button-padding"
+                  className="half-col button-padding"
 >
                   <button
                                     className="big-button primary-button"
@@ -1744,10 +1744,10 @@ ShallowWrapper {
                   </button>
 </div>,
                 <div
-                  className="halfCol button-padding pullright"
+                  className="half-col button-padding pullright"
 >
                   <button
-                                    className="orderPlacedHide big-button"
+                                    className="order-placed-hide big-button"
                                     id="reopen-order-button"
                                     onClick={[Function]}
                   >
@@ -1765,14 +1765,14 @@ ShallowWrapper {
                 "props": Object {
                   "children": Array [
                     <div
-                      className="quatreCol header pointer"
+                      className="quatre-col header pointer"
                       id="back-button"
                       onClick={[Function]}
 >
                       BACK
 </div>,
                     <div
-                      className="threeQuatreCol header"
+                      className="three-quatre-col header"
 >
                       <p
                                             className="pullright detail-header-info"
@@ -1802,7 +1802,7 @@ ShallowWrapper {
                     "nodeType": "host",
                     "props": Object {
                       "children": "BACK",
-                      "className": "quatreCol header pointer",
+                      "className": "quatre-col header pointer",
                       "id": "back-button",
                       "onClick": [Function],
                     },
@@ -1831,7 +1831,7 @@ ShallowWrapper {
                         </i>
                         
 </p>,
-                      "className": "threeQuatreCol header",
+                      "className": "three-quatre-col header",
                     },
                     "ref": null,
                     "rendered": Object {
@@ -1899,12 +1899,12 @@ ShallowWrapper {
                       className="grid-header list-item-detail"
 >
                       <div
-                                            className="quatreCol resize-small"
+                                            className="quatre-col resize-small"
                       >
                                             product
                       </div>
                       <div
-                                            className="quatreCol resize-small"
+                                            className="quatre-col resize-small"
                       >
                                             quantity
                       </div>
@@ -1912,7 +1912,7 @@ ShallowWrapper {
                                             className="clear-small"
                       >
                                             <div
-                                                                  className="quatreCol resize-small"
+                                                                  className="quatre-col resize-small"
                                             >
                                                                   <p
                                                                                         className="pullright"
@@ -1921,7 +1921,7 @@ ShallowWrapper {
                                                                   </p>
                                             </div>
                                             <div
-                                                                  className="quatreCol resize-small"
+                                                                  className="quatre-col resize-small"
                                             >
                                                                   <p
                                                                                         className="pullright"
@@ -1957,12 +1957,12 @@ ShallowWrapper {
                     "props": Object {
                       "children": Array [
                         <div
-                          className="quatreCol resize-small"
+                          className="quatre-col resize-small"
 >
                           product
 </div>,
                         <div
-                          className="quatreCol resize-small"
+                          className="quatre-col resize-small"
 >
                           quantity
 </div>,
@@ -1970,7 +1970,7 @@ ShallowWrapper {
                           className="clear-small"
 >
                           <div
-                                                    className="quatreCol resize-small"
+                                                    className="quatre-col resize-small"
                           >
                                                     <p
                                                                               className="pullright"
@@ -1979,7 +1979,7 @@ ShallowWrapper {
                                                     </p>
                           </div>
                           <div
-                                                    className="quatreCol resize-small"
+                                                    className="quatre-col resize-small"
                           >
                                                     <p
                                                                               className="pullright"
@@ -1999,7 +1999,7 @@ ShallowWrapper {
                         "nodeType": "host",
                         "props": Object {
                           "children": "product",
-                          "className": "quatreCol resize-small",
+                          "className": "quatre-col resize-small",
                         },
                         "ref": null,
                         "rendered": "product",
@@ -2011,7 +2011,7 @@ ShallowWrapper {
                         "nodeType": "host",
                         "props": Object {
                           "children": "quantity",
-                          "className": "quatreCol resize-small",
+                          "className": "quatre-col resize-small",
                         },
                         "ref": null,
                         "rendered": "quantity",
@@ -2024,7 +2024,7 @@ ShallowWrapper {
                         "props": Object {
                           "children": Array [
                             <div
-                              className="quatreCol resize-small"
+                              className="quatre-col resize-small"
 >
                               <p
                                                             className="pullright"
@@ -2033,7 +2033,7 @@ ShallowWrapper {
                               </p>
 </div>,
                             <div
-                              className="quatreCol resize-small"
+                              className="quatre-col resize-small"
 >
                               <p
                                                             className="pullright"
@@ -2056,7 +2056,7 @@ ShallowWrapper {
 >
                                 unitprice
 </p>,
-                              "className": "quatreCol resize-small",
+                              "className": "quatre-col resize-small",
                             },
                             "ref": null,
                             "rendered": Object {
@@ -2083,7 +2083,7 @@ ShallowWrapper {
 >
                                 total
 </p>,
-                              "className": "quatreCol resize-small",
+                              "className": "quatre-col resize-small",
                             },
                             "ref": null,
                             "rendered": Object {
@@ -2148,7 +2148,7 @@ ShallowWrapper {
 >
                     ADD PRODUCT
 </button>,
-                  "className": "halfCol button-padding",
+                  "className": "half-col button-padding",
                 },
                 "ref": null,
                 "rendered": Object {
@@ -2179,7 +2179,7 @@ ShallowWrapper {
 >
                     PLACE ORDER
 </button>,
-                  "className": "halfCol button-padding",
+                  "className": "half-col button-padding",
                 },
                 "ref": null,
                 "rendered": Object {
@@ -2204,13 +2204,13 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": <button
-                    className="orderPlacedHide big-button"
+                    className="order-placed-hide big-button"
                     id="reopen-order-button"
                     onClick={[Function]}
 >
                     REOPEN ORDER
 </button>,
-                  "className": "halfCol button-padding pullright",
+                  "className": "half-col button-padding pullright",
                 },
                 "ref": null,
                 "rendered": Object {
@@ -2219,7 +2219,7 @@ ShallowWrapper {
                   "nodeType": "host",
                   "props": Object {
                     "children": "REOPEN ORDER",
-                    "className": "orderPlacedHide big-button",
+                    "className": "order-placed-hide big-button",
                     "id": "reopen-order-button",
                     "onClick": [Function],
                   },

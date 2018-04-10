@@ -16,12 +16,12 @@ div {
   box-sizing: border-box;
 }
 
-.quatreCol {
+.quatre-col {
   width: 25%;
   float: left;
 }
 
-.halfCol {
+.half-col {
   width: 50%;
   /* margin:20px 0px;
   padding:0px 20px;  */
@@ -38,7 +38,7 @@ div {
   padding: 0px 20px;
 }
 
-.threeQuatreCol {
+.three-quatre-col {
   width: 75%;
   float: left;
 }

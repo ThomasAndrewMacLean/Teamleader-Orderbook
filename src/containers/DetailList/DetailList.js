@@ -51,15 +51,15 @@ export class DetailList extends Component {
                 (el) => this._slider = el
             }>
                 {this.props.item && this.props.products.length > 0 ?
-                    <li className={this.showDelete ? 'showDelete deletePrompt' : 'deletePrompt'}>
+                    <li className={this.showDelete ? 'show-delete delete-prompt' : 'delete-prompt'}>
                         <div>
                             DELETE {this.props.products.find(p => p.id === this.props.item['product-id']).description}?
                         </div>
                         {/* <div className="clear-small"> */}
-                        <div className="quatreCol resize-small">
+                        <div className="quatre-col resize-small">
                             <button className="big-button no-button" onClick={() => this.togglePromptDelete()}>NO</button>
                         </div>
-                        <div className="quatreCol resize-small">
+                        <div className="quatre-col resize-small">
                             <button className="big-button yes-button" onClick={() => this.deleteProduct()}>YES</button>
                         </div>
                         {/* </div> */}
@@ -69,25 +69,25 @@ export class DetailList extends Component {
 
 
                     <li className="list-item-detail">
-                        <div className="quatreCol resize-small">
+                        <div className="quatre-col resize-small">
                             {this.props.item['product-id']}:{this.props.products.find(p => p.id === this.props.item['product-id']).description}
                         </div>
-                        <div className="quatreCol resize-small quantityAndButtons">
+                        <div className="quatre-col resize-small quantity-and-buttons">
                             <div className="buttonwrap">
-                                <button className={this.props.order.hasBeenPlaced ? 'round-button orderPlacedHide' : 'round-button'} onClick={() => this.add(-1)}>-</button>
+                                <button className={this.props.order.hasBeenPlaced ? 'round-button order-placed-hide' : 'round-button'} onClick={() => this.add(-1)}>-</button>
                                 <p className="pad">
                                     {this.props.item.quantity}
                                 </p>
-                                <button className={this.props.order.hasBeenPlaced ? 'round-button orderPlacedHide' : 'round-button'} onClick={() => this.add(1)}>+</button>
+                                <button className={this.props.order.hasBeenPlaced ? 'round-button order-placed-hide' : 'round-button'} onClick={() => this.add(1)}>+</button>
                             </div>
                         </div>
                         <div className="clear-small">
-                            <div className="quatreCol resize-small">
+                            <div className="quatre-col resize-small">
                                 <p className="pullright">
                                     {new Intl.NumberFormat('nl-BE', { style: 'currency', currency: 'EUR' }).format(this.props.item['unit-price'])}
                                 </p>
                             </div>
-                            <div className="quatreCol resize-small">
+                            <div className="quatre-col resize-small">
                                 <p className="pullright">
                                     {new Intl.NumberFormat('nl-BE', { style: 'currency', currency: 'EUR' }).format(this.props.item.total)}
                                 </p>

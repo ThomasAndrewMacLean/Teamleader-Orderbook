@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import {setSelectedOrder} from './../../actions/actions';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { setSelectedOrder } from './../../actions/actions';
 import PropTypes from 'prop-types';
 
 export class OrderList extends Component {
@@ -13,16 +13,16 @@ export class OrderList extends Component {
             <div className="Detail">
                 {this.props.order && this.props.customers.length > 0
                     ? <li>
-                        <div className="quatreCol id-and-name">
+                        <div className="quatre-col id-and-name">
                             {this.props.order.id}
                             <p className="username pullright">&nbsp;{(this.props.customers.find(u => parseInt(u.id, 10) === parseInt(this.props.order['customer-id'], 10)) || {
                                 name: '?'
                             }).name}</p>
                         </div>
-                        <div className="quatreCol textright">
+                        <div className="quatre-col textright">
                             {this.props.order.items.length}
                         </div>
-                        <div className="quatreCol textright">
+                        <div className="quatre-col textright">
                             {new Intl
                                 .NumberFormat('nl-BE', {
                                     style: 'currency',
@@ -30,7 +30,7 @@ export class OrderList extends Component {
                                 })
                                 .format(this.props.order.priceWithDiscount || this.props.order.total)}
                         </div>
-                        <div className="quatreCol">
+                        <div className="quatre-col">
                             <button
                                 className="pullright go-to-details-button"
                                 onClick={() => this.goToDetail(this.props.order.id)}>DETAILS</button>
@@ -43,7 +43,7 @@ export class OrderList extends Component {
 }
 
 const mapStateToProps = (state) => {
-    return {customers: state.data.customers};
+    return { customers: state.data.customers };
 };
 
 const mapDispatchToProps = (dispatch) => {
