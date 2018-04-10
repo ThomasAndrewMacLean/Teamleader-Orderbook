@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import DetailList from './../DetailList/DetailList';
 import Loader from './../../components/Loader/Loader';
 import './Detail.css';
-import { addProduct, placeOrder, reopenOrder, checkForDiscount, setSelectedOrder } from './../../actions/actions';
+import { addProduct, placeOrder, reopenOrder, checkForDiscount, setSelectedOrder, addToast } from './../../actions/actions';
 import Hammer from 'hammerjs';
 import PropTypes from 'prop-types';
 
@@ -40,6 +40,7 @@ export class Detail extends Component {
     placeOrder(id) {
         this.props.placeOrder(id);
         this.props.checkForDiscount(this.props.order);
+        this.props.addToast('Order has been placed', 'success');
     }
 
     componentDidUpdate() {
@@ -164,6 +165,9 @@ const mapDispatchToProps = (dispatch) => {
         },
         setSelectedOrder: (orderId) => {
             dispatch(setSelectedOrder(orderId));
+        },
+        addToast: (msg, type) => {
+            dispatch(addToast(msg, type));
         }
     };
 };
@@ -182,7 +186,8 @@ Detail.propTypes = {
     reopenOrder: PropTypes.func,
     addProduct: PropTypes.func,
     checkForDiscount: PropTypes.func,
-    setSelectedOrder: PropTypes.func
+    setSelectedOrder: PropTypes.func,
+    addToast: PropTypes.func
 };
 
 

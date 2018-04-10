@@ -34,144 +34,154 @@ export default function dataReducer(state = initialState.data, action) {
     let item;
 
     switch (action.type) {
-    case types.LOAD_ORDERS_SUCCESS:
-        //  const newState = JSON.parse(JSON.stringify(state)); 
-        state = {
-            ...state,
-            orders: action.orders//
-        };
+        case types.LOAD_ORDERS_SUCCESS:
+            //  const newState = JSON.parse(JSON.stringify(state)); 
+            state = {
+                ...state,
+                orders: action.orders//
+            };
 
-        return state;
-    case types.LOAD_PRODUCTS_SUCCESS:
-        //  const newState = JSON.parse(JSON.stringify(state)); 
-        state = {
-            ...state,
-            products: action.products
-        };
+            return state;
+        case types.LOAD_PRODUCTS_SUCCESS:
+            //  const newState = JSON.parse(JSON.stringify(state)); 
+            state = {
+                ...state,
+                products: action.products
+            };
 
-        return state;
-    case types.LOAD_CUSTOMERS_SUCCESS:
-        //  const newState = JSON.parse(JSON.stringify(state)); 
-        state = {
-            ...state,
-            customers: action.customers
-        };
+            return state;
+        case types.LOAD_CUSTOMERS_SUCCESS:
+            //  const newState = JSON.parse(JSON.stringify(state)); 
+            state = {
+                ...state,
+                customers: action.customers
+            };
 
-        return state;
-    case types.ADD_QUANTITY:
-        state = JSON.parse(JSON.stringify(state));
+            return state;
+        case types.ADD_QUANTITY:
+            state = JSON.parse(JSON.stringify(state));
 
-        order = helperFunctions.returnOrderById(action.payload.orderId, state.orders);
+            order = helperFunctions.returnOrderById(action.payload.orderId, state.orders);
 
-        if (!order.hasBeenPlaced) {
-            item = order.items.find(i => i['product-id'] === action.payload.productId);
-            item.quantity = (parseInt(item.quantity, 10) + parseInt(action.payload.quantity, 10)).toString();
+            if (!order.hasBeenPlaced) {
+                item = order.items.find(i => i['product-id'] === action.payload.productId);
+                item.quantity = (parseInt(item.quantity, 10) + parseInt(action.payload.quantity, 10)).toString();
 
-            if (parseInt(item.quantity, 10) < 0) {
-                item.quantity = '0';
+                if (parseInt(item.quantity, 10) < 0) {
+                    item.quantity = '0';
+                }
+
+                item.total = item['unit-price'] * parseInt(item.quantity, 10);
+
+                order.total = helperFunctions.getTotal(order);
+
+                state.selectedOrder = order;
+            }
+            return state;
+
+        case types.ADD_PRODUCT:
+            state = JSON.parse(JSON.stringify(state));
+            order = helperFunctions.returnOrderById(action.payload.orderId, state.orders);
+
+            if (!order.hasBeenPlaced && !order.items.find(i => i['product-id'] === action.payload.product.id)) {
+
+                order.items.push({
+                    'product-id': action.payload.product.id,
+                    'quantity': '1',
+                    'unit-price': action.payload.product.price,
+                    'total': action.payload.product.price
+                });
+
+                order.total = helperFunctions.getTotal(order);
+                state.selectedOrder = order;
+
             }
 
-            item.total = item['unit-price'] * parseInt(item.quantity, 10);
+            return state;
 
-            order.total = helperFunctions.getTotal(order);
+        case types.PLACE_ORDER:
+            state = JSON.parse(JSON.stringify(state));
+            order = helperFunctions.returnOrderById(action.payload.orderId, state.orders);
+            if (!order.hasBeenPlaced) {
+                helperFunctions.placeOrder(order);
+                state.selectedOrder = order;
 
-            state.selectedOrder = order;
-        }
-        return state;
-
-    case types.ADD_PRODUCT:
-        state = JSON.parse(JSON.stringify(state));
-        order = helperFunctions.returnOrderById(action.payload.orderId, state.orders);
-
-        if (!order.hasBeenPlaced && !order.items.find(i => i['product-id'] === action.payload.product.id)) {
-
-            order.items.push({
-                'product-id': action.payload.product.id,
-                'quantity': '1',
-                'unit-price': action.payload.product.price,
-                'total': action.payload.product.price
-            });
-
-            order.total = helperFunctions.getTotal(order);
-            state.selectedOrder = order;
-
-        }
-
-        return state;
-
-    case types.PLACE_ORDER:
-        state = JSON.parse(JSON.stringify(state));
-        order = helperFunctions.returnOrderById(action.payload.orderId, state.orders);
-        if (!order.hasBeenPlaced) {
-            helperFunctions.placeOrder(order);
-            state.selectedOrder = order;
-
-        }
-
-        return state;
-
-    case types.REOPEN_ORDER:
-        state = JSON.parse(JSON.stringify(state));
-        order = helperFunctions.returnOrderById(action.payload.orderId, state.orders);
-        if (order.hasBeenPlaced) {
-            helperFunctions.reopenOrder(order);
-            state.selectedOrder = order;
-
-        }
-
-        return state;
-
-    case types.DELETE_PRODUCT:
-        state = JSON.parse(JSON.stringify(state));
-        order = helperFunctions.returnOrderById(action.payload.orderId, state.orders);
-        order.items = order.items.filter(i => i['product-id'] !== action.payload.productId);
-        order.total = helperFunctions.getTotal(order);
-        state.selectedOrder = order;
-
-        return state;
-
-    case types.CHECK_FOR_DISCOUNT_SUCCESS:
-        state = JSON.parse(JSON.stringify(state));
-        order = helperFunctions.returnOrderById(action.payload.order.id, state.orders);
-
-        if (action.payload.order.discount !== '0') {
-            if (!order.timestamp || order.timestamp < action.payload.order.timestamp) {
-                order.discount = action.payload.order.discount;
-                order.priceWithDiscount = action.payload.order.priceWithDiscount;
             }
 
-        }
-        if (action.payload.order.discount === '0') {
-            order.discount = undefined;
-            order.priceWithDiscount = undefined;
-        }
+            return state;
 
-        if (!action.payload.initialCheck) {
+        case types.REOPEN_ORDER:
+            state = JSON.parse(JSON.stringify(state));
+            order = helperFunctions.returnOrderById(action.payload.orderId, state.orders);
+            if (order.hasBeenPlaced) {
+                helperFunctions.reopenOrder(order);
+                state.selectedOrder = order;
+
+            }
+
+            return state;
+
+        case types.DELETE_PRODUCT:
+            state = JSON.parse(JSON.stringify(state));
+            order = helperFunctions.returnOrderById(action.payload.orderId, state.orders);
+            order.items = order.items.filter(i => i['product-id'] !== action.payload.productId);
+            order.total = helperFunctions.getTotal(order);
             state.selectedOrder = order;
-        }
 
-        return state;
-    case types.SET_SELECTED_ORDER:
-        state = JSON.parse(JSON.stringify(state));
-        order = helperFunctions.returnOrderById(action.payload.orderId, state.orders);
+            return state;
 
-        state.selectedOrder = order;
+        case types.CHECK_FOR_DISCOUNT_SUCCESS:
+            state = JSON.parse(JSON.stringify(state));
+            order = helperFunctions.returnOrderById(action.payload.order.id, state.orders);
 
-        return state;
+            if (action.payload.order.discount !== '0') {
+                if (!order.timestamp || order.timestamp < action.payload.order.timestamp) {
+                    order.discount = action.payload.order.discount;
+                    order.priceWithDiscount = action.payload.order.priceWithDiscount;
+                }
 
-    case types.ADD_ORDER:
-        state = JSON.parse(JSON.stringify(state));
-        order = {
-            'customer-id': action.payload.customerId.toString(),
-            id: helperFunctions.getNewId(state.orders),
-            items: [],
-            total: '0'
-        };
-        state.orders.push(order);
+            }
+            if (action.payload.order.discount === '0') {
+                order.discount = undefined;
+                order.priceWithDiscount = undefined;
+            }
 
-        return state;
+            if (!action.payload.initialCheck) {
+                state.selectedOrder = order;
+            }
 
-    default:
-        return state;
+            return state;
+        case types.SET_SELECTED_ORDER:
+            state = JSON.parse(JSON.stringify(state));
+            order = helperFunctions.returnOrderById(action.payload.orderId, state.orders);
+
+            state.selectedOrder = order;
+
+            return state;
+
+        case types.ADD_ORDER:
+            state = JSON.parse(JSON.stringify(state));
+            order = {
+                'customer-id': action.payload.customerId.toString(),
+                id: helperFunctions.getNewId(state.orders),
+                items: [],
+                total: '0'
+            };
+            state.orders.push(order);
+
+            return state;
+
+        case types.ADD_TOAST:
+            state = JSON.parse(JSON.stringify(state));
+            state.toast = { msg: action.payload.msg, type: action.payload.type };
+            return state;
+
+        case types.CLEAR_TOAST:
+            state = JSON.parse(JSON.stringify(state));
+            state.toast.msg = undefined;
+            return state;
+
+        default:
+            return state;
     }
 }

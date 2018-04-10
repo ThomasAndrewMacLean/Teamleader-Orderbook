@@ -176,8 +176,11 @@ it('add product button closes modal', () => {
 it('place order button places order', () => {
     const mockcheckForDiscount = jest.fn();
     const mockplaceOrder = jest.fn();
-
-    wrapper = shallow(<Detail checkForDiscount={mockcheckForDiscount} placeOrder={mockplaceOrder} order={mocks.getOrders()[0]} products={mocks.getProducts()} customers={mocks.getCustomers()} />);
+    const mockAddToast= jest.fn();
+    wrapper = shallow(<Detail checkForDiscount={mockcheckForDiscount}
+         addToast={mockAddToast} placeOrder={mockplaceOrder} 
+         order={mocks.getOrders()[0]} products={mocks.getProducts()} 
+         customers={mocks.getCustomers()} />);
     wrapper.find('#place-order-button').simulate('click');
     expect(mockplaceOrder).toHaveBeenCalled();
 });
@@ -186,10 +189,21 @@ it('place order button places order', () => {
 it('place order button checks discount', () => {
     const mockcheckForDiscount = jest.fn();
     const mockplaceOrder = jest.fn();
+    const mockAddToast= jest.fn();
 
-    wrapper = shallow(<Detail checkForDiscount={mockcheckForDiscount} placeOrder={mockplaceOrder} order={mocks.getOrders()[0]} products={mocks.getProducts()} customers={mocks.getCustomers()} />);
+    wrapper = shallow(<Detail checkForDiscount={mockcheckForDiscount} addToast={mockAddToast}  placeOrder={mockplaceOrder} order={mocks.getOrders()[0]} products={mocks.getProducts()} customers={mocks.getCustomers()} />);
     wrapper.find('#place-order-button').simulate('click');
     expect(mockcheckForDiscount).toHaveBeenCalled();
+});
+
+it('place order button adds toast', () => {
+    const mockcheckForDiscount = jest.fn();
+    const mockplaceOrder = jest.fn();
+    const mockAddToast= jest.fn();
+
+    wrapper = shallow(<Detail checkForDiscount={mockcheckForDiscount} addToast={mockAddToast}  placeOrder={mockplaceOrder} order={mocks.getOrders()[0]} products={mocks.getProducts()} customers={mocks.getCustomers()} />);
+    wrapper.find('#place-order-button').simulate('click');
+    expect(mockAddToast).toHaveBeenCalled();
 });
 
 it('reopen order button reopens order', () => {

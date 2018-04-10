@@ -38,6 +38,9 @@ export function getOrders() {
         'total': '69.00'
     }];
 }
+export function getToast(){
+    return({msg:'hello this is a toast', type:'info'});
+}
 export function getCustomers() {
     return ([{
         'id': '1',

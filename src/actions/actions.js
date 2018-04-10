@@ -127,6 +127,24 @@ export function setSelectedOrder(orderId) {
         }
     };
 }
+export function addToast(msg,type) {
+    return {
+        type: ADD_TOAST,
+        payload: {
+            msg,type
+        }
+    };
+}
+export function clearToast() {
+    return {
+        type: CLEAR_TOAST,
+        payload: {
+            
+        }
+    };
+}
+
+
 export const SET_SELECTED_ORDER = 'SET_SELECTED_ORDER';
 export const LOAD_ORDERS_SUCCESS = 'LOAD_ORDERS_SUCCESS';
 export const LOAD_PRODUCTS_SUCCESS = 'LOAD_PRODUCTS_SUCCESS';
@@ -138,3 +156,5 @@ export const REOPEN_ORDER = 'REOPEN_ORDER';
 export const ADD_PRODUCT = 'ADD_PRODUCT';
 export const DELETE_PRODUCT = 'DELETE_PRODUCT';
 export const CHECK_FOR_DISCOUNT_SUCCESS = 'CHECK_FOR_DISCOUNT_SUCCESS';
+export const ADD_TOAST = 'ADD_TOAST';
+export const CLEAR_TOAST = 'CLEAR_TOAST';

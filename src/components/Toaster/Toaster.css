@@ -1,0 +1,65 @@
+/* @media only screen and (max-width: 500px) {
+    .toast{
+        position: fixed;
+        bottom:0;
+        width:100vw;
+        height: 60px;
+        transition: left 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+        left:-100vw;
+        cursor: pointer;
+    }
+}
+@media only screen and (min-width: 501px) {
+    .toast{
+        position: fixed;
+        bottom:0;
+        width:500px;
+        height: 60px;
+        transition: left 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+        left:-100vw;
+        cursor: pointer;
+    }
+} */
+.toast{
+    position: fixed;
+    bottom:0;
+    width:100vw;
+    max-width:500px;
+    height: 60px;
+    transition: left 0.6s ease-in-out;
+    left:-100vw;
+    cursor: pointer;
+}
+
+.show-toast{
+    left:0;
+}
+
+.hide-toast{
+    left:-100vw;
+}
+
+.toast-msg{
+    height: 100%;
+    width: 100%;
+    
+    display: flex;
+    align-items: center;
+    padding-left:20px;
+}
+
+.info{
+    background: var(--color-violet);
+}
+.danger{
+    background: var(--color-ruby-dark);
+    color:white;
+}
+.warning{
+    background: var(--color-gold-dark);
+    color:white;
+}
+.success{
+    color:white;
+    background: var(--color-mint-dark);
+}

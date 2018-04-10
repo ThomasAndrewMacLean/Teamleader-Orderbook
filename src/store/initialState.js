@@ -3,6 +3,7 @@ export default {
         orders: [],
         products: [],
         customers: [],
-        selectedOrder: {}
+        selectedOrder: {},
+        toast:{}
     }
 };

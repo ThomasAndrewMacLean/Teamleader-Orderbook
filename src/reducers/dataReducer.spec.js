@@ -683,3 +683,69 @@ it('ADD_ORDER should be immutable', () => {
 
     expect(result).not.toEqual(beginState);
 });
+
+it('ADD_TOAST should be immutable', () => {
+    const beginState = {
+        orders: mocks.getOrders()
+    };
+    const action = {
+        'type': types.ADD_TOAST,
+        'payload': { msg: 'helllooowkes', type: 'info' }
+    };
+
+    let result = dataReducer(beginState, action);
+
+    expect(result).not.toEqual(beginState);
+});
+
+it('ADD_TOAST should set toast of state', () => {
+    const beginState = {
+        orders: mocks.getOrders()
+    };
+    const action = {
+        'type': types.ADD_TOAST,
+        'payload': { msg: 'helllooowkes', type: 'info' }
+    };
+
+    let result = dataReducer(beginState, action);
+
+    expect(result.toast.msg).toBe('helllooowkes');
+    expect(result.toast.type).toBe('info');
+
+});
+
+it('test mocks get toast', () => {
+    const beginState = {
+        toast: mocks.getToast()
+    };
+
+    expect(beginState.toast.msg).toBe('hello this is a toast');
+    expect(beginState.toast.type).toBe('info');
+});
+
+it('CLEAR_TOAST clears toast message', () => {
+    const beginState = {
+        toast: mocks.getToast()
+    };
+    const action = {
+        'type': types.CLEAR_TOAST,
+    };
+
+    let result = dataReducer(beginState, action);
+
+    expect(result.toast.msg).toBe(undefined);
+    expect(result.toast.type).toBe('info');
+});
+
+it('CLEAR_TOAST should be immutable', () => {
+    const beginState = {
+        toast: mocks.getToast()
+    };
+    const action = {
+        'type': types.CLEAR_TOAST,
+    };
+
+    let result = dataReducer(beginState, action);
+
+    expect(result).not.toEqual(beginState);
+});
