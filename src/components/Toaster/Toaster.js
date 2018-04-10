@@ -5,10 +5,15 @@ import { clearToast } from './../../actions/actions';
 import PropTypes from 'prop-types';
 
 export class Toaster extends Component {
-    render() {
+
+    componentDidMount() {
         if (this.props.toast.msg) {
-            setTimeout(() => this.props.clearToast(), 5000);
+            setTimeout(() => this.props.clearToast(), 3000);
         }
+
+    }
+
+    render() {
         return (
             <div onClick={() => this.props.clearToast()} className={this.props.toast.msg ? 'show-toast toast' : 'hide-toast toast'}>
                 <div className={this.props.toast.type + ' toast-msg'}>

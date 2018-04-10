@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot 1`] = `
+<div
+  className="hide-toast toast"
+  onClick={[Function]}
+>
+  <div
+    className="undefined toast-msg"
+  />
+</div>
+`;
+
+exports[`snapshot2 1`] = `
+<div
+  className="hide-toast toast"
+  onClick={[Function]}
+>
+  <div
+    className="undefined toast-msg"
+  />
+</div>
+`;
