@@ -17,9 +17,10 @@ import { ConnectedRouter } from 'react-router-redux';
 const history = createHistory();
 const store = configStore();
 
-store.subscribe(() => {
-    console.log(store.getState());
-});
+// // TURN ON FOR DEBUGGING STATE
+// store.subscribe(() => {
+//     console.log(store.getState());
+// });
 
 store.dispatch(loadProducts());
 store.dispatch(loadOrders());
@@ -33,7 +34,7 @@ ReactDOM.render(<Provider store={store}>
             <Route path="/detail/:id" component={Detail} />
             <Route path="/help" component={Help} />
             <Route path="/loader" component={Loader} />
-            <Toaster/>
+            <Toaster />
         </div>
     </ConnectedRouter>
 </Provider>, document.getElementById('root'));
