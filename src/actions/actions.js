@@ -9,6 +9,7 @@ export function loadOrders() {
                 dispatch(loadOrdersSuccess(orders));
             })
             .catch(error => {
+                this.addToast('Please check network connection', 'danger');
                 throw (error);
             });
     };
@@ -127,11 +128,11 @@ export function setSelectedOrder(orderId) {
         }
     };
 }
-export function addToast(msg,type) {
+export function addToast(msg, type) {
     return {
         type: ADD_TOAST,
         payload: {
-            msg,type
+            msg, type
         }
     };
 }
@@ -139,7 +140,7 @@ export function clearToast() {
     return {
         type: CLEAR_TOAST,
         payload: {
-            
+
         }
     };
 }
