@@ -110,16 +110,17 @@ it('if detail id is not correct it calls function goHome', () => {
     const mockHistory = { push: (x) => mock(history.push(x)) };
 
     let order = mocks.getOrders()[0];
-    
+
     let match = {
         params: {
-            id: '666'        }
+            id: '666'
+        }
     };
     const spy = jest.spyOn(Detail.prototype, 'goHome');
     let node = document.createElement('div');
     ReactDOM.render(<Provider test={'foo'} store={store}><Detail store={store} match={match} history={mockHistory} orders={mocks.getOrders()} order={order} products={mocks.getProducts()} customers={mocks.getCustomers()} /></Provider>, node);
     order.id = undefined;
-    
+
     ReactDOM.render(<Provider test={'bar'} store={store}><Detail store={store} match={match} history={mockHistory} orders={mocks.getOrders()} order={order} products={mocks.getProducts()} customers={mocks.getCustomers()} /></Provider>, node);
 
     expect(spy).toHaveBeenCalledTimes(1);
@@ -131,19 +132,21 @@ it('if detail id is correct it calls function setSelectedOrder', () => {
     let history = [];
     const mockHistory = { push: (x) => mock(history.push(x)) };
 
-    const mockSetSelected =jest.fn();
+    const mockSetSelected = jest.fn();
 
     let order = mocks.getOrders()[0];
-    
+
     let match = {
         params: {
-            id: '1'        }
+            id: '1'
+        }
+        
     };
-    
+
     let node = document.createElement('div');
     ReactDOM.render(<Provider test={'foo'} store={store}><Detail setSelectedOrder={mockSetSelected} store={store} match={match} history={mockHistory} orders={mocks.getOrders()} order={order} products={mocks.getProducts()} customers={mocks.getCustomers()} /></Provider>, node);
     order.id = undefined;
-    
+
     ReactDOM.render(<Provider test={'bar'} store={store}><Detail setSelectedOrder={mockSetSelected} store={store} match={match} history={mockHistory} orders={mocks.getOrders()} order={order} products={mocks.getProducts()} customers={mocks.getCustomers()} /></Provider>, node);
 
     expect(mockSetSelected).toHaveBeenCalledTimes(1);

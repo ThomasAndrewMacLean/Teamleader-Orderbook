@@ -5,7 +5,7 @@ export function loadOrders() {
         return Api
             .getAllOrders()
             .then(orders => {
-                orders.forEach(order => dispatch(checkForDiscount(order, true)));
+                orders.forEach(order => dispatch(checkForDiscount(order)));
                 dispatch(loadOrdersSuccess(orders));
             })
             .catch(error => {
@@ -38,28 +38,26 @@ export function loadCustomers() {
             });
     };
 }
-export function checkForDiscount(order, initialCheck = false) {
+export function checkForDiscount(order) {
     return function (dispatch) {
         return Api
             .checkForDiscount(order)
             .then(data => {
-                dispatch(checkForDiscountSuccess(data.order, initialCheck));
+                dispatch(checkForDiscountSuccess(data.order));
             })
             .catch(error => {
                 throw (error);
             });
     };
 }
-export function checkForDiscountSuccess(order, initialCheck) {
+export function checkForDiscountSuccess(order) {
     return {
         type: CHECK_FOR_DISCOUNT_SUCCESS, payload: {
-            order, initialCheck
+            order
         }
     };
 }
 export function loadOrdersSuccess(orders) {
-    orders.forEach(o => checkForDiscount(o));
-
     return { type: LOAD_ORDERS_SUCCESS, orders };
 }
 export function loadProductsSuccess(products) {

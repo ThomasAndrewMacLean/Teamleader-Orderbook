@@ -132,6 +132,7 @@ export default function dataReducer(state = initialState.data, action) {
 
         case types.CHECK_FOR_DISCOUNT_SUCCESS:
             state = JSON.parse(JSON.stringify(state));
+
             order = helperFunctions.returnOrderById(action.payload.order.id, state.orders);
 
             if (action.payload.order.discount !== '0') {
@@ -146,7 +147,7 @@ export default function dataReducer(state = initialState.data, action) {
                 order.priceWithDiscount = undefined;
             }
 
-            if (!action.payload.initialCheck) {
+            if (state.selectedOrder && state.selectedOrder.id === order.id) {
                 state.selectedOrder = order;
             }
 

@@ -1,9 +1,8 @@
-const apiEndpointOrders = 'https://nameless-citadel-45339.herokuapp.com/getOrders';
-const apiEndpointProducts = 'https://nameless-citadel-45339.herokuapp.com/getProducts';
-const apiEndpointCustomers = 'https://nameless-citadel-45339.herokuapp.com/getCustomers';
-const apiEndpointcheckForDiscount = 'https://nameless-citadel-45339.herokuapp.com/calculateDiscount';
+export const apiEndpointOrders = 'https://nameless-citadel-45339.herokuapp.com/getOrders';
+export const apiEndpointProducts = 'https://nameless-citadel-45339.herokuapp.com/getProducts';
+export const apiEndpointCustomers = 'https://nameless-citadel-45339.herokuapp.com/getCustomers';
+export const apiEndpointCheckForDiscount = 'https://nameless-citadel-45339.herokuapp.com/calculateDiscount';
 // const apiEndpointCustomers = 'https://jsonplaceholder.typicode.com/users';
-
 
 class Api {
 
@@ -32,7 +31,8 @@ class Api {
     }
 
     static checkForDiscount(order) {
-        return fetch(apiEndpointcheckForDiscount, {
+        
+        return fetch(apiEndpointCheckForDiscount, {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
@@ -45,6 +45,7 @@ class Api {
             return error;
         });
     }
+
 }
 
 export default Api;
