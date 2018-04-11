@@ -45,9 +45,10 @@ export class Detail extends Component {
 
     componentDidUpdate() {
         if (!this.props.order.id && this.props.orders.length > 0) {
-
             let id = this.props.match.params.id;
-            this.props.setSelectedOrder(id);
+
+            this.props.orders.find(o => o.id === id) ?
+                this.props.setSelectedOrder(id) : this.goHome();
         }
     }
 

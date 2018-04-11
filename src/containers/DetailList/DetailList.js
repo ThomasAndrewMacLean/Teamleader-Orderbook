@@ -19,10 +19,12 @@ export class DetailList extends Component {
     }
 
     deleteProduct() {
-        this.showDelete = !this.showDelete;
-        this.isDeleted = !this.isDeleted;
-        this.setState({});
-        setTimeout(() => this.del(), 300);
+        if (!this.props.order.hasBeenPlaced) {
+            this.showDelete = !this.showDelete;
+            this.isDeleted = !this.isDeleted;
+            this.setState({});
+            setTimeout(() => this.del(), 300);
+        }
     }
 
     del() {

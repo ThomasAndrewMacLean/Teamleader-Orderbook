@@ -1,19 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import Orders from './containers/Orders/Orders';
-import Detail from './containers/Detail/Detail';
-import Help from './containers/Help/Help';
-import Loader from './components/Loader/Loader';
-import Toaster from './components/Toaster/Toaster';
 
 import { Provider } from 'react-redux';
 import configStore from './store/configureStore';
 import registerServiceWorker from './registerServiceWorker';
 import { loadOrders, loadProducts, loadCustomers } from './actions/actions';
-import createHistory from 'history/createBrowserHistory';
-import { Route } from 'react-router';
+
+
 import { ConnectedRouter } from 'react-router-redux';
+
+import Routes from './containers/Routes/Routes';
+import createHistory from 'history/createBrowserHistory';
+import './index.css';
+
 const history = createHistory();
 const store = configStore();
 
@@ -29,13 +28,7 @@ store.dispatch(loadCustomers());
 
 ReactDOM.render(<Provider store={store}>
     <ConnectedRouter history={history}>
-        <div>
-            <Route exact path="/" component={Orders} />
-            <Route path="/detail/:id" component={Detail} />
-            <Route path="/help" component={Help} />
-            <Route path="/loader" component={Loader} />
-            <Toaster />
-        </div>
+        <Routes />
     </ConnectedRouter>
 </Provider>, document.getElementById('root'));
 registerServiceWorker();

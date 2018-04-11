@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 export class Toaster extends Component {
 
-    componentDidMount() {
+    componentDidUpdate() {
         if (this.props.toast.msg) {
             setTimeout(() => this.props.clearToast(), 3000);
         }

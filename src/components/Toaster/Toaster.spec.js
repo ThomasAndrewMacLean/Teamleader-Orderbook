@@ -1,4 +1,6 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+
 import ConnectedToaster, { Toaster } from './Toaster';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
@@ -67,6 +69,13 @@ it('should display the message in the toast msg div', () => {
 
 
 it('function to clear toast runs after 3000 timeout', () => {
+
+    let toast = { msg: 'foo', type: 'info' };
+    let node = document.createElement('div');
+    ReactDOM.render(<Toaster toast={toast} />, node);
+
+    toast.msg = 'bar';
+    ReactDOM.render(<Toaster toast={toast} />, node);
 
     expect(setTimeout).toHaveBeenCalledTimes(1);
     expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), 3000);
