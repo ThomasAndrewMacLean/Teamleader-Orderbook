@@ -15,6 +15,7 @@ const mockDeleteProduct = jest.fn();
 const mockAddQuantity = jest.fn();
 beforeEach(() => {
     jest.clearAllMocks();
+    jest.useFakeTimers();
     DetailList.prototype._slider = { addEventListener };
 
     initialState = {
@@ -99,16 +100,18 @@ it('yes-button click hides deletePrompt', () => {
 
     expect(wrapper.find('.delete-prompt').hasClass('show-delete')).toBeFalsy();
 });
-it('yes-button click triggers deletefunction with product id and order id', (done) => {
+it('yes-button click triggers deletefunction with product id and order id', () => {
     wrapper.find('.delete-cross').simulate('click');
     wrapper.find('.yes-button').simulate('click');
 
-    setTimeout(() => {
-        expect(mockDeleteProduct).toHaveBeenCalledWith('B102', '1'); done();
-    }, 300);
+
+
+    //setTimeout(() => {
+    expect(setTimeout).toHaveBeenCalledWith(expect.any(Function), 300);
+    // }, 300);
 });
 
-it('yes-button click does not trigger deletefunction if product has been placed', (done) => {
+it('yes-button click does not trigger deletefunction if product has been placed', () => {
     let order = mocks.getOrders()[0];
     order.hasBeenPlaced = true;
     wrapper = shallow(<DetailList order={order} item={mocks.getOrders()[0].items[0]} products={mocks.getProducts()} addQuantity={mockAddQuantity} deleteProduct={mockDeleteProduct} />);
@@ -116,9 +119,9 @@ it('yes-button click does not trigger deletefunction if product has been placed'
     wrapper.find('.delete-cross').simulate('click');
     wrapper.find('.yes-button').simulate('click');
 
-    setTimeout(() => {
-        expect(mockDeleteProduct).not.toHaveBeenCalled(); done();
-    }, 300);
+    //setTimeout(() => {
+    expect(setTimeout).not.toHaveBeenCalled(); //done();
+    //}, 300);
 });
 
 it('yes-button click does not trigger setTimeout if product has been placed', () => {
