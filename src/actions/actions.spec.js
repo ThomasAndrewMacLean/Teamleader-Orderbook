@@ -1,6 +1,11 @@
 import * as actions from './actions';
 import * as mocks from './../test-helpers/mocks';
 
+beforeEach(() => {
+    fetch.resetMocks();
+    jest.clearAllMocks();
+});
+
 
 it('SET_SELECTED_ORDER is SET_SELECTED_ORDER', () => {
     expect(actions.SET_SELECTED_ORDER).toBe('SET_SELECTED_ORDER');
@@ -93,6 +98,16 @@ it('loadOrdersSuccess returns loadOrdersSuccess', () => {
     let orders = mocks.getOrders();
     expect(actions.loadOrdersSuccess(orders)).toEqual({ type: actions.LOAD_ORDERS_SUCCESS, orders });
 });
-it('loadOrdersSucces calls checkForDiscount for each order', () => {
-
+it('checkForDiscount returns function', () => {
+    let order = mocks.getOrders()[0];
+    expect(actions.checkForDiscount(order)).toEqual(expect.any(Function));
+});
+it('loadCustomers returns function', () => {
+    expect(actions.loadCustomers()).toEqual(expect.any(Function));
+});
+it('loadProducts returns function', () => {
+    expect(actions.loadProducts()).toEqual(expect.any(Function));
+});
+it('loadOrders returns function', () => {
+    expect(actions.loadOrders()).toEqual(expect.any(Function));
 });

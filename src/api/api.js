@@ -31,7 +31,7 @@ class Api {
     }
 
     static checkForDiscount(order) {
-        
+
         return fetch(apiEndpointCheckForDiscount, {
             headers: {
                 'Accept': 'application/json',
