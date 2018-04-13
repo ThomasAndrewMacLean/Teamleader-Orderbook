@@ -9,13 +9,14 @@ export const helperFunctions = {
     },
     placeOrder(order) {
         order.hasBeenPlaced = true;
-        console.log('ORDER HAS BEEN PLACED: ');
-        console.log(order);
+        console.log('ORDER HAS BEEN PLACED: ');// eslint-disable-line no-console
+        console.log(order);// eslint-disable-line no-console
     },
     reopenOrder(order) {
         order.hasBeenPlaced = false;
-        console.log('ORDER HAS BEEN REOPEND: ');
-        console.log(order);
+
+        console.log('ORDER HAS BEEN REOPEND: ');// eslint-disable-line no-console
+        console.log(order);// eslint-disable-line no-console
     },
     getNewId(orders) {
         let o = orders.sort((a, b) => { return parseInt(a.id, 10) < parseInt(b.id, 10); })[0];
@@ -173,7 +174,7 @@ export default function dataReducer(state = initialState.data, action) {
             return state;
 
         case types.ADD_TOAST:
-            
+
             state = JSON.parse(JSON.stringify(state));
             state.toast = { msg: action.payload.msg, type: action.payload.type };
             return state;

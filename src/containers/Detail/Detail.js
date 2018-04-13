@@ -43,8 +43,6 @@ export class Detail extends Component {
         this.props.addToast('Order has been placed.', 'success');
     }
     goHomeWithError(id) {
-        console.log('error');
-
         this.props.addToast(`Order with id ${id} not found.`, 'danger');
         this.goHome();
     }

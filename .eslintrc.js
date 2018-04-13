@@ -37,7 +37,7 @@ module.exports = {
             "error",
             "always"
         ],
-        "no-console": 0,
+        "no-console": 1,
         "no-debugger": 1
     }
 };

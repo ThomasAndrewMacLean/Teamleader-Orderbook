@@ -62,8 +62,6 @@ it('does render productName if all is set', () => {
     expect(wrapper.contains('Press button')).toBeTruthy();
 });
 it('does render quantity if all is set', () => {
-    console.log(wrapper.text());
-
     expect(wrapper.contains('10')).toBeTruthy();
 });
 it('does render unit price if all is set', () => {
