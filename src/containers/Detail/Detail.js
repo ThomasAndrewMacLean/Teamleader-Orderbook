@@ -42,13 +42,18 @@ export class Detail extends Component {
         this.props.checkForDiscount(this.props.order);
         this.props.addToast('Order has been placed', 'success');
     }
+    goHomeWithError(id) {
+        this.props.addToast(`Order with id ${id} not found`, 'danger');
+        this.goHome();
+    }
 
     componentDidUpdate() {
         if (!this.props.order.id && this.props.orders.length > 0) {
             let id = this.props.match.params.id;
 
             this.props.orders.find(o => o.id === id) ?
-                this.props.setSelectedOrder(id) : this.goHome();
+                this.props.setSelectedOrder(id) :
+                this.goHomeWithError(id);
         }
     }
 

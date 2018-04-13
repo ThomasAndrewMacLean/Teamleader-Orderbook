@@ -104,11 +104,12 @@ it('back button calls function goHome', () => {
     expect(spy).toHaveBeenCalledTimes(1);
 });
 
-it('if detail id is not correct it calls function goHome', () => {
+it('if detail id is not correct it calls function goHomeWithError', () => {
     const mock = jest.fn();
     let history = [];
     const mockHistory = { push: (x) => mock(history.push(x)) };
 
+    const mocksAddToast = jest.fn();
     let order = mocks.getOrders()[0];
 
     let match = {
@@ -116,14 +117,37 @@ it('if detail id is not correct it calls function goHome', () => {
             id: '666'
         }
     };
-    const spy = jest.spyOn(Detail.prototype, 'goHome');
+    const spy = jest.spyOn(Detail.prototype, 'goHomeWithError');
     let node = document.createElement('div');
-    ReactDOM.render(<Provider test={'foo'} store={store}><Detail store={store} match={match} history={mockHistory} orders={mocks.getOrders()} order={order} products={mocks.getProducts()} customers={mocks.getCustomers()} /></Provider>, node);
+    ReactDOM.render(<Provider test={'foo'} store={store}><Detail store={store} match={match} history={mockHistory} orders={mocks.getOrders()} order={order} products={mocks.getProducts()} customers={mocks.getCustomers()} addToast={mocksAddToast} /></Provider>, node);
     order.id = undefined;
 
-    ReactDOM.render(<Provider test={'bar'} store={store}><Detail store={store} match={match} history={mockHistory} orders={mocks.getOrders()} order={order} products={mocks.getProducts()} customers={mocks.getCustomers()} /></Provider>, node);
+    ReactDOM.render(<Provider test={'bar'} store={store}><Detail store={store} match={match} history={mockHistory} orders={mocks.getOrders()} order={order} products={mocks.getProducts()} customers={mocks.getCustomers()} addToast={mocksAddToast}/></Provider>, node);
 
     expect(spy).toHaveBeenCalledTimes(1);
+});
+
+it('if detail id is not correct it calls function addToast', () => {
+    const mock = jest.fn();
+    let history = [];
+    const mockHistory = { push: (x) => mock(history.push(x)) };
+
+    const mocksAddToast = jest.fn();
+    let order = mocks.getOrders()[0];
+
+    let match = {
+        params: {
+            id: '666'
+        }
+    };
+    const spy = jest.spyOn(Detail.prototype, 'goHomeWithError');
+    let node = document.createElement('div');
+    ReactDOM.render(<Provider test={'foo'} store={store}><Detail store={store} match={match} history={mockHistory} orders={mocks.getOrders()} order={order} products={mocks.getProducts()} customers={mocks.getCustomers()} addToast={mocksAddToast} /></Provider>, node);
+    order.id = undefined;
+
+    ReactDOM.render(<Provider test={'bar'} store={store}><Detail store={store} match={match} history={mockHistory} orders={mocks.getOrders()} order={order} products={mocks.getProducts()} customers={mocks.getCustomers()} addToast={mocksAddToast}/></Provider>, node);
+
+    expect(mocksAddToast).toHaveBeenCalledTimes(1);
 });
 
 
@@ -140,7 +164,7 @@ it('if detail id is correct it calls function setSelectedOrder', () => {
         params: {
             id: '1'
         }
-        
+
     };
 
     let node = document.createElement('div');
