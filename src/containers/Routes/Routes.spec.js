@@ -51,6 +51,7 @@ it('/ should redirect to Orders component', () => {
     //  console.log(wrapper.text());
 
     expect(wrapper.find(Orders)).toHaveLength(1);
+    expect(wrapper.find(NotFound)).toHaveLength(0);
 });
 
 it('/Help should redirect to Help component', () => {
