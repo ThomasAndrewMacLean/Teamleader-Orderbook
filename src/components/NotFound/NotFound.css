@@ -1,0 +1,30 @@
+.not-found{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.not-found-text-wrapper{
+    display: flex;
+    color:white;
+    font-size: 18px;
+    font-weight: 100;
+    justify-content: center;
+    align-items: center;
+    padding:30px;
+    line-height: 40px;
+    width: 300px;
+    background: var(--color-mint-dark);
+    flex-direction:column;
+    cursor: pointer;
+}
+
+.smaller-text{
+    font-size: 14px;
+}
+
+.big-text{
+    font-size: 40px;
+}
