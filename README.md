@@ -34,6 +34,9 @@ All client side errors are logged and sent to [this trello board](https://trello
 
 Test suites can be run with the command `npm test` or `yarn test`. Testing is done with jest. Snapshot tests will fail with older versions of node (below 7).
 
+If tests fail on mac after latests macOS update, read this thread:
+https://github.com/facebook/jest/issues/1767 (tldr: reinstall watchman with brew)
+
 ### CI
 
 On every commit to github, the project is built using [travis](https://travis-ci.org/ThomasAndrewMacLean/Teamleader-Orderbook) and all tests are run. If all goes well the new version gets deployed on [heroku](https://teamleader-orderbook.herokuapp.com/).
