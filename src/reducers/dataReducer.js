@@ -173,6 +173,7 @@ export default function dataReducer(state = initialState.data, action) {
             return state;
 
         case types.ADD_TOAST:
+            
             state = JSON.parse(JSON.stringify(state));
             state.toast = { msg: action.payload.msg, type: action.payload.type };
             return state;

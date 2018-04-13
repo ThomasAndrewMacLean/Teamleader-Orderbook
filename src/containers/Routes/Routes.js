@@ -13,13 +13,15 @@ export class Routes extends Component {
 
     render() {
         return (
-            <Switch>
-                <Route exact path="/" component={Orders} />
-                <Route path="/detail/:id" component={Detail} />
-                <Route path="/help" component={Help} />
-                <Route component={NotFound} />
+            <div>
+                <Switch>
+                    <Route exact path="/" component={Orders} />
+                    <Route path="/detail/:id" component={Detail} />
+                    <Route path="/help" component={Help} />
+                    <Route component={NotFound} />
+                </Switch>
                 <Toaster />
-            </Switch>
+            </div>
         );
     }
 }
