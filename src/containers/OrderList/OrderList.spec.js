@@ -64,18 +64,18 @@ it('does not render .... if customers are loaded and order is set', () => {
 });
 
 it('renders count of items in order', () => {
-    let order ={
-        items:[{},{},{},{},{}],
+    let order = {
+        items: [{ quantity: '1' }, { quantity: '2' }, { quantity: '5' }],
     };
 
     wrapper = shallow(<OrderList order={order} customers={[{}]} />);
-    expect(wrapper.text()).toContain('5');
+    expect(wrapper.text()).toContain('8');
 });
 
 it('renders orderID', () => {
-    let order ={
-        items:[],
-        id:'orderID'
+    let order = {
+        items: [],
+        id: 'orderID'
     };
 
     wrapper = shallow(<OrderList order={order} customers={[{}]} />);
@@ -83,13 +83,13 @@ it('renders orderID', () => {
 });
 
 it('renders name from customer array', () => {
-    let order ={
-        items:[],
-        'customer-id':999
+    let order = {
+        items: [],
+        'customer-id': 999
     };
     let customer = {
-        id:999,
-        name:'Thomas MacLean'
+        id: 999,
+        name: 'Thomas MacLean'
     };
 
     wrapper = shallow(<OrderList order={order} customers={[customer]} />);
@@ -97,10 +97,10 @@ it('renders name from customer array', () => {
 });
 
 it('renders ? from customer array if cant find id', () => {
-    let order ={
-        items:[]
+    let order = {
+        items: []
     };
-    order['customer-id']='non existing id';
+    order['customer-id'] = 'non existing id';
     wrapper = shallow(<OrderList order={order} customers={mocks.getCustomers()} />);
     expect(wrapper.text()).toContain('?');
 });

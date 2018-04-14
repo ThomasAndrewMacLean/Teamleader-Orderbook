@@ -20,7 +20,7 @@ export class OrderList extends Component {
                             }).name}</p>
                         </div>
                         <div className="quatre-col textright">
-                            {this.props.order.items.length}
+                            {this.props.order.items.reduce((a, b) => a += parseInt(b.quantity, 10), 0)}
                         </div>
                         <div className="quatre-col textright">
                             {new Intl

@@ -143,7 +143,7 @@ exports[`snapshot 1`] = `
             <div
               className="quatre-col textright"
             >
-              1
+              10
             </div>
             <div
               className="quatre-col textright"
@@ -180,7 +180,7 @@ exports[`snapshot 1`] = `
             <div
               className="quatre-col textright"
             >
-              1
+              5
             </div>
             <div
               className="quatre-col textright"
@@ -217,7 +217,7 @@ exports[`snapshot 1`] = `
             <div
               className="quatre-col textright"
             >
-              2
+              3
             </div>
             <div
               className="quatre-col textright"
