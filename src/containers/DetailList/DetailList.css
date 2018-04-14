@@ -12,7 +12,7 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    padding: 0;
+    padding: 20px 0 40px 0;
     transition: 0.3s left cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 .detail{
@@ -43,6 +43,9 @@
         right: 10px;
         bottom: 28px; 
         transition: opacity 0.2s ease-in;
+    }
+    .delete-prompt{
+        padding:0 !important;
     }
     .delete-cross:hover {
         color: var(--color-ruby-darkest);
