@@ -22,12 +22,16 @@ const composeEnhancers =
             // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
         }) : compose;
 
+//es
+const middleware = process.env.NODE_ENV !== 'production' ? // eslint-disable-line no-undef
+    [require('redux-immutable-state-invariant').default(), routerMw, logger, thunk] :
+    [routerMw, logger, thunk];
 
 export default function configureStore() {
     return createStore(
 
         rootReducer,
         composeEnhancers(
-            applyMiddleware(routerMw, logger, thunk))
+            applyMiddleware(...middleware))
     );
 }
