@@ -25,6 +25,14 @@ it('should add orders when type is LOAD_ORDERS_SUCCESS', () => {
     expect(result.orders).toHaveLength(orders.length);
 });
 
+it('should return state if action type not found', () => {
+    let orders = mocks.getOrders();
+    let type = '???UNKNOWN???';
+
+    let result = dataReducer(initialState, { type, orders });
+    expect(initialState).toEqual(result);
+});
+
 it('LOAD_ORDERS_SUCCESS should be immutable', () => {
     let orders = mocks.getOrders();
     let type = types.LOAD_ORDERS_SUCCESS;
@@ -508,6 +516,57 @@ it('CHECK_FOR_DISCOUNT_SUCCESS should add discount', () => {
     const action = {
         'type': types.CHECK_FOR_DISCOUNT_SUCCESS,
         'payload': { 'order': { priceWithDiscount: '9', id: '1', discount: '1' } }
+    };
+    let result = dataReducer(beginState, action);
+
+    expect(result.orders[0].priceWithDiscount).toBe('9');
+    expect(result.orders[0].discount).toBe('1');
+});
+
+it('CHECK_FOR_DISCOUNT_SUCCESS should not add discount if timestamp is older than timestamp on current order', () => {
+    let orders = mocks.getOrders();
+    orders.map(o => o.timestamp = 10);
+
+    const beginState = {
+        orders
+    };
+    const action = {
+        'type': types.CHECK_FOR_DISCOUNT_SUCCESS,
+        'payload': { 'order': { priceWithDiscount: '9', timestamp: 9, id: '1', discount: '1' } }
+    };
+    let result = dataReducer(beginState, action);
+
+    expect(result.orders[0].priceWithDiscount).toBe(undefined);
+    expect(result.orders[0].discount).toBe(undefined);
+});
+
+it('CHECK_FOR_DISCOUNT_SUCCESS should add discount if timestamp is newer than timestamp on current order', () => {
+    let orders = mocks.getOrders();
+    orders.map(o => o.timestamp = 10);
+
+    const beginState = {
+        orders
+    };
+    const action = {
+        'type': types.CHECK_FOR_DISCOUNT_SUCCESS,
+        'payload': { 'order': { priceWithDiscount: '9', timestamp: 11, id: '1', discount: '1' } }
+    };
+    let result = dataReducer(beginState, action);
+
+    expect(result.orders[0].priceWithDiscount).toBe('9');
+    expect(result.orders[0].discount).toBe('1');
+});
+
+it('CHECK_FOR_DISCOUNT_SUCCESS should always add discount if timestamp on current order does not yet exist (initial state)', () => {
+    let orders = mocks.getOrders();
+    orders.map(o => o.timestamp = undefined);
+
+    const beginState = {
+        orders
+    };
+    const action = {
+        'type': types.CHECK_FOR_DISCOUNT_SUCCESS,
+        'payload': { 'order': { priceWithDiscount: '9', timestamp: 0, id: '1', discount: '1' } }
     };
     let result = dataReducer(beginState, action);
 

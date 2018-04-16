@@ -1,6 +1,5 @@
 import * as types from './../actions/actions';
 import initialState from './../store/initialState';
-// import { browserHistory } from 'react-router';
 
 export const helperFunctions = {
     getTotal(order) {
@@ -123,7 +122,7 @@ export default function dataReducer(state = initialState.data, action) {
             return state;
 
         case types.DELETE_PRODUCT:
-            state = JSON.parse(JSON.stringify(state));
+            state = JSON.parse(JSON.stringify(state));//Object.assign({}, state);
             order = helperFunctions.returnOrderById(action.payload.orderId, state.orders);
             order.items = order.items.filter(i => i['product-id'] !== action.payload.productId);
             order.total = helperFunctions.getTotal(order);
@@ -141,7 +140,6 @@ export default function dataReducer(state = initialState.data, action) {
                     order.discount = action.payload.order.discount;
                     order.priceWithDiscount = action.payload.order.priceWithDiscount;
                 }
-
             }
             if (action.payload.order.discount === '0') {
                 order.discount = undefined;
