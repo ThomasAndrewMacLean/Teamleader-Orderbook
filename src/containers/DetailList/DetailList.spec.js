@@ -64,11 +64,11 @@ it('does render productName if all is set', () => {
 it('does render quantity if all is set', () => {
     expect(wrapper.contains('10')).toBeTruthy();
 });
-it('does render unit price if all is set', () => {
-    expect(wrapper.contains('€4.99')).toBeTruthy();
+it('does render unit price if all is set', () => {  
+    expect(wrapper.html().includes('4.99')).toBeTruthy();
 });
 it('does render totalPrice if all is set', () => {
-    expect(wrapper.contains('€49.90')).toBeTruthy();
+    expect(wrapper.html().includes('49.90')).toBeTruthy();
 });
 it('first round buttons trigger add quantity with -1', () => {
     wrapper.find('.round-button').at(0).simulate('click');

@@ -148,7 +148,7 @@ exports[`snapshot 1`] = `
             <div
               className="quatre-col textright"
             >
-              €49.90
+              € 49.90
             </div>
             <div
               className="quatre-col"
@@ -185,7 +185,7 @@ exports[`snapshot 1`] = `
             <div
               className="quatre-col textright"
             >
-              €24.95
+              € 24.95
             </div>
             <div
               className="quatre-col"
@@ -222,7 +222,7 @@ exports[`snapshot 1`] = `
             <div
               className="quatre-col textright"
             >
-              €69.00
+              € 69.00
             </div>
             <div
               className="quatre-col"

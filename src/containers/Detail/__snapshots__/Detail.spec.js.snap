@@ -163,7 +163,7 @@ ShallowWrapper {
                                                             className="marginright"
                                                   >
                                                              
-                                                            €49.90
+                                                            € 49.90
                                                   </i>
                                                   
                                         </p>
@@ -462,7 +462,7 @@ ShallowWrapper {
                                                             className="marginright"
                                                 >
                                                              
-                                                            €49.90
+                                                            € 49.90
                                                 </i>
                                                 
                                     </p>
@@ -587,7 +587,7 @@ ShallowWrapper {
                                                                 className="marginright"
                                                 >
                                                                  
-                                                                €49.90
+                                                                € 49.90
                                                 </i>
                                                 
                                 </p>
@@ -709,7 +709,7 @@ ShallowWrapper {
                                                             className="marginright"
                                         >
                                                              
-                                                            €49.90
+                                                            € 49.90
                                         </i>
                                         
                     </p>
@@ -750,7 +750,7 @@ ShallowWrapper {
                                             className="marginright"
                       >
                                              
-                                            €49.90
+                                            € 49.90
                       </i>
                       
 </p>,
@@ -772,7 +772,7 @@ ShallowWrapper {
                           className="marginright"
 >
                            
-                          €49.90
+                          € 49.90
 </i>,
                         "",
                       ],
@@ -792,14 +792,14 @@ ShallowWrapper {
                         "props": Object {
                           "children": Array [
                             " ",
-                            "€49.90",
+                            "€ 49.90",
                           ],
                           "className": "marginright",
                         },
                         "ref": null,
                         "rendered": Array [
                           " ",
-                          "€49.90",
+                          "€ 49.90",
                         ],
                         "type": "i",
                       },
@@ -1240,7 +1240,7 @@ ShallowWrapper {
                                                                         className="marginright"
                                                             >
                                                                          
-                                                                        €49.90
+                                                                        € 49.90
                                                             </i>
                                                             
                                                 </p>
@@ -1539,7 +1539,7 @@ ShallowWrapper {
                                                                       className="marginright"
                                                         >
                                                                        
-                                                                      €49.90
+                                                                      € 49.90
                                                         </i>
                                                         
                                           </p>
@@ -1664,7 +1664,7 @@ ShallowWrapper {
                                                                         className="marginright"
                                                       >
                                                                          
-                                                                        €49.90
+                                                                        € 49.90
                                                       </i>
                                                       
                                     </p>
@@ -1786,7 +1786,7 @@ ShallowWrapper {
                                                                   className="marginright"
                                             >
                                                                    
-                                                                  €49.90
+                                                                  € 49.90
                                             </i>
                                             
                       </p>
@@ -1827,7 +1827,7 @@ ShallowWrapper {
                                                 className="marginright"
                         >
                                                  
-                                                €49.90
+                                                € 49.90
                         </i>
                         
 </p>,
@@ -1849,7 +1849,7 @@ ShallowWrapper {
                             className="marginright"
 >
                              
-                            €49.90
+                            € 49.90
 </i>,
                           "",
                         ],
@@ -1869,14 +1869,14 @@ ShallowWrapper {
                           "props": Object {
                             "children": Array [
                               " ",
-                              "€49.90",
+                              "€ 49.90",
                             ],
                             "className": "marginright",
                           },
                           "ref": null,
                           "rendered": Array [
                             " ",
-                            "€49.90",
+                            "€ 49.90",
                           ],
                           "type": "i",
                         },

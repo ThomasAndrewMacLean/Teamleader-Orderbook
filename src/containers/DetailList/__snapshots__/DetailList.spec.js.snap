@@ -151,7 +151,7 @@ ShallowWrapper {
                               <p
                                         className="pullright"
                               >
-                                        €4.99
+                                        € 4.99
                               </p>
                     </div>
                     <div
@@ -160,7 +160,7 @@ ShallowWrapper {
                               <p
                                         className="pullright"
                               >
-                                        €49.90
+                                        € 49.90
                               </p>
                     </div>
           </div>
@@ -343,7 +343,7 @@ ShallowWrapper {
                             <p
                                           className="pullright"
                             >
-                                          €4.99
+                                          € 4.99
                             </p>
               </div>
               <div
@@ -352,7 +352,7 @@ ShallowWrapper {
                             <p
                                           className="pullright"
                             >
-                                          €49.90
+                                          € 49.90
                             </p>
               </div>
 </div>,
@@ -503,7 +503,7 @@ ShallowWrapper {
                   <p
                                     className="pullright"
                   >
-                                    €4.99
+                                    € 4.99
                   </p>
 </div>,
                 <div
@@ -512,7 +512,7 @@ ShallowWrapper {
                   <p
                                     className="pullright"
                   >
-                                    €49.90
+                                    € 49.90
                   </p>
 </div>,
               ],
@@ -528,7 +528,7 @@ ShallowWrapper {
                   "children": <p
                     className="pullright"
 >
-                    €4.99
+                    € 4.99
 </p>,
                   "className": "quatre-col resize-small",
                 },
@@ -538,11 +538,11 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "€4.99",
+                    "children": "€ 4.99",
                     "className": "pullright",
                   },
                   "ref": null,
-                  "rendered": "€4.99",
+                  "rendered": "€ 4.99",
                   "type": "p",
                 },
                 "type": "div",
@@ -555,7 +555,7 @@ ShallowWrapper {
                   "children": <p
                     className="pullright"
 >
-                    €49.90
+                    € 49.90
 </p>,
                   "className": "quatre-col resize-small",
                 },
@@ -565,11 +565,11 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "€49.90",
+                    "children": "€ 49.90",
                     "className": "pullright",
                   },
                   "ref": null,
-                  "rendered": "€49.90",
+                  "rendered": "€ 49.90",
                   "type": "p",
                 },
                 "type": "div",
@@ -692,7 +692,7 @@ ShallowWrapper {
                                     <p
                                                 className="pullright"
                                     >
-                                                €4.99
+                                                € 4.99
                                     </p>
                         </div>
                         <div
@@ -701,7 +701,7 @@ ShallowWrapper {
                                     <p
                                                 className="pullright"
                                     >
-                                                €49.90
+                                                € 49.90
                                     </p>
                         </div>
             </div>
@@ -884,7 +884,7 @@ ShallowWrapper {
                                 <p
                                                 className="pullright"
                                 >
-                                                €4.99
+                                                € 4.99
                                 </p>
                 </div>
                 <div
@@ -893,7 +893,7 @@ ShallowWrapper {
                                 <p
                                                 className="pullright"
                                 >
-                                                €49.90
+                                                € 49.90
                                 </p>
                 </div>
 </div>,
@@ -1044,7 +1044,7 @@ ShallowWrapper {
                     <p
                                         className="pullright"
                     >
-                                        €4.99
+                                        € 4.99
                     </p>
 </div>,
                   <div
@@ -1053,7 +1053,7 @@ ShallowWrapper {
                     <p
                                         className="pullright"
                     >
-                                        €49.90
+                                        € 49.90
                     </p>
 </div>,
                 ],
@@ -1069,7 +1069,7 @@ ShallowWrapper {
                     "children": <p
                       className="pullright"
 >
-                      €4.99
+                      € 4.99
 </p>,
                     "className": "quatre-col resize-small",
                   },
@@ -1079,11 +1079,11 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "children": "€4.99",
+                      "children": "€ 4.99",
                       "className": "pullright",
                     },
                     "ref": null,
-                    "rendered": "€4.99",
+                    "rendered": "€ 4.99",
                     "type": "p",
                   },
                   "type": "div",
@@ -1096,7 +1096,7 @@ ShallowWrapper {
                     "children": <p
                       className="pullright"
 >
-                      €49.90
+                      € 49.90
 </p>,
                     "className": "quatre-col resize-small",
                   },
@@ -1106,11 +1106,11 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "children": "€49.90",
+                      "children": "€ 49.90",
                       "className": "pullright",
                     },
                     "ref": null,
-                    "rendered": "€49.90",
+                    "rendered": "€ 49.90",
                     "type": "p",
                   },
                   "type": "div",
