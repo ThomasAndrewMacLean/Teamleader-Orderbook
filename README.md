@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/ThomasAndrewMacLean/Teamleader-Orderbook.svg?branch=master)](https://travis-ci.org/ThomasAndrewMacLean/Teamleader-Orderbook)
+[![Build Status](https://travis-ci.org/ThomasAndrewMacLean/Teamleader-Orderbook.svg?branch=master)](https://travis-ci.org/ThomasAndrewMacLean/Teamleader-Orderbook) [![Greenkeeper badge](https://badges.greenkeeper.io/ThomasAndrewMacLean/Teamleader-Orderbook.svg)](https://greenkeeper.io/)
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
